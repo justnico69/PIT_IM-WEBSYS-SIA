@@ -7,7 +7,7 @@ import AdMain from './AdMain';
 
 function AllAdComps() {
   return (
-    <div className="App min-h-screen w-full bg-gradient-to-b from-blue-500 via-blue-400 to-sky-300 ">
+    <div className="App min-h-screen w-full bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 ">
       <AdHeader />
         <div className="flex">
             <AdSidebar />

@@ -2,20 +2,20 @@ import React from 'react';
 
 function AdSidebar() {
   return (
-    <aside className="flex flex-col w-64 h-auto px-5 overflow-y-auto overflow-x-hidden bg-white border-r-2 border-blue-100 bg-gradient-to-b from-blue-500 via-blue-400 to-sky-300">
+    <aside className="flex flex-col w-64 h-screen px-5 overflow-y-auto overflow-x-hidden border-blue-100 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500">
       <div className="flex flex-col justify-between flex-1 mt-6">
         <nav className="-mx-3 space-y-6 ">
           <div className="space-y-3">
-            <div id="sidebarGradient" className="bg-gradient-to-b from-blue-500 via-blue-400 to-sky-300 rounded-xl shadow-lg mb-6 ml-5 mr-5 px- py-4">
-              <a href="" className="text-white hover:text-black my-4 w-full flex flex-col items-center justify-center">
-                <button className="material-icons-outlined focus:outline-none" style={{fontSize: "3rem"}}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <div id="sidebarGradient" className="bg-white h-[600px] rounded-xl shadow-lg mb-6 ml-5 mr-5 px- py-4">
+              <a href="" className="text-blue-600 hover:text-blue-800 my-4 w-full flex flex-col items-center justify-center">
+                <button className="material-icons-outlined focus:outline-none" style={{fontSize: "3rem"}}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-14">
   <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
 </svg></button>
-                <span className="mt-5 font-bold">Admin</span>
+                <span className="mt-5 font-bold">Welcome, Admin!</span>
               </a>
 
               {/* Sidebar Navigation */}
-              <div className="mt-10 text-white text-sm font-semibold">
+              <div className="mt-10 text-blue-600 text-sm font-semibold">
                 <a href="#" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-600 hover:text-blue-50">
                   <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
                     <span className="material-icons-outlined"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
