@@ -40,16 +40,16 @@ function WMainCont() {
                     <div className="relative z-10 fade-rise h-full w-full lg:w-1/2 mt-20">
                         <div className="py-8 px-10 grid grid-cols-4 gap-2"> {/* Adjusted gap */}
                             <div className="h-48 col-span-4 sm:col-span-4 relative">
-                                <img className="rounded-md absolute inset-0 h-full w-full object-cover" src="https://www.cavendish.ac.ug/wp-content/uploads/2017/05/Cavendish-Uganda-Computer-Science.jpg" alt="fresh beets" />
+                                <img className="rounded-md absolute inset-0 h-full w-full object-cover" src="https://www.cavendish.ac.ug/wp-content/uploads/2017/05/Cavendish-Uganda-Computer-Science.jpg" alt="IT" />
                             </div>
                             <div className="h-48 col-span-4 sm:col-span-2 relative">
-                                <img className="rounded-lg absolute inset-0 h-full w-full object-cover" src="https://www.simplilearn.com/ice9/free_resources_article_thumb/how_to_become_A_programmer.jpg" alt="red veggies" />
+                                <img className="rounded-lg absolute inset-0 h-full w-full object-cover" src="https://www.simplilearn.com/ice9/free_resources_article_thumb/how_to_become_A_programmer.jpg" alt="DS" />
                             </div>
                             <div className="h-48 col-span-4 sm:col-span-2 relative">
-                                <img className="rounded-sm absolute inset-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1528901166007-3784c7dd3653?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvbXB1dGVyJTIwcHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D" alt="asparagus" />
+                                <img className="rounded-sm absolute inset-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1528901166007-3784c7dd3653?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvbXB1dGVyJTIwcHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D" alt="CS" />
                             </div>
                             <div className="h-48 col-span-4 sm:col-span relative">
-                                <img className="rounded-md absolute inset-0 h-full w-full object-cover" src="https://lh3.googleusercontent.com/YhdkG2UADwjikGExywVS7WN9C902mIx5O2Kx8tRU6dodpN45aISsFyvzlne2uSKYnmxnnIBWmQsFkMItm3ugF_JdCcua__IjmYQYt-rOQq-Ita9NaG9n=h720" alt="carrots" />
+                                <img className="rounded-md absolute inset-0 h-full w-full object-cover" src="https://lh3.googleusercontent.com/YhdkG2UADwjikGExywVS7WN9C902mIx5O2Kx8tRU6dodpN45aISsFyvzlne2uSKYnmxnnIBWmQsFkMItm3ugF_JdCcua__IjmYQYt-rOQq-Ita9NaG9n=h720" alt="TCM" />
                             </div>
                         </div>
                     </div>
