@@ -32,6 +32,10 @@ Route::get('/student-dashboard', function () {
     return Inertia::render('DComponents/StudentD');
 })->name('student.dashboard');
 
+Route::get('/enrollment-process', function () {
+    return Inertia::render('DComponents/Enrollment/EnrollApp');
+})->name('enrollment-process');
+
 Route::get('/registrar-dashboard', function () {
     return Inertia::render('RegistrarComponents/Registrar');
 })->name('registrar.dashboard');

@@ -12,7 +12,7 @@ const Sidebar = () => {
 </svg>
 
 </button>
-                                <span className="mt-5 font-bold mb-4 text-center">Welcome back, Student!</span>
+                                <span className="mt-5 font-bold mb-4 text-center">Welcome back, <br></br>Student!</span>
                             </a>
                             <div className="mt-10 text-blue-600 text-sm font-semibold">
                                 <a href="#" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
