@@ -33,18 +33,19 @@ function WpHeader() {
             <nav className="relative">
                 <div className="flex items-center justify-between px-5 py-5 w-full relative z-10">
                     <div className="flex items-center">
-                        <div className={`font-bold text-xl pl-10 ${isTop ? 'text-white' : 'text-blue-800'}`}>
-                            NNN University<span className={`${isTop ? 'text-blue-800' : 'text-blue-500'}`}> University</span>
-                        </div>
+                    <div className={`font-bold font-Poppins text-xl pl-10 ${isTop ? 'text-white' : 'text-blue-800'} tracking-wide`}>
+                        NNN University
+                    </div>
+
                     </div>
                     <div className="flex mt-4 space-x-4 mr-10">
-                        <a href="/login-page" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Login
-                        </a>
-                        <a href="/admission-form" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                            Apply here
-                        </a>
-                    </div>
+                        <a href="/login-page" className="text-white font-bold py-2 px-4  hover:underline border-white border-r-2 pr-9">
+                        Login
+                    </a>
+                    <a href="/admission-form" className="text-white font-bold py-2 px-4 rounded hover:underline">
+                        Apply here
+                    </a>
+                </div>
                 </div>
             </nav>
         </header>
