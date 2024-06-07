@@ -1,48 +1,49 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function WpHeader() {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [showHeader, setShowHeader] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isTop, setIsTop] = useState(true);
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
+    const handleScroll = () => {
+        if (window.scrollY === 0) {
+            setIsTop(true);
+        } else {
+            setIsTop(false);
+        }
+
+        if (window.scrollY > lastScrollY) {
+            setShowHeader(false);
+        } else {
+            setShowHeader(true);
+        }
+
+        setLastScrollY(window.scrollY);
     };
 
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [lastScrollY]);
+
     return (
-        <header className="sticky top-0 z-50"> {/* Added sticky and top-0 classes */}
-            <nav className="bg-gradient-to-b from-blue-500 via-blue-400 to-sky-300">
-                <div className="flex items-center justify-between px-5 py-5 w-full border-blue-200">
+        <header className={`fixed top-0 w-full z-50 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'} bg-transparent`}>
+            <nav className="relative">
+                <div className="flex items-center justify-between px-5 py-5 w-full relative z-10">
                     <div className="flex items-center">
-                        <div className="font-bold text-white text-xl">
-                            Nikol, Nikolai, Nikkolo<span className="text-blue-800"> University</span>
+                        <div className={`font-bold text-xl pl-10 ${isTop ? 'text-white' : 'text-blue-800'}`}>
+                            NNN University<span className={`${isTop ? 'text-blue-800' : 'text-blue-500'}`}> University</span>
                         </div>
                     </div>
-                    <div className="relative">
-                        <button
-                            onClick={toggleDropdown}
-                            className="text-white focus:outline-none"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M4 6h16M4 12h16m-7 6h7"
-                                />
-                            </svg>
-                        </button>
-                        {isDropdownOpen && (
-                            <div className="absolute top-full right-0 mt-2 bg-white shadow-md rounded-lg">
-                                {/* Dropdown content */}
-                                <a href="/login-page" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Login</a>
-                                <a href="/admission-form" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Apply</a>
-                            </div>
-                        )}
+                    <div className="flex mt-4 space-x-4 mr-10">
+                        <a href="/login-page" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Login
+                        </a>
+                        <a href="/admission-form" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                            Apply here
+                        </a>
                     </div>
                 </div>
             </nav>
