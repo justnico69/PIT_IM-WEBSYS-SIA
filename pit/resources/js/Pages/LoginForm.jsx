@@ -27,11 +27,25 @@ function Login({ csrfToken }) {
         <div className="relative h-screen flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8 px-6">
             <div className="absolute inset-0 bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://imagescdn.homes.com/i2/VXPLK43-4n9ZpgiohBL-_4ogTCPg05VtC_CeB50fugQ/111/washington-high-school-of-information-technology-milwaukee-wi-8-schoolphoto.jpg?p=1)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.8' }}></div>
             <div className="absolute inset-0 bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://t3.ftcdn.net/jpg/02/98/47/38/360_F_298473896_Vsz21xTwMtroEeeGgU8pL2vwt3N65pfR.jpg)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.8' }}></div>
-            <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-lg bg-white/30 backdrop-blur-sm py-8 px-4 shadow sm:rounded-lg sm:px-10">
+            <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-lg bg-white/30 backdrop-blur-sm py-8 px-4 shadow sm:rounded-lg sm:px-10 animate-riseFade">
+                <style jsx>{`
+                    @keyframes riseFade {
+                        0% {
+                            transform: translateY(20px);
+                            opacity: 0;
+                        }
+                        100% {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                    }
+                    .animate-riseFade {
+                        animation: riseFade 0.8s ease-out;
+                    }
+                `}</style>
                 <div className="text-center">
-                <img width="96" height="96" src="https://img.icons8.com/pulsar-gradient/96/nfc-n.png" alt="nfc-n" 
-                className="mx-auto h-auto" />                
-                <h2 className="mt-3 mb-3 text-violet-950 text-center text-3xl leading-9 font-poppins font-extrabold">
+                    <img width="96" height="96" src="https://img.icons8.com/pulsar-gradient/96/nfc-n.png" alt="nfc-n" className="mx-auto h-auto" />
+                    <h2 className="mt-3 mb-3 text-violet-950 text-center text-3xl leading-9 font-poppins font-extrabold">
                         NNN Enrollment Portal
                     </h2>
                     <p className="mt-0 mb-8 text-sm text-center font-medium font-poppins text-white">
@@ -87,7 +101,7 @@ function Login({ csrfToken }) {
 
                         <div className="text-sm leading-5">
                             <a href="#"
-                               className="font-medium text-white hover:text-blue-900 focus:outline-none focus:underline transition ease-in-out duration-150">
+                                className="font-medium text-white hover:text-blue-900 focus:outline-none focus:underline transition ease-in-out duration-150">
                                 Forgot your password?
                             </a>
                         </div>
