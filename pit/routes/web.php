@@ -49,6 +49,10 @@ Route::get('/admission-form', function () {
     return Inertia::render('AdmissionComponents/AdmissionForm');
 })->name('admission.form');
 
+Route::get('/thank-you', function () {
+    return Inertia::render('AdmissionComponents/ThankYouPage');
+})->name('admission.form');
+
 Route::post('/submitForm', [AdmissionInfoController::class, 'store'])->name('submitForm');
 
 Route::get('/admin-dashboard', function () {

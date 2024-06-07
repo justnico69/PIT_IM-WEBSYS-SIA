@@ -8,6 +8,7 @@ import EmailFieldset from './EmailFieldset';
 import AddressFieldset from './AddressFieldset';
 import EmergencyContactFieldset from './EmergencyContactFieldset';
 import SchoolLastAttendedFieldset from './SchoolLastAttendedFieldset';
+import ThankYouPage from './ThankYouPage';
 
 const AdmissionForm = () => {
     const [formData, setFormData] = useState({
@@ -32,6 +33,7 @@ const AdmissionForm = () => {
     });
 
     const [alertMessage, setAlertMessage] = useState('');
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -59,8 +61,7 @@ const AdmissionForm = () => {
             if (result.error) {
                 setAlertMessage(result.error);
             } else {
-                setAlertMessage('Form submitted successfully');
-                // Clear form data or redirect as needed
+                setIsSubmitted(true);
             }
         } catch (error) {
             setAlertMessage(error.message);
@@ -68,6 +69,10 @@ const AdmissionForm = () => {
 
         setTimeout(() => setAlertMessage(''), 5000);
     };
+
+    if (isSubmitted) {
+        return <ThankYouPage />;
+    }
 
     return (
         <div>
@@ -78,9 +83,9 @@ const AdmissionForm = () => {
                             <p id="alert-message" className="text-center">{alertMessage}</p>
                         </div>
                     )}
-                    <form id="admissionForm" className="bg-white shadow-md rounded px-9 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
-                        <h1 className="text-3xl font-bold font-sans text-center mb-2">Admission Form</h1>
-                        <div className="w-full border-t border-gray-200 mb-2"></div>
+                    <form id="admissionForm" className="bg-white/60 shadow-md rounded px-9 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+                        <h1 className="text-3xl font-extrabold font-poppins text-center mb-2">Admission Form</h1>
+                        <div className="w-full border-t border-black mb-2"></div>
                         <NameFieldset formData={formData} handleChange={handleChange} />
                         <BirthdateFieldset formData={formData} handleChange={handleChange} />
                         <GenderFieldset formData={formData} handleChange={handleChange} />
@@ -90,7 +95,7 @@ const AdmissionForm = () => {
                         <EmergencyContactFieldset formData={formData} handleChange={handleChange} />
                         <SchoolLastAttendedFieldset formData={formData} handleChange={handleChange} />
                         <div className="flex items-center justify-end">
-                            <button className="bg-blue-500 mt-10 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
+                            <button className="bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-700 hover:to-violet-700 mt-10 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
