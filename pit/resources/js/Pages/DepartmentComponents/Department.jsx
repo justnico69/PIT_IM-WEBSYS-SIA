@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 
 export default function Department() {
     return (
-        <div className="min-h-screen w-full bg-gradient-to-b from-blue-500 via-blue-400 to-sky-300">
+        <div className="min-h-screen w-full bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500">
             <Head title="Department-Dashboard" />
             <Header />
             <div className="flex">

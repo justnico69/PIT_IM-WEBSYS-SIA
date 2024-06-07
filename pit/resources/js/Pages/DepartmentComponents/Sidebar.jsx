@@ -1,13 +1,13 @@
 
 const Sidebar = () => {
     return (
-        <aside className="flex flex-col w-64 h-screen px-5 overflow-y-auto bg-gradient-to-b from-blue-500 via-blue-400 to-sky-300">
+        <aside className="flex flex-col w-64 h-screen px-5 overflow-y-auto bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500">
             <div className="flex flex-col justify-between flex-1 mt-6">
                 <nav className="-mx-3 space-y-6">
                     <div className="space-y-3">
-                        <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[500px] px- py-4">
+                        <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[735px] px- py-4">
                             <a href="" className="text-blue-800 hover:text-blue-600 my-4 w-full flex flex-col items-center justify-center">
-                                <button className="material-icons-outlined focus:outline-none" style={{ fontSize: '3rem' }}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                <button className="material-icons-outlined focus:outline-none" style={{ fontSize: '3rem' }}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-14">
   <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" />
 </svg>
 
