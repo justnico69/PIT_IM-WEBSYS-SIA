@@ -82,8 +82,8 @@ function MainContent() {
           }
         `}
       </style>
-      <h1 className="text-3xl font-bold mb-8">Ongoing Applications</h1>
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+      <h1 className="text-3xl font-bold mb-8 ml-10">Ongoing Applications</h1>
+      <div className="bg-white shadow overflow-hidden sm:rounded-lg ml-10 mr-10">
         <div className="px-4 py-5 sm:px-6">
           <h3 className="text-lg leading-6 font-medium text-gray-900">Applicants</h3>
         </div>
