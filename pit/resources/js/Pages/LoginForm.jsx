@@ -103,7 +103,7 @@ function Login({ csrfToken }) {
                             </button>
                         </span>
                     </div>
-                    {error && <div className="mt-4 text-red-600">{error}</div>}
+                    {error && <div className="mt-4 text-red-700">{error}</div>}
                 </form>
             </div>
         </div>

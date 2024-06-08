@@ -32,6 +32,10 @@ Route::get('/student-dashboard', function () {
     return Inertia::render('DComponents/StudentD');
 })->name('student.dashboard');
 
+Route::get('/enrollment-process', function () {
+    return Inertia::render('DComponents/Enrollment/EnrollApp');
+})->name('enrollment-process');
+
 Route::get('/registrar-dashboard', function () {
     return Inertia::render('RegistrarComponents/Registrar');
 })->name('registrar.dashboard');
@@ -51,6 +55,10 @@ Route::get('/cashier-dashboard', function () {
 
 Route::get('/admission-form', function () {
     return Inertia::render('AdmissionComponents/AdmissionForm');
+})->name('admission.form');
+
+Route::get('/thank-you', function () {
+    return Inertia::render('AdmissionComponents/ThankYouPage');
 })->name('admission.form');
 
 Route::post('/submitForm', [AdmissionInfoController::class, 'store'])->name('submitForm');
