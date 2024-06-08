@@ -12,3 +12,10 @@ Route::get('/applicants', [ApplicantsController::class, 'index']);
 Route::get('/applicants/{id}', [ApplicantsController::class, 'show']); 
 
 Route::post('/login', 'Auth\LoginEnController@login');
+
+use App\Http\Controllers\ApplicationController;
+
+
+Route::get('/applications', [ApplicationController::class, 'index']);
+Route::get('/applications/{id}', [ApplicationController::class, 'show']);
+Route::delete('/applications/{id}', [ApplicationController::class, 'destroy']);
