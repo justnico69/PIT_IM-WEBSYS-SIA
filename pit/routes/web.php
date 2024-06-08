@@ -40,6 +40,10 @@ Route::get('/registrar-dashboard', function () {
     return Inertia::render('RegistrarComponents/Registrar');
 })->name('registrar.dashboard');
 
+Route::get('/settings-dashboard', function () {
+    return Inertia::render('RegistrarComponents/Settings');
+})->name('settings.dashboard');
+
 Route::get('/department-dashboard', function () {
     return Inertia::render('DepartmentComponents/Department');
 })->name('department.dashboard');
