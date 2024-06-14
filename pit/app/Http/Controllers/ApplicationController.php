@@ -27,4 +27,3 @@ class ApplicationController extends Controller
         return response()->json(['message' => 'Applicant rejected and deleted successfully!']);
     }
 }
-//heeeyyy

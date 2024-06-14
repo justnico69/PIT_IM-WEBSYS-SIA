@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
@@ -58,7 +58,7 @@ function MainContent() {
         <form onSubmit={handleFormSubmit}>
             <div className="grid grid-cols-3 gap-3 p-4">
            
-            <label className="block text-gray-500 text-base font-bold col-span-3" htmlFor="firstName">Student Name:</label>
+            <label className="block text-gray-500 text-base font-bold col-span-3" htmlFor="firstName">First Name:</label>
             <input type="text" name="firstName" value={newStudent.firstName} onChange={handleInputChange} placeholder="First Name" className="rounded-md col-span-1" />
             <input type="text" name="middleName" value={newStudent.middleName} onChange={handleInputChange} placeholder="Middle Name" className="rounded-md col-span-1" />
             <input type="text" name="lastName" value={newStudent.lastName} onChange={handleInputChange} placeholder="Last Name" className="rounded-md col-span-1" />
@@ -66,7 +66,7 @@ function MainContent() {
             <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Student Number:</label>
             <input type="text" name="studentNumber" value={newStudent.studentNumber} onChange={handleInputChange} placeholder="Student Number" className="rounded-md col-span-3" />
 
-            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Student Email:</label>
+            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Email Address:</label>
             <input type="text" name="email" value={newStudent.email} onChange={handleInputChange} placeholder="Email Address" className="rounded-md col-span-3" />
 
             <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Contact Number:</label>
@@ -82,7 +82,6 @@ function MainContent() {
                 <option value="BSCS">Bachelor of Science in Computer Science</option>
                 <option value="BSDS">Bachelor of Science in Data Science</option>
             </select>
-
             
             <select name="yrlevel" value={newStudent.yrlevel} onChange={handleInputChange} className="rounded-md col-span-1">
                 <option value="" disabled>Select your year level</option>
