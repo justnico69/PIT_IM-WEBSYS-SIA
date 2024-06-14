@@ -1,4 +1,3 @@
-import React from 'react';
 
 function AdMain() {
   return (
@@ -20,7 +19,7 @@ function AdMain() {
       {/* Dashboard Components */}
       <div className="grid grid-cols-2 gap-2">
         <div className="mr-10 col-span-2 bg-white rounded-xl h-[150px] shadow-lg flex items-center justify-center">
-          <a href="#" className="text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
+          <a href="accepted-applicants" className="text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
             <span className="material-icons-outlined focus:outline-none" style={{ fontSize: "2rem" }}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
                 <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z" clipRule="evenodd" />
@@ -42,16 +41,7 @@ function AdMain() {
           </a>
         </div>
 
-        <div className="h-24 mt-2 mr-10 col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center">
-          <a href="#" className="text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
-            <span className="material-icons-outlined focus:outline-none" style={{ fontSize: "2rem" }}>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                <path d="M10.375 2.25a4.125 4.125 0 1 0 0 8.25 4.125 4.125 0 0 0 0-8.25ZM10.375 12a7.125 7.125 0 0 0-7.124 7.247.75.75 0 0 0 .363.63 13.067 13.067 0 0 0 6.761 1.873c2.472 0 4.786-.684 6.76-1.873a.75.75 0 0 0 .364-.63l.001-.12v-.002A7.125 7.125 0 0 0 10.375 12ZM16 9.75a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5h-6Z" />
-              </svg>
-            </span>
-            <span className="ml-2 text-lg font-semibold">Rejected Applicants</span>
-          </a>
-        </div>
+      
       </div>
     </div>
   );

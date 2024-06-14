@@ -11,7 +11,7 @@ function Login({ csrfToken }) {
         setError('');
 
         try {
-            const response = await axios.post('/login-page', { email, password, _token: csrfToken });
+            const response = await axios.post('/login', { email, password, guard: 'student', _token: csrfToken });
             const redirectUrl = response.data.redirectUrl;
             window.location.href = redirectUrl;
         } catch (error) {
