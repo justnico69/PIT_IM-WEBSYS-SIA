@@ -7,7 +7,7 @@ export default function Header() {
                     <div className="flex items-center justify-between py-2 text-5x1">
                     <div className="flex items-center justify-center">
                         <img
-                            src="https://pouch.jumpshare.com/preview/Ttl4yMYCp2MxESEjCCDLeuJlTprbTYEdaE2mE3Tq_UpNZLGvm3srtq0r5_ctz8TXnh6VIGqyei9xMhJyL9K1T74cqB5_oyclRnkSuEx6WfM"
+                            src="https://pouch.jumpshare.com/preview/Ttl4yMYCp2MxESEjCCDLeuJlTprbTYEdaE2mE3Tq_UpNZLGvm3srtq0r5_ctz8TXuVep9aX4ATYw3F4IoN9M7aAaHm8Clkdzgt3s73hA2vY"
                             alt="EduTech Logo"
                             className="h-8 w-30 object-contain mr-5 mb-3-2"
                         />

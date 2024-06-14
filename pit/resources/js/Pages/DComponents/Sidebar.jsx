@@ -1,7 +1,7 @@
 
 const Sidebar = () => {
     return (
-        <aside className="flex flex-col w-96 h-screen px-5 overflow-y-auto">
+        <aside className="flex flex-col w-96 h-full px-5 overflow-y-auto">
             <div className="flex flex-col justify-between flex-1 ml-3 mt-14">
                 <nav className="-mx-3 space-y-6">
                     <div className="space-y-3">
