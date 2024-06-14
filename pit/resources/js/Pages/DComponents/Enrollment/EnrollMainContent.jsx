@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
 
-Modal.setAppElement('#root'); // Set the root element for accessibility
+Modal.setAppElement('#root');
 
 function MainContent() {
   const [selectedStudent, setSelectedStudent] = useState(null);
@@ -11,14 +11,6 @@ function MainContent() {
     lastName: '',
     email: '',
     contactno: '',
-    streetadd: '',
-    city: '',
-    province: '',
-    zipcode: '',
-    emergencyName: '',
-    relationship: '',
-    emergencyContactNumber: '',
-    schoolLastAttended: ''
   });
 
   const studentNames = [
@@ -44,49 +36,72 @@ function MainContent() {
       lastName: '',
       email: '',
       contactno: '',
-      streetadd: '',
-      city: '',
-      province: '',
-      zipcode: '',
-      emergencyName: '',
-      relationship: '',
-      emergencyContactNumber: '',
-      schoolLastAttended: ''
     });
   };
 
   return (
-    <main className="container mx-auto py-10">
-    <h1 className="text-3xl font-bold mb-8 text-white">Enrollment</h1>
-    <div className="bg-white p-10 shadow overflow-hidden sm:rounded-lg mr-5 px-3">
-        <div className="px-4 py-5 sm:px-4">
-        <h3 className="text-lg leading-6 font-medium text-gray-900">Enrollment Form</h3>
-        </div>
-        <div className="border-t border-gray-200 rounded-sm">
+    <main className="w-full ml-5">
+      <div className="flex flex-row">
+        <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 mb-5 flex-grow">
+            <p className="text-3xl mt-3 font-bold text-blue-800">Enrollment</p>
+            <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Let's get started!</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 mb-3">
+                <div className="mt-5">
+                    <p className="text-base font-bold text-white">Enrollment Form</p>
+                </div>
+            </div>
+
+        <div className="bg-white p-5 shadow overflow-hidden sm:rounded-lg mr-8 px-3">
         <form onSubmit={handleFormSubmit}>
             <div className="grid grid-cols-3 gap-3 p-4">
            
+
+            <label className="block text-gray-500 text-base font-bold col-span-3" htmlFor="firstName">First Name:</label>
+            <input type="text" name="firstName" value={newStudent.firstName} onChange={handleInputChange} placeholder="First Name" className="rounded-md col-span-1" />
+            <input type="text" name="middleName" value={newStudent.middleName} onChange={handleInputChange} placeholder="Middle Name" className="rounded-md col-span-1" />
+            <input type="text" name="lastName" value={newStudent.lastName} onChange={handleInputChange} placeholder="Last Name" className="rounded-md col-span-1" />
+            
             <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Student Number:</label>
             <input type="text" name="studentNumber" value={newStudent.studentNumber} onChange={handleInputChange} placeholder="Student Number" className="rounded-md col-span-3" />
 
             <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Email Address:</label>
             <input type="text" name="email" value={newStudent.email} onChange={handleInputChange} placeholder="Email Address" className="rounded-md col-span-3" />
 
-            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Program:</label>
-            <input type="text" name="program" value={newStudent.program} onChange={handleInputChange} placeholder="e.g. Bachelor of Science in Information Technology" className="rounded-md col-span-3" />
+            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Contact Number:</label>
+            <input type="text" name="contactNumber" value={newStudent.contactNumber} onChange={handleInputChange} placeholder="Phone Number" className="rounded-md col-span-3" />
             
-            <label className="block text-gray-500 text-base font-bold col-span-2 mt-3" htmlFor="firstName">Year Level:</label>
-            <label className="block text-gray-500 text-base font-bold col-span-1 mt-3" htmlFor="firstName">Semester:</label>
-            <input type="text" name="yrlevel" value={newStudent.yrlevel} onChange={handleInputChange} placeholder="e.g. Freshman" className="rounded-md col-span-2" />
-            <input type="text" name="semester" value={newStudent.semester} onChange={handleInputChange} placeholder="e.g. 1st Semester" className="rounded-md col-span-1" />
+            <label className="block text-gray-500 text-base font-bold col-span-1 mt-3" htmlFor="program">Program:</label>
+            <label className="block text-gray-500 text-base font-bold col-span-1 mt-3" htmlFor="yrlevel">Year Level:</label>
+            <label className="block text-gray-500 text-base font-bold col-span-1 mt-3" htmlFor="semester">Semester:</label>
+            <select name="program" value={newStudent.program} onChange={handleInputChange} className="rounded-md col-span-1">
+                <option value="" disabled>Select your program</option>
+                <option value="BSIT">Bachelor of Science in Information Technology</option>
+                <option value="BSTCM">Bachelor of Science in Technology Communication Management</option>
+                <option value="BSCS">Bachelor of Science in Computer Science</option>
+                <option value="BSDS">Bachelor of Science in Data Science</option>
+            </select>
             
+            <select name="yrlevel" value={newStudent.yrlevel} onChange={handleInputChange} className="rounded-md col-span-1">
+                <option value="" disabled>Select your year level</option>
+                <option value="Freshman">First Year (Freshman)</option>
+                <option value="Sophomore">Second Year (Sophomore)</option>
+                <option value="Junior">Third Year (Junior)</option>
+                <option value="Senior">Fourth Year (Senior)</option>
+            </select>
+            <select name="semester" value={newStudent.semester} onChange={handleInputChange} className="rounded-md col-span-1">
+                <option value="" disabled>Select your semester</option>
+                <option value="1st Semester">1st Semester</option>
+                <option value="2nd Semester">2nd Semester</option>
+            </select>
 
             </div>
             <button type="submit" className="mt-8 w-full flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded">
-            Submit
+            Submit Enrollment Form
             </button>
         </form>
-        </div>
     </div>
     </main>
 
