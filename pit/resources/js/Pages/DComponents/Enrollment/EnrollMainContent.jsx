@@ -58,7 +58,7 @@ function MainContent() {
         <form onSubmit={handleFormSubmit}>
             <div className="grid grid-cols-3 gap-3 p-4">
            
-            <label className="block text-gray-500 text-base font-bold col-span-3" htmlFor="firstName">First Name:</label>
+            <label className="block text-gray-500 text-base font-bold col-span-3" htmlFor="firstName">Student Name:</label>
             <input type="text" name="firstName" value={newStudent.firstName} onChange={handleInputChange} placeholder="First Name" className="rounded-md col-span-1" />
             <input type="text" name="middleName" value={newStudent.middleName} onChange={handleInputChange} placeholder="Middle Name" className="rounded-md col-span-1" />
             <input type="text" name="lastName" value={newStudent.lastName} onChange={handleInputChange} placeholder="Last Name" className="rounded-md col-span-1" />
