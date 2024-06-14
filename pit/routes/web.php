@@ -22,15 +22,26 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+Route::middleware(['web'])->group(function () {
+    Route::get('/student-dashboard', function () {
+        return Inertia::render('DComponents/StudentD');
+    })->middleware(['auth:student', 'role:student'])->name('student.dashboard');
 });
 
-Route::get('/student-dashboard', function () {
-    return Inertia::render('DComponents/StudentD');
-})->name('student.dashboard');
+
+Route::get('/login', [PagesController::class, 'showLoginPage'])->name('login');
+
+Route::post('/login', [LoginEnController::class, 'login']);
+
+Route::post('/logout', [LoginEnController::class, 'logout'])->name('logout');
+
+Route::get('/test', function () {
+    dump(Auth::user());
+});
+//Route::get('/student-dashboard', function () {
+    //return Inertia::render('DComponents/StudentD');
+//})->name('student.dashboard');
 
 Route::get('/enrollment-process', function () {
     return Inertia::render('DComponents/Enrollment/EnrollApp');
@@ -59,7 +70,7 @@ Route::get('/admission-form', function () {
 
 Route::get('/thank-you', function () {
     return Inertia::render('AdmissionComponents/ThankYouPage');
-})->name('admission.form');
+})->name('thank.you');
 
 Route::post('/submitForm', [AdmissionInfoController::class, 'store'])->name('submitForm');
 
@@ -71,6 +82,10 @@ Route::get('/application-process', function () {
     return Inertia::render('AdminComponents/Applications/App');
 })->name('application-process');
 
+Route::get('/accepted-applicants', function () {
+    return Inertia::render('AdminComponents/ApplicantList/App');
+})->name('accepted.applicants');
+
 // routes/web.php
 
 
@@ -79,12 +94,8 @@ Route::get('/application-process', function () {
 
 
 
-Route::get('/login-page', [PagesController::class, 'showLoginPage'])->name('login-page');
-
-Route::post('/login-page', [LoginEnController::class, 'login']);
 
 
-// Dashboard routes for different user roles
 
 
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root'); // Set the root element for accessibility
@@ -66,25 +66,12 @@ function MainContent() {
         <form onSubmit={handleFormSubmit}>
             <div className="grid grid-cols-3 gap-3 p-4">
            
-            <label className="block text-gray-500 text-base font-bold col-span-3" htmlFor="firstName">First Name:</label>
-            <input type="text" name="firstName" value={newStudent.firstName} onChange={handleInputChange} placeholder="First Name" className="rounded-md col-span-1" />
-            <input type="text" name="middleName" value={newStudent.middleName} onChange={handleInputChange} placeholder="Middle Name" className="rounded-md col-span-1" />
-            <input type="text" name="lastName" value={newStudent.lastName} onChange={handleInputChange} placeholder="Last Name" className="rounded-md col-span-1" />
-
-            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Address:</label>
-            <input type="text" name="streetAddress" value={newStudent.streetAddress} onChange={handleInputChange} placeholder="Street Address" className="rounded-md col-span-3" />
-            <input type="text" name="City" value={newStudent.City} onChange={handleInputChange} placeholder="City" className="rounded-md col-span-2" />
-            <input type="text" name="province" value={newStudent.province} onChange={handleInputChange} placeholder="Province/Region" className="rounded-md col-span-1" />
-
             <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Student Number:</label>
             <input type="text" name="studentNumber" value={newStudent.studentNumber} onChange={handleInputChange} placeholder="Student Number" className="rounded-md col-span-3" />
 
-            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Student Email:</label>
+            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Email Address:</label>
             <input type="text" name="email" value={newStudent.email} onChange={handleInputChange} placeholder="Email Address" className="rounded-md col-span-3" />
 
-            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Contact Number:</label>
-            <input type="text" name="contactNumber" value={newStudent.contactNumber} onChange={handleInputChange} placeholder="Phone Number" className="rounded-md col-span-3" />
-            
             <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="firstName">Program:</label>
             <input type="text" name="program" value={newStudent.program} onChange={handleInputChange} placeholder="e.g. Bachelor of Science in Information Technology" className="rounded-md col-span-3" />
             

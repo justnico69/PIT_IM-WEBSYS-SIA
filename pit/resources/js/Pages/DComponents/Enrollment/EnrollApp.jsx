@@ -1,9 +1,8 @@
-import React from 'react';
 import Header from './EnrollHeader';
 import MainContent from './EnrollMainContent';
 import Sidebar from './EnrollSidebar';
 
-function App() {
+function App(auth) {
   return (
     <div className="bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 min-h-screen">
       <Header />

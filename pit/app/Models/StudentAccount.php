@@ -4,14 +4,15 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\HasFactory; // Include this
 
 class StudentAccount extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasFactory; // Use the HasFactory trait
 
-    protected $table = 'student_account'; // Corrected table name
+    protected $table = 'student_account';
 
-    protected $fillable = ['name', 'email', 'password']; // Fillable fields
+    protected $fillable = ['name', 'email', 'password', 'role']; // Add 'role' here
 
-    protected $hidden = ['password', 'remember_token']; // Hidden fields
+    protected $hidden = ['password', 'remember_token'];
 }

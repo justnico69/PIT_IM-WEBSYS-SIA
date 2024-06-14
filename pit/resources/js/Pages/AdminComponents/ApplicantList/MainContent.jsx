@@ -4,67 +4,24 @@ import Modal from 'react-modal';
 Modal.setAppElement('#root'); // Set the root element for accessibility
 
 function MainContent() {
-  const [studentNames, setStudentNames] = useState([]);
+  const [acceptedApplicants, setAcceptedApplicants] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/applicants')
+    // Fetch accepted applicants
+    fetch('http://localhost:8000/api/applicantshow')
       .then((response) => response.json())
-      .then((data) => setStudentNames(data));
+      .then((data) => setAcceptedApplicants(data));
   }, []);
 
-  const handleStudentClick = (id) => {
-    fetch(`http://localhost:8000/api/applicants/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setSelectedStudent(data);
-        setIsModalOpen(true);
-      });
+  const handleStudentClick = (student) => {
+    setSelectedStudent(student);
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-  };
-
-  const acceptApplicant = (id) => {
-    if (window.confirm("Do you confirm this?")) {
-      fetch(`http://localhost:8000/api/applicant/accept/${id}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then(() => {
-          setStudentNames(studentNames.filter(student => student.id !== id));
-          closeModal();
-        })
-        .catch((error) => {
-          console.error('There was a problem with the fetch operation:', error);
-        });
-    }
-  };
-
-  const rejectApplicant = (id) => {
-    if (window.confirm("Are you sure you want to reject this applicant?")) {
-      fetch(`http://localhost:8000/api/applications/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((response) => response.json())
-        .then(() => {
-          setStudentNames(studentNames.filter(student => student.id !== id));
-          closeModal();
-        });
-    }
   };
 
   return (
@@ -99,20 +56,19 @@ function MainContent() {
         `}
       </style>
 
-      <h1 className="text-3xl font-bold mb-8 ml-10">Ongoing Applications</h1>
+      <h1 className="text-3xl font-bold mb-8 ml-10">Accepted Applicants</h1>
       <div className="bg-white shadow overflow-hidden sm:rounded-lg ml-10 mr-10">
         <div className="px-4 py-5 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">Applicants</h3>
+          <h3 className="text-lg leading-6 font-medium text-gray-900">Accepted Applicants</h3>
         </div>
         <div className="border-t border-gray-200">
           <dl>
-            {studentNames.map((student) => (
-              <div key={student.id} className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            {acceptedApplicants.map((applicant) => (
+              <div key={applicant.id} className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-500">
-                  <button onClick={() => handleStudentClick(student.id)} className="text-blue-500 hover:underline">
-                    {student.name}
-                  </button>
+                  {applicant.firstName} {applicant.lastName}
                 </dt>
+                <button onClick={() => handleStudentClick(applicant)} className="text-blue-500 hover:underline ml-2 focus:outline-none">View Details</button>
               </div>
             ))}
           </dl>
@@ -164,16 +120,6 @@ function MainContent() {
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.schoolLastAttended}</dd>
                 </div>
               </dl>
-
-              {/* Accept and reject buttons */}
-              <div className="flex justify-end px-4 py-3 sm:px-6">
-                <button onClick={() => acceptApplicant(selectedStudent.id)} className="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                  Accept
-                </button>
-                <button onClick={() => rejectApplicant(selectedStudent.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                  Reject
-                </button>
-              </div>
               {/* Close button */}
               <button onClick={closeModal} className="text-red-500 hover:underline mx-4 mb-4 block text-right">
                 Close
