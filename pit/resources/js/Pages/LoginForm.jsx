@@ -25,10 +25,10 @@ function Login({ csrfToken }) {
 
     return (
         <div className="relative h-screen flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8 px-6">
-            <div className="absolute inset-0 bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3933.jpg?t=st=1718296263~exp=1718299863~hmac=07f072b527e0b0eae48f0562bad7ebbd1335bdbcecab875144e8a9e509267355&w=900)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.8' }}></div>
+            <div className="absolute inset-0 bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/7067d0170920411.646604dc0db99.jpg)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.9'}}></div>
             <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-lg border-2 border-white bg-white/20 backdrop-blur-lg py-8 px-4 shadow sm:rounded-3xl sm:px-10">
             <div className="text-center">
-                <img width="200" height="200" src="https://pouch.jumpshare.com/preview/Ttl4yMYCp2MxESEjCCDLeuJlTprbTYEdaE2mE3Tq_UpNZLGvm3srtq0r5_ctz8TXFvd1RSXsHDToDr8ymvrB9ONpLQD51u-OdohGWooJ--E" alt="EduTech Logo" 
+                <img width="200" height="200" src="https://pouch.jumpshare.com/preview/Ttl4yMYCp2MxESEjCCDLeuJlTprbTYEdaE2mE3Tq_UpNZLGvm3srtq0r5_ctz8TXnh6VIGqyei9xMhJyL9K1T74cqB5_oyclRnkSuEx6WfM" alt="EduTech Logo" 
                 className="mx-auto h-auto mt-5 mb-5" />                
                 <h2 className="mb-3 text-blue-800 text-center text-2xl leading-9 font-poppins font-extrabold">
                         NNN College Enrollment Portal
@@ -122,7 +122,7 @@ function Login({ csrfToken }) {
                                 type="submit"
                                 className="w-full flex justify-center py-2 px-4 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-900 focus:outline-none focus:border-blue-900 focus:shadow-outline-indigo active:bg-blue-900 transition duration-150 ease-in-out"
                             >
-                                Sign in
+                                Log in
                             </button>
                         </span>
                     </div>
