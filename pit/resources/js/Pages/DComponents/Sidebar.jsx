@@ -1,11 +1,11 @@
 
 const Sidebar = () => {
     return (
-        <aside className="flex flex-col w-80 h-screen px-5 overflow-y-auto">
-            <div className="flex flex-col justify-between flex-1 mt-12">
+        <aside className="flex flex-col w-96 h-screen px-5 overflow-y-auto">
+            <div className="flex flex-col justify-between flex-1 ml-3 mt-14">
                 <nav className="-mx-3 space-y-6">
                     <div className="space-y-3">
-                        <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[600px] px- py-4">
+                        <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[700px] px- py-4">
                             <a href="" className="text-blue-800 hover:text-blue-600 my-4 w-full flex flex-col items-center justify-center">
                                 <button className="material-icons-outlined focus:outline-none" style={{ fontSize: '3rem' }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-14">

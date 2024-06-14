@@ -3,7 +3,7 @@ export default function Header() {
     return (
         <header>
             <nav className="fixed bg-white flex w-full z-0 shadow-md items-center justify-between">
-                <div className="text-blue-800 px-10 py-2 z-10 w-full ">
+                <div className="text-blue-800 px-10 py-5 z-10 w-full ">
                     <div className="flex items-center justify-between py-2 text-5x1">
                     <div className="flex items-center justify-center">
                         <img
@@ -13,7 +13,7 @@ export default function Header() {
                         />
                             <div className="text-blue-600 text-xl">
                                 <div className="font-bold mb-2 mt-2">
-                                NNN<span className="text-blue-800"> College of Information Technology and Computing</span>
+                                NNN<span className="text-blue-800"> College of Information Technology and Computing Enrollment Portal</span>
                                 </div>
                             </div>
                             </div>
