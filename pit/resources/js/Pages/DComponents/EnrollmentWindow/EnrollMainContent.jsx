@@ -54,7 +54,7 @@ function MainContent() {
                 </div>
             </div>
 
-        <div className="bg-white p-5 shadow overflow-hidden sm:rounded-lg mr-8 px-3">
+        <div className="bg-white p-5 shadow overflow-hidden sm:rounded-xl mr-8 px-3">
         <form onSubmit={handleFormSubmit}>
             <div className="grid grid-cols-3 gap-3 p-4">
            
