@@ -30,6 +30,19 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('DComponents/StudentD');
     })->middleware(['auth:student', 'role:student'])->name('student.dashboard');
 
+    Route::get('/student-dash-enrollment-process', function () {
+        return Inertia::render('DComponents/EnrollmentWindow/EnrollApp');
+    })->name('student-dash-enrollment-process');
+    
+    Route::get('/student-dash-cert-of-registration', function () {
+        return Inertia::render('DComponents/CertOfRegisWindow/CORApp');
+    })->name('student-dash-cert-of-registration');
+    
+    Route::get('/student-dash-program-details', function () {
+        return Inertia::render('DComponents/ProgramDetailsWindow/ProgramApp');
+    })->name('student-dash-program-details');
+    
+
     // Department Staff Dashboard
     Route::get('/department-dashboard', function () {
         return Inertia::render('DepartmentComponents/Department');
@@ -69,40 +82,7 @@ Route::post('/login', [LoginEnController::class, 'login']);
 Route::post('/logout', [LoginEnController::class, 'logout'])->name('logout');
 
 
-
-Route::get('/enrollment-process', function () {
-    return Inertia::render('DComponents/Enrollment/EnrollApp');
-})->name('enrollment-process');
-
-Route::get('/settings-dashboard', function () {
-    return Inertia::render('RegistrarComponents/Settings');
-})->name('settings.dashboard');
-
-Route::get('/admission-form', function () {
-    return Inertia::render('AdmissionComponents/AdmissionForm');
-})->name('admission.form');
-
-Route::get('/thank-you', function () {
-    return Inertia::render('AdmissionComponents/ThankYouPage');
-})->name('thank.you');
-
-Route::post('/submitForm', [AdmissionInfoController::class, 'store'])->name('submitForm');
-
-
-
-
-
-
-
-
-//Route::get('/test', function () {
-    //return view('test');
-//});
-
-
 // routes/web.php
 use App\Http\Controllers\AdmissionHandlerController;
 
 Route::get('/admission-handlers', [AdmissionHandlerController::class, 'index']);
-
-
