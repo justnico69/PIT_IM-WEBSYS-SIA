@@ -39,7 +39,7 @@ function WpHeader() {
                         </div>
                     </div>
                     <div className="flex mt-4 space-x-4 mr-10">
-                        <a href="/login-page" className="text-white font-bold py-2 px-4 hover:underline border-white border-r-2 pr-9">
+                        <a href="/login" className="text-white font-bold py-2 px-4 hover:underline border-white border-r-2 pr-9">
                             Login
                         </a>
                         <a href="/admission-form" className="text-white font-bold py-2 px-4 rounded hover:underline">
