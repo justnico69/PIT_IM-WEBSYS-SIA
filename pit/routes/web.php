@@ -53,6 +53,10 @@ Route::get('/student-dash-cert-of-registration', function () {
     return Inertia::render('DComponents/CertOfRegisWindow/CORApp');
 })->name('student-dash-cert-of-registration');
 
+Route::get('/student-dash-program-details', function () {
+    return Inertia::render('DComponents/ProgramDetailsWindow/ProgramApp');
+})->name('student-dash-program-details');
+
 {/*REGISTRAR DASHBOARD*/} 
 Route::get('/registrar-dashboard', function () {
     return Inertia::render('RegistrarComponents/Registrar');
