@@ -41,12 +41,31 @@ function MainContent() {
           }
           return response.json();
         })
-        .then(() => {
+        .then((data) => {
           setStudentNames(studentNames.filter(student => student.id !== id));
           closeModal();
+          alert(data.message); // Display the success message
+          
+          // Send acceptance email
+          fetch('http://localhost:8000/api/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: selectedStudent.email }),
+          })
+          .then((response) => response.json())
+          .then((data) => {
+            alert(data.message); // Display success message for email sending
+          })
+          .catch((error) => {
+            console.error('There was a problem with the fetch operation:', error);
+           
+          });
         })
         .catch((error) => {
           console.error('There was a problem with the fetch operation:', error);
+         
         });
     }
   };

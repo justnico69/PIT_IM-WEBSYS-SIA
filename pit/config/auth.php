@@ -43,7 +43,23 @@ return [
         'student' => [
             'driver' => 'session',
             'provider' => 'student_accounts',
-    ],
+        ],
+        'department_staff' => [
+            'driver' => 'session',
+            'provider' => 'department_staff',
+        ],
+        'cashier' => [
+            'driver' => 'session',
+            'provider' => 'cashiers',
+        ],
+        'registrar' => [
+            'driver' => 'session',
+            'provider' => 'registrars',
+        ],
+        'admission_handler' => [
+            'driver' => 'session',
+            'provider' => 'admission_handlers',
+        ],
     ],
 
     /*
@@ -71,6 +87,22 @@ return [
      'student_accounts' => [ // Define the 'student_accounts' provider
         'driver' => 'eloquent',
         'model' => App\Models\StudentAccount::class,
+    ],
+    'department_staff' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\DepartmentStaff::class,
+    ],
+    'cashiers' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Cashier::class,
+    ],
+    'registrars' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Registrar::class,
+    ],
+    'admission_handlers' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\AdmissionHandler::class,
     ],
 ],
         // 'users' => [
