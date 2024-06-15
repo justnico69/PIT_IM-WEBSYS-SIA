@@ -3,7 +3,6 @@ namespace App\Http\Controllers;
 use App\Models\AdmissionInfo;
 use App\Models\AcceptedApplicants;
 use Illuminate\Http\Request;
-
 class AcceptedApplicantController extends Controller
 {
     public function acceptApplicant($id)
@@ -44,6 +43,8 @@ class AcceptedApplicantController extends Controller
         // Delete the applicant from admission_info table
         $applicant->delete();
 
+       
+
         return response()->json(['message' => 'Applicant accepted successfully']);
     }
     public function show($id)
@@ -64,7 +65,4 @@ class AcceptedApplicantController extends Controller
         $applicants = AcceptedApplicants::all();
         return response()->json($applicants);
     }
-
 }
-
-

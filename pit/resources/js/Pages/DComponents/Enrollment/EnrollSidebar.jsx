@@ -16,7 +16,7 @@ const Sidebar = () => {
                                 <span className="mt-5 font-bold mb-4 text-center text-xl">Welcome, Student!</span>
                             </a>
                             <div className="mt-10 px-3 text-blue-600 text-lg font-semibold">
-                                <a href="#" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
+                                <a href="student-dashboard" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
                                     <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
                                         <span className="material-icons-outlined">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -39,16 +39,8 @@ const Sidebar = () => {
                                     </span>
                                 </a>
 
-                                <a href="#" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
-                                    <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
-                                        <span className="material-icons-outlined">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                                            <path fill-rule="evenodd" d="M16.5 3.75a1.5 1.5 0 0 1 1.5 1.5v13.5a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 0 1-1.5-1.5V15a.75.75 0 0 0-1.5 0v3.75a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5.25a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3V9A.75.75 0 1 0 9 9V5.25a1.5 1.5 0 0 1 1.5-1.5h6Zm-5.03 4.72a.75.75 0 0 0 0 1.06l1.72 1.72H2.25a.75.75 0 0 0 0 1.5h10.94l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 0 0-1.06 0Z" clip-rule="evenodd" />
-                                            </svg>
-                                            </span>
-                                        <span className="ml-2">Logout</span>
-                                    </span>
-                                </a>
+                               
+                           
                             </div>
                         </div>
                     </div>
