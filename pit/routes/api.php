@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginEnController;
 use App\Http\Controllers\ApplicantsController;
+use App\Http\Controllers\MailController;
 
 Route::get('/enrollment-status', function () {
     //
@@ -28,3 +29,6 @@ Route::post('/applicant/accept/{id}', [AcceptedApplicantController::class, 'acce
 Route::get('/applicantshow/accept/{id}', [AcceptedApplicantController::class, 'show']);
 
 Route::get('/applicantshow', [AcceptedApplicantController::class, 'index']);
+
+
+Route::post('send-email',[MailController::class,'sendMail']);

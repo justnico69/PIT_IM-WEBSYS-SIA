@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import NameFieldset from './NameFieldset';
-import BirthdateFieldset from './BirthdateFieldset';
-import GenderFieldset from './GenderFieldset';
-import NationalityFieldset from './NationalityFieldset';
-import EmailFieldset from './EmailFieldset';
 import AddressFieldset from './AddressFieldset';
+import BirthdateFieldset from './BirthdateFieldset';
+import EmailFieldset from './EmailFieldset';
 import EmergencyContactFieldset from './EmergencyContactFieldset';
+import GenderFieldset from './GenderFieldset';
+import NameFieldset from './NameFieldset';
+import NationalityFieldset from './NationalityFieldset';
 import SchoolLastAttendedFieldset from './SchoolLastAttendedFieldset';
 import ThankYouPage from './ThankYouPage';
+
 
 const AdmissionForm = () => {
     const [formData, setFormData] = useState({

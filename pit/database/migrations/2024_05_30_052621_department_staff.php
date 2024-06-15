@@ -16,6 +16,7 @@ class DepartmentStaff extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('role')->default('department_staff');
             $table->timestamps();
         });
     
