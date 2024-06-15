@@ -27,49 +27,46 @@ function MainContent() {
     setIsModalOpen(false);
   };
 
-  const acceptApplicant = (id) => {
+  const acceptApplicant = (id, email) => {
     if (window.confirm("Do you confirm this?")) {
-      fetch(`http://localhost:8000/api/applicant/accept/${id}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setStudentNames(studentNames.filter(student => student.id !== id));
-          closeModal();
-          alert(data.message); // Display the success message
-          
-          // Send acceptance email
-          fetch('http://localhost:8000/api/send-email', {
+        fetch(`http://localhost:8000/api/applicant/accept/${id}`, {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email: selectedStudent.email }),
-          })
-          .then((response) => response.json())
-          .then((data) => {
-            alert(data.message); // Display success message for email sending
-          })
-          .catch((error) => {
-            console.error('There was a problem with the fetch operation:', error);
-           
-          });
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            setStudentNames(studentNames.filter(student => student.id !== id));
+            closeModal();
+            alert(data.message); // Display the success message
+            
+            // Send acceptance email
+            fetch('http://localhost:8000/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email, applicant_id: id }), // Pass applicant_id here
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                alert(data.message); // Display success message for email sending
+            })
+            .catch((error) => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
         })
         .catch((error) => {
-          console.error('There was a problem with the fetch operation:', error);
-         
+            console.error('There was a problem with the fetch operation:', error);
         });
     }
-  };
-
+};
   const rejectApplicant = (id) => {
     if (window.confirm("Are you sure you want to reject this applicant?")) {
       fetch(`http://localhost:8000/api/applications/${id}`, {
@@ -186,7 +183,7 @@ function MainContent() {
 
               {/* Accept and reject buttons */}
               <div className="flex justify-end px-4 py-3 sm:px-6">
-                <button onClick={() => acceptApplicant(selectedStudent.id)} className="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                <button onClick={() => acceptApplicant(selectedStudent.id, selectedStudent.email)} className="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                   Accept
                 </button>
                 <button onClick={() => rejectApplicant(selectedStudent.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
