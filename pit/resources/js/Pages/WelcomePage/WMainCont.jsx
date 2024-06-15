@@ -42,7 +42,7 @@ function WMainCont() {
                     <div className="relative z-10 fade-rise h-full w-full lg:w-1/2 mt-32">
                         <div className="py-8 px-10 grid grid-cols-4 gap-2"> {/* Adjusted gap */}
                             <div className="h-64 col-span-4 sm:col-span-4 relative">
-                                <img className="rounded-md absolute inset-0 h-full w-full" src="https://pouch.jumpshare.com/preview/G2x-T9Q8eTTZoc1e-T-Oam9Ox0S80eHoXFSatM_qeD3sGcQyqaAPt3Jjc1zahuezF7OVKV0fQNkZDHViI_M6k0LyxfXrd9yd7ZbT-J-x-KA" alt="IT" />
+                                <img className="rounded-md absolute inset-0 h-full w-full" src="https://pouch.jumpshare.com/preview/G2x-T9Q8eTTZoc1e-T-Oam9Ox0S80eHoXFSatM_qeD3sGcQyqaAPt3Jjc1zahuezHp3KCspIuujQec8vecPrfT02Wne5xsuybODMpLQhqAs" alt="IT" />
                             </div>
                             <div className="h-48 col-span-4 sm:col-span-2 relative">
                                 <img className="rounded-lg absolute inset-0 h-full w-full object-cover" src="https://www.epic.com/_next/image/?url=https%3A%2F%2Fmedia.epic.com%2Fepicdotcom%2Fwordpress%2F2019%2F12%2Fmaydm-makers-epic-experience.jpg&w=3840&q=75g" alt="DS" />
