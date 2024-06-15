@@ -31,7 +31,7 @@ class AcceptedApplicant extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('andina.aljo@gmail.com', 'NNN_Admission'),
+            from: new Address('triplenuniversity@gmail.com', 'NNN_Admission'),
             subject: $this->subject,
         );
     }
