@@ -58,7 +58,7 @@ const MainContent = () => {
                     </a>
                 </div>
                 <div className="row-span-3 col-span-4 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[150px]">
-                    <a href="#" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
+                    <a href="assess-billing" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
                                 <path d="M4.5 3.75a3 3 0 0 0-3 3v.75h21v-.75a3 3 0 0 0-3-3h-15Z" />
