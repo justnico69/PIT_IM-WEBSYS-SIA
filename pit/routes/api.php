@@ -31,4 +31,10 @@ Route::get('/applicantshow/accept/{id}', [AcceptedApplicantController::class, 's
 Route::get('/applicantshow', [AcceptedApplicantController::class, 'index']);
 
 
-Route::post('send-email',[MailController::class,'sendMail']);
+Route::post('/send-email', [MailController::class, 'sendMail']);
+
+
+use App\Http\Controllers\NewlyEnrolleeController;
+
+Route::post('/enroll', [NewlyEnrolleeController::class, 'store']);
+Route::get('/enrollee/image/{id}', [NewlyEnrolleeController::class, 'showImage'])->name('enrollee.image');
