@@ -85,15 +85,15 @@ function MainContent() {
       },
       Junior: {
         '1st Semester': [
-          { courseCode: 'TCM311a', courseName: 'Elective 1 (Communication Management Track', units: 3 },
-          { courseCode: 'TCM311b', courseName: 'Elective 1 (Multimedia Track)', units: 3 },
+          { courseCode: 'TCM311a', courseName: 'Elective 1 (Knowledge Management', units: 3 },
+          { courseCode: 'TCM311b', courseName: 'Elective 1 (Multimedia Tools 1)', units: 3 },
           { courseCode: 'TCM312', courseName: 'Digital Activism', units: 3 },
           { courseCode: 'TCM313', courseName: 'Podcasting: Principles & Practices', units: 3 },
           { courseCode: 'TCM314', courseName: 'Content Writing 2', units: 3 },
           { courseCode: 'TCM315', courseName: 'Communication Management', units: 3 },
           { courseCode: 'TCM316', courseName: 'Professional Presentation', units: 3 },
-          { courseCode: 'TCM317a', courseName: 'Elective 2 (Communication Management Track)', units: 3 },
-          { courseCode: 'TCM317b', courseName: 'Elective 2 (Multimedia Track)', units: 3 },
+          { courseCode: 'TCM317a', courseName: 'Elective 2 (Communication for Corporations, Nonprofits)', units: 3 },
+          { courseCode: 'TCM317b', courseName: 'Elective 2 (Visual Communication and Graphic Design)', units: 3 },
         ],
         '2nd Semester': [
           { courseCode: 'TCM321', courseName: 'Technopreneurship', units: 3 },
@@ -101,18 +101,19 @@ function MainContent() {
           { courseCode: 'TCM323', courseName: 'Intercultural Communication', units: 3 },
           { courseCode: 'TCM324', courseName: 'Media Laws and Ethics', units: 3 },
           { courseCode: 'TCM325', courseName: 'Thesis 1', units: 3 },
-          { courseCode: 'TCM326a', courseName: 'Elective 3 (Communication Management Track)', units: 3 },
-          { courseCode: 'TCM326b', courseName: 'Elective 3 (Multimedia Track)', units: 3 },
+          { courseCode: 'TCM326a', courseName: 'Elective 3 (Communication Strategies)', units: 3 },
+          { courseCode: 'TCM326b', courseName: 'Elective 3 (Multimedia Tools 2)', units: 3 },
         ],
       },
       Senior: {
         '1st Semester': [
-          { courseCode: 'TCM321', courseName: '', units: 3 },
-          { courseCode: 'TCM322', courseName: '', units: 3 },
-          { courseCode: 'TCM323', courseName: '', units: 3 },
+          { courseCode: 'TCM411', courseName: 'Communication & Social Media', units: 3 },
+          { courseCode: 'TCM412a', courseName: 'Elective 4 (Technology Marketing)', units: 3 },
+          { courseCode: 'TCM412b', courseName: 'Elective 4 (Film Production)', units: 3 },
+          { courseCode: 'TCM413', courseName: 'Thesis 2', units: 3 },
         ],
         '2nd Semester': [
-          { courseCode: 'TCM102', courseName: 'Digital Media Design', units: 4 },
+          { courseCode: 'TCM421', courseName: 'Internship', units: 6 },
         ],
       },
     },
@@ -120,34 +121,63 @@ function MainContent() {
     BSCS: {
       Freshman: {
         '1st Semester': [
-          { courseCode: 'CS101', courseName: 'Computer Architecture', units: 3 },
+          { courseCode: 'CS111', courseName: 'Introduction to Cumputing', units: 3 },
+          { courseCode: 'CS112', courseName: 'Computer Programming 1', units: 3 },
         ],
         '2nd Semester': [
-          { courseCode: 'CS102', courseName: 'Data Structures and Algorithms', units: 4 },
+          { courseCode: 'CS121', courseName: 'Computer Programming 2', units: 3 },
+          { courseCode: 'CS122', courseName: 'Physics for Computer Science (Basic Electronics)', units: 3 },
         ],
       },
       Sophomore: {
         '1st Semester': [
-          { courseCode: 'TCM101', courseName: 'Communication Principles', units: 3 },
+          { courseCode: 'CS211', courseName: 'Discrete Mathematics 1', units: 3 },
+          { courseCode: 'CS212', courseName: 'Human Computer Interaction', units: 3 },
+          { courseCode: 'CS213', courseName: 'Data Structures and Algorithms 1', units: 3 },
+          { courseCode: 'CS214', courseName: 'Fundamentals of Database Systems', units: 3 },
+          { courseCode: 'CSMath211', courseName: 'Statistics for Computer Science', units: 3 },
         ],
         '2nd Semester': [
-          { courseCode: 'TCM102', courseName: 'Digital Media Design', units: 4 },
+          { courseCode: 'CSMath221', courseName: 'Calculus for Computer Science', units: 3 },
+          { courseCode: 'CS221', courseName: 'Algorithms and Complexity 2', units: 3 },
+          { courseCode: 'CS222', courseName: 'Computer Architecture and Organization', units: 3 },
+          { courseCode: 'CS223', courseName: 'Discrete Structure 2', units: 3 },
+          { courseCode: 'CS224', courseName: 'Applications Development and Emerging Technologies', units: 3 },
+          { courseCode: 'CS225', courseName: 'Object Orientred Programming', units: 3 },
         ],
       },
       Junior: {
         '1st Semester': [
-          { courseCode: 'TCM101', courseName: 'Communication Principles', units: 3 },
+          { courseCode: 'CS311', courseName: 'Automata Theory and Formal Languages', units: 3 },
+          { courseCode: 'CS312', courseName: 'Introduction to Artificial Intelligence', units: 3 },
+          { courseCode: 'CS313', courseName: 'Networks and Communications', units: 3 },
+          { courseCode: 'CS314', courseName: 'Operating Systems', units: 3 },
+          { courseCode: 'CS315', courseName: 'Principles of Programming Languages', units: 3 },
+          { courseCode: 'CS316', courseName: 'Information Management', units: 3 },
+          { courseCode: 'CS317', courseName: 'Software Engineering', units: 3 },
         ],
         '2nd Semester': [
-          { courseCode: 'TCM102', courseName: 'Digital Media Design', units: 4 },
+          { courseCode: 'CS321', courseName: 'Information Assurance and Security', units: 3 },
+          { courseCode: 'CS322', courseName: 'Technopreneurship', units: 3 },
+          { courseCode: 'CS323', courseName: 'Parallel and Distributed Computing', units: 3 },
+          { courseCode: 'CS324', courseName: 'Machine Learning', units: 3 },
+          { courseCode: 'CS325', courseName: 'Research Methods', units: 3 },
+          { courseCode: 'CS326', courseName: 'Software Implementation and Management', units: 3 },
+          { courseCode: 'CS327', courseName: 'Social Issues and Professional Practice', units: 3 },
         ],
       },
       Senior: {
         '1st Semester': [
-          { courseCode: 'TCM101', courseName: 'Communication Principles', units: 3 },
+          { courseCode: 'CS411', courseName: 'CS Thesis Writing 1', units: 3 },
+          { courseCode: 'CS412', courseName: 'CS Thesis Writing 2', units: 3 },
+          { courseCode: 'CS413', courseName: 'Graphics and Visual Computing', units: 3 },
+          { courseCode: 'CS414', courseName: 'Image Processing', units: 3 },
+          { courseCode: 'CS415', courseName: 'Data Mining', units: 3 },
+          { courseCode: 'CS416', courseName: 'Introduction to Neutral Networks and Deep Learning', units: 3 },
+          { courseCode: 'CS417', courseName: 'Computer Vision', units: 3 },
         ],
         '2nd Semester': [
-          { courseCode: 'TCM102', courseName: 'Digital Media Design', units: 4 },
+          { courseCode: 'CS421', courseName: 'OJT (Practicum)', units: 6 },
         ],
       },
     },
@@ -155,34 +185,55 @@ function MainContent() {
     BSDS: {
       Freshman: {
         '1st Semester': [
-          { courseCode: 'DS101', courseName: 'Statistics for Data Science', units: 3 },
+          { courseCode: 'DS111', courseName: 'Introduction to Computer Science', units: 3 },
+          { courseCode: 'DS112', courseName: 'Computer Programming', units: 3 },
         ],
         '2nd Semester': [
-          { courseCode: 'DS102', courseName: 'Machine Learning', units: 4 },
+          { courseCode: 'DS121', courseName: 'Introduction to Data Science', units: 3 },
+          { courseCode: 'DS122', courseName: 'Introduction to Statistical Methods', units: 3 },
+          { courseCode: 'DS123', courseName: 'Data Structures and Algorithms', units: 3 },
+          { courseCode: 'DS124', courseName: 'Linear Algebra', units: 3 },
         ],
       },
       Sophomore: {
         '1st Semester': [
-          { courseCode: 'TCM101', courseName: 'Communication Principles', units: 3 },
+          { courseCode: 'DS211', courseName: 'Linear and Nonlinear Models', units: 3 },
+          { courseCode: 'DS212', courseName: 'Object Oriented Programming', units: 3 },
+          { courseCode: 'DS213', courseName: 'Intro to Human Computer Interaction', units: 3 },
         ],
         '2nd Semester': [
-          { courseCode: 'TCM102', courseName: 'Digital Media Design', units: 4 },
+          { courseCode: 'DS221', courseName: 'Data Visualization and Storytelling', units: 3 },
+          { courseCode: 'DS222', courseName: 'Theory of Databases', units: 3 },
+          { courseCode: 'DS223', courseName: 'Computer Networking', units: 3 },
+          { courseCode: 'DS224', courseName: 'Optimization Theory', units: 3 },
         ],
       },
       Junior: {
         '1st Semester': [
-          { courseCode: 'TCM101', courseName: 'Communication Principles', units: 3 },
+          { courseCode: 'DS311', courseName: 'Exploratory Data Analysis', units: 3 },
+          { courseCode: 'DS312', courseName: 'Data Mining and Applications', units: 3 },
+          { courseCode: 'DS313', courseName: 'Advanced Database Management System', units: 3 },
+          { courseCode: 'DS314', courseName: 'DS Elective 1', units: 3 },
+          { courseCode: 'DS315', courseName: 'DS Elective 2', units: 3 },
         ],
         '2nd Semester': [
-          { courseCode: 'TCM102', courseName: 'Digital Media Design', units: 4 },
+          { courseCode: 'DS321', courseName: 'Computational Statistics', units: 3 },
+          { courseCode: 'DS322', courseName: 'Machine Learning', units: 3 },
+          { courseCode: 'DS323', courseName: 'Cloud Computing', units: 3 },
+          { courseCode: 'DS324', courseName: 'DS Elective 3', units: 3 },
+          { courseCode: 'DS325', courseName: 'Capstone Project 1', units: 3 },
+
         ],
       },
       Senior: {
         '1st Semester': [
-          { courseCode: 'TCM101', courseName: 'Communication Principles', units: 3 },
+          { courseCode: 'DS411', courseName: 'Predictive Analytics', units: 3 },
+          { courseCode: 'DS412', courseName: 'Time Series Analysis and Stochastic', units: 3 },
+          { courseCode: 'DS413', courseName: 'DS Elective 4', units: 3 },
+          { courseCode: 'DS414', courseName: 'Data Science Capstone 2', units: 3 },
         ],
         '2nd Semester': [
-          { courseCode: 'TCM102', courseName: 'Digital Media Design', units: 4 },
+          { courseCode: 'DS421', courseName: 'OJT (Data Science Practice)', units: 6 },
         ],
       },
     },
@@ -192,6 +243,7 @@ function MainContent() {
     setSelectedProgram(e.target.value);
   };
 
+  //UI DESIGN
   return (
     <main className="w-full ml-5">
       <div className="flex flex-row">
@@ -207,7 +259,7 @@ function MainContent() {
         </div>
       </div>
 
-      <div className="bg-white p-5 shadow overflow-hidden sm:rounded-xl mr-8 px-3">
+      <div className="bg-white p-5 mb-5 shadow overflow-hidden sm:rounded-xl mr-8 px-3">
         <form>
           <div className="grid grid-cols-3 gap-3 p-4">
             <label className="block text-gray-500 text-base font-bold col-span-3" htmlFor="program">

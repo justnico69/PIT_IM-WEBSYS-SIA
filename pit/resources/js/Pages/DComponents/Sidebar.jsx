@@ -29,7 +29,7 @@ const Sidebar = () => {
 
                                 <span className="mt-5 px-3 font-bold mb-4 text-center text-xl">Welcome, Student!</span>
                             </a>
-                            <div className="mt-10 px-3 text-blue-600 text-lg font-semibold">
+                            <div className="mt-10 px-2 text-blue-600 text-lg font-semibold">
                                 <a href="student-dashboard" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
                                     <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
                                         <span className="material-icons-outlined">
