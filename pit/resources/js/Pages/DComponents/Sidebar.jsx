@@ -15,11 +15,11 @@ const handleLogout = async (e) => {
 
 const Sidebar = () => {
     return (
-        <aside className="flex flex-col w-80 h-full px-5 overflow-y-auto">
+        <aside className="flex flex-col w-96 h-full px-5 overflow-y-auto">
             <div className="flex flex-col justify-between flex-1 ml-3 mt-14">
                 <nav className="-mx-3 space-y-6">
                     <div className="space-y-3">
-                        <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[697px] py-4">
+                        <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[700px] px- py-4">
                             <a href="" className="text-blue-800 hover:text-blue-600 my-4 w-full flex flex-col items-center justify-center">
                                 <button className="material-icons-outlined focus:outline-none" style={{ fontSize: '3rem' }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-14">
@@ -27,12 +27,10 @@ const Sidebar = () => {
                                     </svg>
                                 </button>
 
-                                <span className="mt-5 px-3 font-bold mb-4 text-center text-xl">Welcome, Student!</span>
+                                <span className="mt-5 font-bold mb-4 text-center text-xl">Welcome, Student!</span>
                             </a>
                             <div className="mt-10 px-3 text-blue-600 text-lg font-semibold">
                                 <a href="student-dashboard" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
-                            <div className="mt-10 px-2 text-blue-600 text-lg font-semibold">
-                                <a href="#" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
                                     <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
                                         <span className="material-icons-outlined">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -57,8 +55,9 @@ const Sidebar = () => {
                                 <a href="#" onClick={handleLogout} className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
                                     <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
                                         <span className="material-icons-outlined">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                                            <path fill-rule="evenodd" d="M7.5 3.75A1.5 1.5 0 0 0 6 5.25v13.5a1.5 1.5 0 0 0 1.5 1.5h6a1.5 1.5 0 0 0 1.5-1.5V15a.75.75 0 0 1 1.5 0v3.75a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3V5.25a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3V9A.75.75 0 0 1 15 9V5.25a1.5 1.5 0 0 0-1.5-1.5h-6Zm10.72 4.72a.75.75 0 0 1 1.06 0l3 3a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 1 1-1.06-1.06l1.72-1.72H9a.75.75 0 0 1 0-1.5h10.94l-1.72-1.72a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                                <path fill-rule="evenodd" d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                                                <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
                                             </svg>
                                         </span>
                                         <span className="ml-2">Logout</span>
@@ -74,7 +73,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-
-
-
