@@ -14,7 +14,8 @@ class AdmissionHandlers extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('password'); // Leave it as plain text
+            $table->string('password'); 
+            $table->string('role')->default('admission_handler');
             $table->timestamps();
         });
 
