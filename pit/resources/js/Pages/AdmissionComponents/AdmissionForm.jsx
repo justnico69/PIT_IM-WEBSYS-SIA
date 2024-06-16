@@ -9,6 +9,7 @@ import NameFieldset from './NameFieldset';
 import NationalityFieldset from './NationalityFieldset';
 import SchoolLastAttendedFieldset from './SchoolLastAttendedFieldset';
 import ThankYouPage from './ThankYouPage';
+import Adheader from './Adheader';
 
 
 const AdmissionForm = () => {
@@ -84,9 +85,8 @@ const AdmissionForm = () => {
                             <p id="alert-message" className="text-center">{alertMessage}</p>
                         </div>
                     )}
-                    <form id="admissionForm" className="bg-white/60 border-2 shadow-md rounded px-9 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
-                        <h1 className="text-3xl font-extrabold font-poppins text-center mb-2">Admission Form</h1>
-                        <div className="w-full border-t border-black mb-2"></div>
+                    <Adheader/>
+                    <form id="admissionForm" className="bg-white/60 border-2 shadow-md rounded px-9 pt-6 pb-8 mb-2 mt-20" onSubmit={handleSubmit}>
                         <NameFieldset formData={formData} handleChange={handleChange} />
                         <BirthdateFieldset formData={formData} handleChange={handleChange} />
                         <GenderFieldset formData={formData} handleChange={handleChange} />
@@ -96,7 +96,7 @@ const AdmissionForm = () => {
                         <EmergencyContactFieldset formData={formData} handleChange={handleChange} />
                         <SchoolLastAttendedFieldset formData={formData} handleChange={handleChange} />
                         <div className="flex items-center justify-end">
-                            <button className="bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-700 hover:to-cyan-700 mt-10 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
+                            <button className="bg-blue-500 hover:bg-blue-800 mt-10 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

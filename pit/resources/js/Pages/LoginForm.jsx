@@ -28,7 +28,7 @@ function Login({ csrfToken }) {
             <div className="absolute inset-0 bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/7067d0170920411.646604dc0db99.jpg)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.9'}}></div>
             <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-lg border-2 border-white bg-white/20 backdrop-blur-lg py-8 px-4 shadow sm:rounded-3xl sm:px-10">
             <div className="text-center">
-                <img width="200" height="200" src="https://pouch.jumpshare.com/preview/Ttl4yMYCp2MxESEjCCDLeuJlTprbTYEdaE2mE3Tq_UpNZLGvm3srtq0r5_ctz8TXnse3GQli2S_yjgF05ZI6dJrzG1XSwu1TRjsWKxEcSvE" alt="EduTech Logo" 
+                <img width="200" height="200" src="https://pouch.jumpshare.com/preview/Ttl4yMYCp2MxESEjCCDLeuJlTprbTYEdaE2mE3Tq_UpNZLGvm3srtq0r5_ctz8TXHp3KCspIuujQec8vecPrffk_3ZbqpPRYDU7SYKSgNo8" alt="EduTech Logo" 
                 className="mx-auto h-auto mt-5 mb-5" />                
                 <h2 className="mb-3 text-blue-800 text-center text-2xl leading-9 font-poppins font-extrabold">
                         NNN College Enrollment Portal

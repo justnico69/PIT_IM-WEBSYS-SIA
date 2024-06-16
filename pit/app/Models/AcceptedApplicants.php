@@ -8,6 +8,9 @@ class AcceptedApplicants extends Model
 {
     use HasFactory;
 
+    protected $table = 'accepted_applicants'; // Ensure this matches your actual table name
+    protected $primaryKey = 'id'; // Ensure this matches your actual primary key column
+
     protected $fillable = [
         'firstName',
         'middleName',
