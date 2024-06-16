@@ -65,6 +65,11 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('CashierComponents/Cashier');
     })->middleware(['auth:cashier', 'role:cashier'])->name('cashier.dashboard');
 
+    Route::get('/payprocess', function () {
+        return Inertia::render('CashierComponents/PayProcessWindow/PayProcessApp');
+    })->middleware(['auth:cashier', 'role:cashier'])->name('payment-process');
+
+    
     // Registrar Dashboard
     Route::get('/registrar-dashboard', function () {
         return Inertia::render('RegistrarComponents/Registrar');
