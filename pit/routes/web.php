@@ -19,6 +19,11 @@ Route::get('/', function () {
     return Inertia::render('WelcomePage/WelPage');
 })->name('welcome-page');;
 
+Route::get('/admission-form', function () {
+    return Inertia::render('AdmissionComponents/AdmissionForm');
+})->name('admission-form');;
+
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -30,13 +35,13 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('DComponents/StudentD');
     })->middleware(['auth:student', 'role:student'])->name('student.dashboard');
 
-    Route::get('/student-dash-enrollment-process', function () {
+    Route::get('/enrollment-process', function () {
         return Inertia::render('DComponents/EnrollmentWindow/EnrollApp');
     })->name('student-dash-enrollment-process');
     
-    Route::get('/student-dash-cert-of-registration', function () {
+    Route::get('/certofreg', function () {
         return Inertia::render('DComponents/CertOfRegisWindow/CORApp');
-    })->name('student-dash-cert-of-registration');
+    })->name('certofregistration');
     
     Route::get('/student-dash-program-details', function () {
         return Inertia::render('DComponents/ProgramDetailsWindow/ProgramApp');
@@ -73,6 +78,10 @@ Route::middleware(['web'])->group(function () {
 
     
 });
+
+
+
+Route::post('/submitForm', [AdmissionInfoController::class, 'store'])->name('submitForm');
 
 
 Route::get('/login', [PagesController::class, 'showLoginPage'])->name('login');
