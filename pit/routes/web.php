@@ -43,9 +43,13 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('DComponents/CertOfRegisWindow/CORApp');
     })->name('certofregistration');
     
-    Route::get('/student-dash-program-details', function () {
+    Route::get('/program-details', function () {
         return Inertia::render('DComponents/ProgramDetailsWindow/ProgramApp');
     })->name('student-dash-program-details');
+
+    Route::get('/shiftreq', function () {
+        return Inertia::render('DComponents/ShiftReqWindow/ShiftReqApp');
+    })->name('shiftrequest');
     
 
     // Department Staff Dashboard
