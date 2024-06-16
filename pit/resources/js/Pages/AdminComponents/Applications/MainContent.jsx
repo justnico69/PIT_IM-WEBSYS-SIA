@@ -118,15 +118,15 @@ function MainContent() {
         `}
       </style>
 
-      <h1 className="text-3xl font-bold mb-8 ml-10">Ongoing Applications</h1>
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg ml-10 mr-10">
+      <h1 className="text-white text-3xl font-poppins font-extrabold mb-8 ml-10">Ongoing Applications</h1>
+      <div className="bg-white border-2 shadow overflow-hidden sm:rounded-lg ml-10 mr-10">
         <div className="px-4 py-5 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">Applicants</h3>
+          <h3 className="text-lg leading-6 font-bold text-gray-900">Applicants</h3>
         </div>
         <div className="border-t border-gray-200">
           <dl>
             {studentNames.map((student) => (
-              <div key={student.id} className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <div key={student.id} className="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-500">
                   <button onClick={() => handleStudentClick(student.id)} className="text-blue-500 hover:underline">
                     {student.name}

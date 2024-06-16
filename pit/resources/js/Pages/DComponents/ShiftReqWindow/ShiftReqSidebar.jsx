@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const handleLogout = async (e) => {
     e.preventDefault();
 
@@ -19,7 +17,7 @@ const Sidebar = () => {
             <div className="flex flex-col justify-between flex-1 ml-3 mt-14">
                 <nav className="-mx-3 space-y-6">
                     <div className="space-y-3">
-                        <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[840px] py-4">
+                        <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[940px] py-4">
                             <a href="" className="text-blue-800 hover:text-blue-600 my-4 w-full flex flex-col items-center justify-center">
                                 <button className="material-icons-outlined focus:outline-none" style={{ fontSize: '3rem' }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-14">
@@ -29,7 +27,7 @@ const Sidebar = () => {
 
                                 <span className="mt-5 px-3 font-bold mb-4 text-center text-xl">Welcome, Student!</span>
                             </a>
-                            <div className="mt-10 px-2 text-blue-600 text-lg font-semibold">
+                            <div className="mt-10 px-3 text-blue-600 text-lg font-semibold">
                                 <a href="student-dashboard" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
                                     <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
                                         <span className="material-icons-outlined">
@@ -63,6 +61,9 @@ const Sidebar = () => {
                                         <span className="ml-2">Logout</span>
                                     </span>
                                 </a>
+
+                               
+                           
                             </div>
                         </div>
                     </div>

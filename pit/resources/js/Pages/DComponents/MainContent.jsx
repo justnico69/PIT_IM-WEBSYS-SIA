@@ -37,7 +37,7 @@ const MainContent = () => {
                     </a>
                 </div>
                 <div className="row-span-3 col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[100px]">
-                    <a href="#" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
+                    <a href="program-details" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
                                 <path fill-rule="evenodd" d="M5.625 1.5H9a3.75 3.75 0 0 1 3.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 0 1 3.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 0 1-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875ZM9.75 17.25a.75.75 0 0 0-1.5 0V18a.75.75 0 0 0 1.5 0v-.75Zm2.25-3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3a.75.75 0 0 1 .75-.75Zm3.75-1.5a.75.75 0 0 0-1.5 0V18a.75.75 0 0 0 1.5 0v-5.25Z" clip-rule="evenodd" />
@@ -48,7 +48,7 @@ const MainContent = () => {
                     </a>
                 </div>
                 <div className="row-span-3 col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[100px]">
-                    <a href="#" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
+                    <a href="shiftreq" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
                                 <path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm14.25 6a.75.75 0 0 1-.22.53l-2.25 2.25a.75.75 0 1 1-1.06-1.06L15.44 12l-1.72-1.72a.75.75 0 1 1 1.06-1.06l2.25 2.25c.141.14.22.331.22.53Zm-10.28-.53a.75.75 0 0 0 0 1.06l2.25 2.25a.75.75 0 1 0 1.06-1.06L8.56 12l1.72-1.72a.75.75 0 1 0-1.06-1.06l-2.25 2.25Z" clip-rule="evenodd" />
@@ -58,7 +58,7 @@ const MainContent = () => {
                     </a>
                 </div>
                 <div className="row-span-3 col-span-4 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[150px]">
-                    <a href="#" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
+                    <a href="assess-billing" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
                                 <path d="M4.5 3.75a3 3 0 0 0-3 3v.75h21v-.75a3 3 0 0 0-3-3h-15Z" />

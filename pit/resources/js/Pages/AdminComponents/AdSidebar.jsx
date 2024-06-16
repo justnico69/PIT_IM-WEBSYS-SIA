@@ -15,7 +15,7 @@ const handleLogout = async (e) => {
 
 function AdSidebar() {
   return (
-    <aside className="flex flex-col w-64 h-screen px-5 overflow-y-auto overflow-x-hidden border-blue-100 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500">
+    <aside className="flex flex-col w-64 mt-5 h-screen px-5 overflow-y-auto overflow-x-hidden border-blue-100 style={{ backgroundImage: 'url(https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3920.jpg?t=st=1718357895~exp=1718361495~hmac=e029c64e2bf40ce2b07c6f1ad9b35cf47c271e526e50a0e4c19e99d9193c60e8&w=900)">
       <div className="flex flex-col justify-between flex-1 mt-6">
         <nav className="-mx-3 space-y-6 ">
           <div className="space-y-3">
@@ -48,7 +48,7 @@ function AdSidebar() {
                   </span>
                 </a>
 
-                <a href="#" onClick={handleLogout} className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-600 hover:text-blue-50">
+                <a href="/" onClick={handleLogout} className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-600 hover:text-blue-50">
                   <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
                     <span className="material-icons-outlined"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
   <path fill-rule="evenodd" d="M16.5 3.75a1.5 1.5 0 0 1 1.5 1.5v13.5a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 0 1-1.5-1.5V15a.75.75 0 0 0-1.5 0v3.75a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5.25a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3V9A.75.75 0 1 0 9 9V5.25a1.5 1.5 0 0 1 1.5-1.5h6Zm-5.03 4.72a.75.75 0 0 0 0 1.06l1.72 1.72H2.25a.75.75 0 0 0 0 1.5h10.94l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 0 0-1.06 0Z" clip-rule="evenodd" />
