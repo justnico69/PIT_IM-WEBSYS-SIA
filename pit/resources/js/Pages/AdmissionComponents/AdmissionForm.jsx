@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import NameFieldset from './NameFieldset';
-import BirthdateFieldset from './BirthdateFieldset';
-import GenderFieldset from './GenderFieldset';
-import NationalityFieldset from './NationalityFieldset';
-import EmailFieldset from './EmailFieldset';
 import AddressFieldset from './AddressFieldset';
+import BirthdateFieldset from './BirthdateFieldset';
+import EmailFieldset from './EmailFieldset';
 import EmergencyContactFieldset from './EmergencyContactFieldset';
+import GenderFieldset from './GenderFieldset';
+import NameFieldset from './NameFieldset';
+import NationalityFieldset from './NationalityFieldset';
 import SchoolLastAttendedFieldset from './SchoolLastAttendedFieldset';
 import ThankYouPage from './ThankYouPage';
+import Adheader from './Adheader';
+
 
 const AdmissionForm = () => {
     const [formData, setFormData] = useState({
@@ -83,9 +85,8 @@ const AdmissionForm = () => {
                             <p id="alert-message" className="text-center">{alertMessage}</p>
                         </div>
                     )}
-                    <form id="admissionForm" className="bg-white/60 shadow-md rounded px-9 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
-                        <h1 className="text-3xl font-extrabold font-poppins text-center mb-2">Admission Form</h1>
-                        <div className="w-full border-t border-black mb-2"></div>
+                    <Adheader/>
+                    <form id="admissionForm" className="bg-white/60 border-2 shadow-md rounded px-9 pt-6 pb-8 mb-2 mt-20" onSubmit={handleSubmit}>
                         <NameFieldset formData={formData} handleChange={handleChange} />
                         <BirthdateFieldset formData={formData} handleChange={handleChange} />
                         <GenderFieldset formData={formData} handleChange={handleChange} />
@@ -95,13 +96,14 @@ const AdmissionForm = () => {
                         <EmergencyContactFieldset formData={formData} handleChange={handleChange} />
                         <SchoolLastAttendedFieldset formData={formData} handleChange={handleChange} />
                         <div className="flex items-center justify-end">
-                            <button className="bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-700 hover:to-violet-700 mt-10 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
+                            <button className="bg-blue-500 hover:bg-blue-800 mt-10 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div className="absolute inset-0 bg-no-repeat bg-cover h-[1400px]" style={{ backgroundImage: 'url(https://imagescdn.homes.com/i2/VXPLK43-4n9ZpgiohBL-_4ogTCPg05VtC_CeB50fugQ/111/washington-high-school-of-information-technology-milwaukee-wi-8-schoolphoto.jpg?p=1)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.8', zIndex: '0' }}></div>
-            <div className="absolute inset-0 bg-no-repeat bg-cover h-[1400px]" style={{ backgroundImage: 'url(https://t3.ftcdn.net/jpg/02/98/47/38/360_F_298473896_Vsz21xTwMtroEeeGgU8pL2vwt3N65pfR.jpg)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.8', zIndex: '0' }}></div>
+            <div className="absolute inset-0 bg-no-repeat bg-cover h-[1400px]" style={{ backgroundImage: 'url(https://imagescdn.homes.com/i2/VXPLK43-4n9ZpgiohBL-_4ogTCPg05VtC_CeB50fugQ/111/washington-high-school-of-information-technology-milwaukee-wi-8-schoolphoto.jpg?p=1)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.8' }}></div>
+                    <div className="absolute inset-0 bg-no-repeat bg-cover h-[1400px]" style={{ backgroundImage: 'url(https://wallpapers.com/images/featured/blank-white-background-xbsfzsltjksfompa.jpg)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.1' }}></div>
+                    <div className="absolute inset-0 bg-no-repeat bg-cover h-[1400px]" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/blank-blue-halftone-background_53876-114466.jpg?size=626&ext=jpg&ga=GA1.1.2116175301.1718236800&semt=ais_user)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.6' }}></div>
         </div>
     );
 };

@@ -27,12 +27,46 @@ function MainContent() {
     setIsModalOpen(false);
   };
 
-  const acceptApplicant = () => {
-    // Add logic to accept applicant
-    // For now, let's just close the modal
-    closeModal();
-  };
-
+  const acceptApplicant = (id, email) => {
+    if (window.confirm("Do you confirm this?")) {
+        fetch(`http://localhost:8000/api/applicant/accept/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            setStudentNames(studentNames.filter(student => student.id !== id));
+            closeModal();
+            alert(data.message); // Display the success message
+            
+            // Send acceptance email
+            fetch('http://localhost:8000/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email, applicant_id: id }), // Pass applicant_id here
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                alert(data.message); // Display success message for email sending
+            })
+            .catch((error) => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        })
+        .catch((error) => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    }
+};
   const rejectApplicant = (id) => {
     if (window.confirm("Are you sure you want to reject this applicant?")) {
       fetch(`http://localhost:8000/api/applications/${id}`, {
@@ -45,9 +79,7 @@ function MainContent() {
         .then(() => {
           setStudentNames(studentNames.filter(student => student.id !== id));
           closeModal();
-          
         });
-        
     }
   };
 
@@ -82,15 +114,16 @@ function MainContent() {
           }
         `}
       </style>
-      <h1 className="text-3xl font-bold mb-8">Ongoing Applications</h1>
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+
+      <h1 className="text-3xl font-bold mb-8 ml-10">Ongoing Applications</h1>
+      <div className="bg-white shadow overflow-hidden sm:rounded-lg ml-10 mr-10">
         <div className="px-4 py-5 sm:px-6">
           <h3 className="text-lg leading-6 font-medium text-gray-900">Applicants</h3>
         </div>
         <div className="border-t border-gray-200">
           <dl>
-            {studentNames.map((student, index) => (
-              <div key={index} className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            {studentNames.map((student) => (
+              <div key={student.id} className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-500">
                   <button onClick={() => handleStudentClick(student.id)} className="text-blue-500 hover:underline">
                     {student.name}
@@ -132,21 +165,25 @@ function MainContent() {
                 </div>
                 <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className="text-sm font-medium text-gray-500">Address</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.streetadd}, {selectedStudent.city}, {selectedStudent.province}, {selectedStudent.zipcode}</dd>
+                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    {selectedStudent.streetadd}, {selectedStudent.city}, {selectedStudent.province}, {selectedStudent.zipcode}
+                  </dd>
                 </div>
                 <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className="text-sm font-medium text-gray-500">Emergency Contact</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.emergencyName} ({selectedStudent.relationship}) - {selectedStudent.emergencyContactNumber}</dd>
+                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    {selectedStudent.emergencyName} ({selectedStudent.relationship}) - {selectedStudent.emergencyContactNumber}
+                  </dd>
                 </div>
                 <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className="text-sm font-medium text-gray-500">School Last Attended</dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.schoolLastAttended}</dd>
                 </div>
               </dl>
-           
+
               {/* Accept and reject buttons */}
               <div className="flex justify-end px-4 py-3 sm:px-6">
-                <button onClick={acceptApplicant} className="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                <button onClick={() => acceptApplicant(selectedStudent.id, selectedStudent.email)} className="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                   Accept
                 </button>
                 <button onClick={() => rejectApplicant(selectedStudent.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">

@@ -1,5 +1,5 @@
 
-export default function Header() {
+function Header() {
     return (
         <header>
             <nav className="fixed bg-white border-b-2 border-blue-100 flex w-full z-10 items-center justify-between">
@@ -23,3 +23,4 @@ export default function Header() {
         </header>
     );
 }
+export default Header;
