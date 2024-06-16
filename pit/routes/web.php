@@ -50,6 +50,10 @@ Route::middleware(['web'])->group(function () {
     Route::get('/shiftreq', function () {
         return Inertia::render('DComponents/ShiftReqWindow/ShiftReqApp');
     })->name('shiftrequest');
+
+    Route::get('/assess-billing', function () {
+        return Inertia::render('DComponents/AssessBillingWindow/AssessBillingApp');
+    })->name('assessment-billing');
     
 
     // Department Staff Dashboard
