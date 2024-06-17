@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function MainContent() {
   const [selectedProgram, setSelectedProgram] = useState('');
@@ -56,9 +58,11 @@ function MainContent() {
       await axios.post(`/api/processing_enrollment/pay/${studentId}`);
       fetchStudents();
       closeModal();
+      toast.success('Payment Confirmed!'); // Display success toast
     } catch (error) {
       console.error('Error processing payment', error);
       setError('Error processing payment');
+      toast.error('Error processing payment'); // Display error toast
     }
   };
 
@@ -69,6 +73,7 @@ function MainContent() {
 
   return (
     <main className="w-full ml-5">
+      <ToastContainer />
       <div className="flex flex-row">
         <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 mb-5 flex-grow">
           <p className="text-3xl mt-3 font-bold text-blue-800">Payment Processing</p>
@@ -148,7 +153,7 @@ function MainContent() {
                       <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.yrlevel}</dd>
                     </div>
                     <div className="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt className="text-sm font-bold text-gray-500">Semester</dt>
+                      <dt className="text-sm font-bold text-gray-500">Semester</dt>
                       <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.semester}</dd>
                     </div>
                     <div className="bg-gray-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -205,7 +210,7 @@ function MainContent() {
                     className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 sm:ml-3 sm:w-auto sm:text-sm"
                     onClick={handlePayBalance}
                   >
-                    Pay Balance
+                    Confirm Payment
                   </button>
                   <button
                     type="button"

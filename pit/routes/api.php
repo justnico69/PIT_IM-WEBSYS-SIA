@@ -32,7 +32,7 @@ Route::get('/applicantshow', [AcceptedApplicantController::class, 'index']);
 
 
 Route::post('/send-email', [MailController::class, 'sendMail']);
-
+Route::post('/send-rejection-email', [MailController::class, 'sendRejectionMail']);
 
 use App\Http\Controllers\EnrolledStudentController;
 
@@ -48,3 +48,4 @@ use App\Http\Controllers\ProcessingEnrollmentController;
 
 Route::get('/processing_enrollment', [ProcessingEnrollmentController::class, 'index']);
 Route::post('/processing_enrollment/pay/{id}', [ProcessingEnrollmentController::class, 'pay']);
+Route::get('/check_duplicate_student_number/{studentNumber}', [ProcessingEnrollmentController::class, 'checkDuplicateStudentNumber']);
