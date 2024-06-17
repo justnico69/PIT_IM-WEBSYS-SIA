@@ -23,6 +23,10 @@ Route::get('/admission-form', function () {
     return Inertia::render('AdmissionComponents/AdmissionForm');
 })->name('admission-form');;
 
+Route::get('/thankyou-page', function () {
+    return Inertia::render('AdmissionComponents/ThankYouPage');
+})->name('thank.you');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -37,30 +41,61 @@ Route::middleware(['web'])->group(function () {
 
     Route::get('/enrollment-process', function () {
         return Inertia::render('DComponents/EnrollmentWindow/EnrollApp');
-    })->name('student-dash-enrollment-process');
+    })->middleware(['auth:student', 'role:student'])->name('enrollment.process');
     
     Route::get('/certofreg', function () {
         return Inertia::render('DComponents/CertOfRegisWindow/CORApp');
+    })->middleware(['auth:student', 'role:student'])->name('certofreg');
+    
+    Route::get('/program-details', function () {
+        return Inertia::render('DComponents/ProgramDetailsWindow/ProgramApp');
+    })->middleware(['auth:student', 'role:student'])->name('program-details');
     })->name('certofregistration');
     
-    Route::get('/student-dash-program-details', function () {
+    Route::get('/program-details', function () {
         return Inertia::render('DComponents/ProgramDetailsWindow/ProgramApp');
     })->name('student-dash-program-details');
+
+    Route::get('/shiftreq', function () {
+        return Inertia::render('DComponents/ShiftReqWindow/ShiftReqApp');
+    })->name('shiftrequest');
+
+    Route::get('/assess-billing', function () {
+        return Inertia::render('DComponents/AssessBillingWindow/AssessBillingApp');
+    })->name('assessment-billing');
     
 
     // Department Staff Dashboard
     Route::get('/department-dashboard', function () {
         return Inertia::render('DepartmentComponents/Department');
     })->middleware(['auth:department_staff', 'role:department_staff'])->name('department.dashboard');
+
+    Route::get('/it-department', function () {
+        return Inertia::render('DepartmentComponents/IT/ItApp');
+    })->middleware(['auth:department_staff', 'role:department_staff'])->name('it.department');
+
     // Cashier Dashboard
     Route::get('/cashier-dashboard', function () {
         return Inertia::render('CashierComponents/Cashier');
     })->middleware(['auth:cashier', 'role:cashier'])->name('cashier.dashboard');
 
+    Route::get('/payprocess', function () {
+        return Inertia::render('CashierComponents/PayProcessWindow/PayProcessApp');
+    })->middleware(['auth:cashier', 'role:cashier'])->name('payment-process');
+
+    
     // Registrar Dashboard
     Route::get('/registrar-dashboard', function () {
         return Inertia::render('RegistrarComponents/Registrar');
     })->middleware(['auth:registrar', 'role:registrar'])->name('registrar.dashboard');
+
+    Route::get('/new-en-stud', function () {
+        return Inertia::render('RegistrarComponents/NewEnrolStudWindow/NEStudApp');
+    })->middleware(['auth:registrar', 'role:registrar'])->name('new-en-stud');
+
+    Route::get('/distofcor', function () {
+        return Inertia::render('RegistrarComponents/DistributionCORWindow/DistOfCORApp');
+    })->middleware(['auth:registrar', 'role:registrar'])->name('distofcor');
 
     // Admission Handler Dashboard
     Route::get('/admin-dashboard', function () {
@@ -77,9 +112,10 @@ Route::middleware(['web'])->group(function () {
     })->middleware(['auth:admission_handler', 'role:admission_handler'])->name('accepted.applicants');
 
     
-});
 
-
+    Route::get('/thankyou-page', function () {
+        return Inertia::render('AdmissionComponents/ThankYouPage');
+    })->name('thank.you');
 
 Route::post('/submitForm', [AdmissionInfoController::class, 'store'])->name('submitForm');
 
