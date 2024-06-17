@@ -1,8 +1,9 @@
+import React from 'react';
+import axios from 'axios';
+
 const handleLogout = async (e) => {
   e.preventDefault();
-
   const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
   try {
       await axios.post('/logout', { _token: csrfToken });
       window.location.href = '/login'; // Redirect to the login page
@@ -69,6 +70,6 @@ function Sidebar() {
     </div>
 </aside>
   );
-}
+};
 
 export default Sidebar;
