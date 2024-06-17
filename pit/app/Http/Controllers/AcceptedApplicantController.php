@@ -1,8 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\AdmissionInfo;
 use App\Models\AcceptedApplicants;
+use App\Models\StudentAccount;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 class AcceptedApplicantController extends Controller
 {
     public function acceptApplicant($id)
@@ -12,45 +17,55 @@ class AcceptedApplicantController extends Controller
             return response()->json(['error' => 'Applicant not found'], 404);
         }
 
-        // Generate the student number
+        // Generate a new student number
         $lastAcceptedApplicant = AcceptedApplicants::orderBy('student_number', 'desc')->first();
-        $lastStudentNumber = $lastAcceptedApplicant ? intval($lastAcceptedApplicant->student_number) : 2023122999;
-        $newStudentNumber = $lastStudentNumber + 1;
+        $newStudentNumber = $lastAcceptedApplicant ? intval($lastAcceptedApplicant->student_number) + 1 : 2023123000;
 
-        // Create a new accepted applicant
-        $acceptedApplicant = new AcceptedApplicants();
-        $acceptedApplicant->firstName = $applicant->firstName;
-        $acceptedApplicant->middleName = $applicant->middleName;
-        $acceptedApplicant->lastName = $applicant->lastName;
-        $acceptedApplicant->month = $applicant->month;
-        $acceptedApplicant->day = $applicant->day;
-        $acceptedApplicant->year = $applicant->year;
-        $acceptedApplicant->gender = $applicant->gender;
-        $acceptedApplicant->nationality = $applicant->nationality;
-        $acceptedApplicant->email = $applicant->email;
-        $acceptedApplicant->contactno = $applicant->contactno;
-        $acceptedApplicant->streetadd = $applicant->streetadd;
-        $acceptedApplicant->city = $applicant->city;
-        $acceptedApplicant->province = $applicant->province;
-        $acceptedApplicant->zipcode = $applicant->zipcode;
-        $acceptedApplicant->emergencyName = $applicant->emergencyName;
-        $acceptedApplicant->relationship = $applicant->relationship;
-        $acceptedApplicant->emergencyContactNumber = $applicant->emergencyContactNumber;
-        $acceptedApplicant->schoolLastAttended = $applicant->schoolLastAttended;
-        $acceptedApplicant->student_number = $newStudentNumber;
-        $acceptedApplicant->save();
+        // Change email format
+        $newEmail = str_replace('@gmail.com', '@stud.nnn', $applicant->email);
+
+        // Create the student account first
+        $studentAccount = StudentAccount::create([
+            'student_number' => $newStudentNumber,
+            'name' => "{$applicant->firstName} {$applicant->lastName}",
+            'email' => $newEmail,
+            'password' => Hash::make($newStudentNumber), // Set the student number as the password
+        ]);
+
+        // Then create a new accepted applicant
+        $acceptedApplicant = AcceptedApplicants::create([
+            'student_number' => $newStudentNumber,
+            'firstName' => $applicant->firstName,
+            'middleName' => $applicant->middleName,
+            'lastName' => $applicant->lastName,
+            'month' => $applicant->month,
+            'day' => $applicant->day,
+            'year' => $applicant->year,
+            'gender' => $applicant->gender,
+            'nationality' => $applicant->nationality,
+            'email' => $applicant->email,
+            'contactno' => $applicant->contactno,
+            'streetadd' => $applicant->streetadd,
+            'city' => $applicant->city,
+            'province' => $applicant->province,
+            'zipcode' => $applicant->zipcode,
+            'emergencyName' => $applicant->emergencyName,
+            'relationship' => $applicant->relationship,
+            'emergencyContactNumber' => $applicant->emergencyContactNumber,
+            'schoolLastAttended' => $applicant->schoolLastAttended
+        ]);
 
         // Delete the applicant from admission_info table
         $applicant->delete();
 
-       
-
-        return response()->json(['message' => 'Applicant accepted successfully']);
+        // Return the newStudentNumber along with the response
+        return response()->json(['message' => 'Applicant accepted successfully', 'newStudentNumber' => $newStudentNumber]);
     }
+
     public function show($id)
     {
         // Find the accepted applicant by ID
-        $applicant = AcceptedApplicant::find($id);
+        $applicant = AcceptedApplicants::find($id);
 
         // Check if the applicant exists
         if (!$applicant) {
@@ -60,6 +75,7 @@ class AcceptedApplicantController extends Controller
         // Return the applicant details as a JSON response
         return response()->json($applicant);
     }
+
     public function index()
     {
         $applicants = AcceptedApplicants::all();

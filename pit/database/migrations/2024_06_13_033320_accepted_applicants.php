@@ -1,19 +1,15 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class AcceptedApplicants extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('accepted_applicants', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('student_number')->primary(); // Ensure this is primary
             $table->string('firstName');
             $table->string('middleName')->nullable();
             $table->string('lastName');
@@ -32,16 +28,16 @@ class AcceptedApplicants extends Migration
             $table->string('relationship');
             $table->string('emergencyContactNumber');
             $table->string('schoolLastAttended');
-            $table->string('student_number')->unique();
             $table->timestamps();
+
+            // Add the foreign key constraint
+            $table->foreign('student_number')
+                  ->references('student_number')
+                  ->on('student_account')
+                  ->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('accepted_applicants');

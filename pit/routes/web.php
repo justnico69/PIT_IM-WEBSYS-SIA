@@ -37,15 +37,28 @@ Route::middleware(['web'])->group(function () {
 
     Route::get('/enrollment-process', function () {
         return Inertia::render('DComponents/EnrollmentWindow/EnrollApp');
-    })->name('student-dash-enrollment-process');
+    })->middleware(['auth:student', 'role:student'])->name('enrollment.process');
     
     Route::get('/certofreg', function () {
         return Inertia::render('DComponents/CertOfRegisWindow/CORApp');
+    })->middleware(['auth:student', 'role:student'])->name('certofreg');
+    
+    Route::get('/program-details', function () {
+        return Inertia::render('DComponents/ProgramDetailsWindow/ProgramApp');
+    })->middleware(['auth:student', 'role:student'])->name('program-details');
     })->name('certofregistration');
     
-    Route::get('/student-dash-program-details', function () {
+    Route::get('/program-details', function () {
         return Inertia::render('DComponents/ProgramDetailsWindow/ProgramApp');
     })->name('student-dash-program-details');
+
+    Route::get('/shiftreq', function () {
+        return Inertia::render('DComponents/ShiftReqWindow/ShiftReqApp');
+    })->name('shiftrequest');
+
+    Route::get('/assess-billing', function () {
+        return Inertia::render('DComponents/AssessBillingWindow/AssessBillingApp');
+    })->name('assessment-billing');
     
 
     // Department Staff Dashboard
@@ -77,7 +90,7 @@ Route::middleware(['web'])->group(function () {
     })->middleware(['auth:admission_handler', 'role:admission_handler'])->name('accepted.applicants');
 
     
-});
+
 
 
 

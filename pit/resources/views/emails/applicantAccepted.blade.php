@@ -4,9 +4,8 @@
     <title>{{ $subject }}</title>
 </head>
 <body>
-    <img src="{{ $message->embed(public_path('eyesagi.jpg')) }}" alt="Congratulations" style="max-width: 350px; height: auto;">
+    <img src="{{ $message->embed(public_path('nnnbanner3.png')) }}" alt="Congratulations" style="max-width: 500px; height: auto;">
     <h3>{{ $subject }}</h3>
-    <p> {{ $mailMessage }} </p>
-    
+    <p>{!! $mailMessage !!}</p>
 </body>
 </html>

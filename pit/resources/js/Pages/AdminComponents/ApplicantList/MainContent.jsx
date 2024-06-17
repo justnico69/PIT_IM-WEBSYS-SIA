@@ -56,15 +56,15 @@ function MainContent() {
         `}
       </style>
 
-      <h1 className="text-3xl font-bold mb-8 ml-10">Accepted Applicants</h1>
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg ml-10 mr-10">
+      <h1 className="text-white font-poppins text-3xl font-extrabold mb-8 ml-10">Accepted Applicants</h1>
+      <div className="bg-white border-2 shadow overflow-hidden sm:rounded-lg ml-10 mr-10">
         <div className="px-4 py-5 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">Accepted Applicants</h3>
+          <h3 className="text-lg leading-6 font-bold text-gray-900">Names of the Accepted Applicants</h3>
         </div>
-        <div className="border-t border-gray-200">
+        <div className="border-t border-gray-200 ">
           <dl>
             {acceptedApplicants.map((applicant) => (
-              <div key={applicant.id} className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <div key={applicant.id} className="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-sm font-medium text-gray-500">
                   {applicant.firstName} {applicant.lastName}
                 </dt>
@@ -85,43 +85,43 @@ function MainContent() {
         {selectedStudent && (
           <div className="bg-white shadow overflow-hidden sm:rounded-lg">
             <div className="px-4 py-5 sm:px-6">
-              <h3 className="text-lg leading-6 font-medium text-gray-900">Applicant Information</h3>
+              <h3 className="text-lg leading-6 font-medium text-black">Applicant Information</h3>
             </div>
             <div className="border-t border-gray-200">
               <dl>
-              <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Student Number</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.student_number}</dd>
+              <div className="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className="text-sm font-bold text-gray-500">Student Number</dt>
+                  <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.student_number}</dd>
                 </div>
-                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Full Name</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <div className="bg-gray-200  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className="text-sm font-bold text-gray-500">Full Name</dt>
+                  <dd className="mt-1 text-medium text-large text-black sm:mt-0 sm:col-span-2">
                     {selectedStudent.firstName} {selectedStudent.middleName} {selectedStudent.lastName}
                   </dd>
                 </div>
-                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Email</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.email}</dd>
+                <div className="bg-gray-100  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className="text-sm font-bold text-gray-500">Email</dt>
+                  <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.email}</dd>
                 </div>
-                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Contact Number</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.contactno}</dd>
+                <div className="bg-gray-200  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className="text-sm font-bold text-gray-500">Contact Number</dt>
+                  <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.contactno}</dd>
                 </div>
-                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Address</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <div className="bg-gray-100  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className="text-sm font-bold text-gray-500">Address</dt>
+                  <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">
                     {selectedStudent.streetadd}, {selectedStudent.city}, {selectedStudent.province}, {selectedStudent.zipcode}
                   </dd>
                 </div>
-                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">Emergency Contact</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <div className="bg-gray-200  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className="text-sm font-bold text-gray-500">Emergency Contact</dt>
+                  <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">
                     {selectedStudent.emergencyName} ({selectedStudent.relationship}) - {selectedStudent.emergencyContactNumber}
                   </dd>
                 </div>
-                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt className="text-sm font-medium text-gray-500">School Last Attended</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.schoolLastAttended}</dd>
+                <div className="bg-gray-100  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt className="text-sm font-bold text-gray-500">School Last Attended</dt>
+                  <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.schoolLastAttended}</dd>
                 </div>
               </dl>
               {/* Close button */}

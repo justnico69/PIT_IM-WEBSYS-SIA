@@ -17,14 +17,14 @@ export default function Header() {
                                 </div>
                             </div>
                             </div>
-
+  
                             <div className="flex items-center text-gray-500">
                             <button className="material-icons-outlined p-2 text-blue-800" style={{ fontSize: 30 }}>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                                 <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
                                 </svg>
                                 </button>
-
+  
                             <button className="material-icons-outlined p-2 text-blue-800" style={{ fontSize: 30 }}>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                                 <path d="M5.85 3.5a.75.75 0 0 0-1.117-1 9.719 9.719 0 0 0-2.348 4.876.75.75 0 0 0 1.479.248A8.219 8.219 0 0 1 5.85 3.5ZM19.267 2.5a.75.75 0 1 0-1.118 1 8.22 8.22 0 0 1 1.987 4.124.75.75 0 0 0 1.48-.248A9.72 9.72 0 0 0 19.266 2.5Z" />
@@ -37,4 +37,5 @@ export default function Header() {
             </nav>
         </header>
     );
-}
+  }
+  
