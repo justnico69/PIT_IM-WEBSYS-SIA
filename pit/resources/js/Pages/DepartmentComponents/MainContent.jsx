@@ -2,9 +2,9 @@ const MainContent = () => {
     return (
         <div className="w-full ml-5">
             <div className="flex flex-row">
-                <div className="bg-white rounded-xl shadow-lg px-6 py-4 mt-28 mr-14 flex-grow">
-                    <p className="text-3xl mt-3 font-bold text-blue-800">Dashboard / Home</p>
-                    <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, Department Staff!</p>
+                <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 flex-grow">
+                    <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Dashboard / Home</p>
+                    <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, Department!</p>
                 </div>
             </div>
             <div className="grid grid-cols-3 mb-3">
