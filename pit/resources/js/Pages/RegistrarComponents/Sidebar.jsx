@@ -15,7 +15,7 @@ const handleLogout = async (e) => {
 
 const Sidebar = () => {
     return (
-        <aside className="flex flex-col w-64 h-screen px-5 overflow-y-auto bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500">
+        <aside className="flex flex-col w-64 h-screen px-5 overflow-y-auto bg-white rounded-xl shadow-lg">
             <div className="flex flex-col justify-between flex-1 mt-6">
                 <nav className="-mx-3 space-y-6">
                     <div className="space-y-3">

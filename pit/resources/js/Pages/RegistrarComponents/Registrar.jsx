@@ -6,7 +6,7 @@ import Settings from './Settings';
 
 export default function Registrar() {
     return (
-        <div className="min-h-screen w-full bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500">
+        <div className="min-h-screen w-full bg-white rounded-xl shadow-lg">
             <Head title="Registrar-Dashboard" />
             <Header />
             <div className="flex">
