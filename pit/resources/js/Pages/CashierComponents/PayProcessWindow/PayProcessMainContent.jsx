@@ -185,14 +185,26 @@ function MainContent() {
                     {/* Add additional fields as necessary */}
                   </dl>
                   {/* Close button */}
-                  <button
+                  <div className="flex justify-end mt-5">
+                    <button
                     onClick={closeModal}
-                    className="mx-4 mb-4 mt-5 block text-right"
+                    className="mx-4 mb-4 text-right inline-block"
                   >
                     <span className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                       Close
                     </span>
                   </button>
+                  
+                  <button
+                    onClick={closeModal}
+                    className="mx-4 mb-4 text-right inline-block"
+                  >
+                    <span className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                      Pay Balance
+                    </span>
+                  </button>
+                  </div>
+                
                 </div>
               </>
             )}
