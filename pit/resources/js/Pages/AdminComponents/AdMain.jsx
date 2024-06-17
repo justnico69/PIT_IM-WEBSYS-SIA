@@ -9,11 +9,11 @@ const MainContent = () => {
   };
 
   return (
-    <div className="w-full ml-12 h-screen overflow-hidden mt-5"> {/* Ensure h-screen and overflow-hidden are applied */}
+    <div className="w-full ml-[52px] h-screen overflow-hidden mt-5"> {/* Ensure h-screen and overflow-hidden are applied */}
       <div className="flex flex-row">
         <div className="bg-white rounded-xl shadow-lg px-6 py-4 mt-6 mr-10 flex-grow">
           <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Admission Dashboard</p>
-          <p className="mt-3 mb-3 text-base font-semibold text-indigo-900">Welcome, admin!</p>
+          <p className="mt-3 mb-2 text-base font-semibold text-indigo-900">Welcome, admin!</p>
         </div>
       </div>
 

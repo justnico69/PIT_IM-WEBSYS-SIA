@@ -16,8 +16,8 @@ const handleLogout = async (e) => {
 
 function AlSidebar() {
   return (
-    <aside className="flex flex-col w-80 h-full px-5 overflow-y-auto mr-2 border-blue-100" style={{ backgroundImage: 'url()' }}>
-      <div className="flex flex-col justify-between flex-1 ml-3 mt-10">
+    <aside className="flex flex-col w-[329px] h-full px-4 overflow-y-auto mr-2 border-blue-100" style={{ backgroundImage: 'url()' }}>
+      <div className="flex flex-col justify-between flex-1 ml-4 mt-10">
         <nav className="-mx-3 space-y-6">
           <div className="space-y-3">
             <div id="sidebarGradient" className="bg-white h-[600px] rounded-xl shadow-lg mb-6 ml-5 mr-0 px-4 py-4">
