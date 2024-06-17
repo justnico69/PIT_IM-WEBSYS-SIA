@@ -1,26 +1,18 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
 function MainContent() {
-  const [selectedStudent, setSelectedStudent] = useState(null);
   const [newStudent, setNewStudent] = useState({
-    firstName: '',
-    middleName: '',
-    lastName: '',
-    email: '',
-    contactno: '',
-    studentNumber: '',
+    student_number: '',
+   
     program: '',
     yrlevel: '',
     semester: '',
-    idImage: null,
+    id_image: null,
   });
-
-  const studentNames = [
-    // Existing student data here...
-  ];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -29,25 +21,37 @@ function MainContent() {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setNewStudent({ ...newStudent, idImage: file });
+    setNewStudent({ ...newStudent, id_image: file });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-   
-    // Reset form fields
-    setNewStudent({
-      firstName: '',
-      middleName: '',
-      lastName: '',
-      email: '',
-      contactno: '',
-      studentNumber: '',
-      program: '',
-      yrlevel: '',
-      semester: '',
-      idImage: null,
-    });
+    
+    const formData = new FormData();
+    for (const key in newStudent) {
+      formData.append(key, newStudent[key]);
+    }
+
+    try {
+      const response = await axios.post('/api/enroll', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      console.log(response.data.message);
+
+      // Reset form fields
+      setNewStudent({
+        student_number: '',
+       
+        program: '',
+        yrlevel: '',
+        semester: '',
+        id_image: null,
+      });
+    } catch (error) {
+      console.error('There was an error!', error);
+    }
   };
 
   return (
@@ -68,21 +72,9 @@ function MainContent() {
       <div className="bg-white p-5 shadow overflow-hidden sm:rounded-xl mb-5 mr-8 px-3">
         <form onSubmit={handleFormSubmit}>
           <div className="grid grid-cols-3 gap-3 p-4">
-            
-            {/*INPUTS*/}
-            <label className="block text-gray-500 text-base font-bold col-span-3" htmlFor="firstName">Student Name:</label>
-            <input type="text" name="firstName" value={newStudent.firstName} onChange={handleInputChange} placeholder="First Name" className="rounded-md col-span-1" />
-            <input type="text" name="middleName" value={newStudent.middleName} onChange={handleInputChange} placeholder="Middle Name" className="rounded-md col-span-1" />
-            <input type="text" name="lastName" value={newStudent.lastName} onChange={handleInputChange} placeholder="Last Name" className="rounded-md col-span-1" />
+            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="student_number">Student Number:</label>
+            <input type="text" name="student_number" value={newStudent.student_number} onChange={handleInputChange} placeholder="Student Number" className="rounded-md col-span-3" />
 
-            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="studentNumber">Student Number:</label>
-            <input type="text" name="studentNumber" value={newStudent.studentNumber} onChange={handleInputChange} placeholder="Student Number" className="rounded-md col-span-3" />
-
-            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="email">Student Email:</label>
-            <input type="text" name="email" value={newStudent.email} onChange={handleInputChange} placeholder="Email Address" className="rounded-md col-span-3" />
-
-            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="contactNumber">Contact Number:</label>
-            <input type="text" name="contactNumber" value={newStudent.contactNumber} onChange={handleInputChange} placeholder="Phone Number" className="rounded-md col-span-3" />
 
             <label className="block text-gray-500 text-base font-bold col-span-1 mt-3" htmlFor="program">Program:</label>
             <label className="block text-gray-500 text-base font-bold col-span-1 mt-3" htmlFor="yrlevel">Year Level:</label>
@@ -108,22 +100,18 @@ function MainContent() {
               <option value="2nd Semester">2nd Semester</option>
             </select>
 
-
-            {/*UP0LOAD IMAGE BUTTON*/}
-            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="idImage">Upload 2x2 ID Image:</label>
+            <label className="block text-gray-500 text-base font-bold col-span-3 mt-3" htmlFor="id_image">Upload 2x2 ID Image:</label>
             <div className="col-span-3 flex items-center">
               <label className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
                 Choose File
-                <input type="file" name="idImage" onChange={handleFileChange} className="hidden" accept="image/*" />
+                <input type="file" name="id_image" onChange={handleFileChange} className="hidden" accept="image/*" />
               </label>
-              {newStudent.idImage && (
-                <span className="ml-3 text-gray-700">{newStudent.idImage.name}</span>
+              {newStudent.id_image && (
+                <span className="ml-3 text-gray-700">{newStudent.id_image.name}</span>
               )}
             </div>
           </div>
 
-
-          {/*SUBMIT BUTTON*/}
           <button type="submit" className="mt-8 w-full flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded">
             Submit Enrollment Form
           </button>

@@ -41,10 +41,15 @@ Route::middleware(['web'])->group(function () {
 
     Route::get('/enrollment-process', function () {
         return Inertia::render('DComponents/EnrollmentWindow/EnrollApp');
-    })->name('student-dash-enrollment-process');
+    })->middleware(['auth:student', 'role:student'])->name('enrollment.process');
     
     Route::get('/certofreg', function () {
         return Inertia::render('DComponents/CertOfRegisWindow/CORApp');
+    })->middleware(['auth:student', 'role:student'])->name('certofreg');
+    
+    Route::get('/program-details', function () {
+        return Inertia::render('DComponents/ProgramDetailsWindow/ProgramApp');
+    })->middleware(['auth:student', 'role:student'])->name('program-details');
     })->name('certofregistration');
     
     Route::get('/program-details', function () {
@@ -89,7 +94,7 @@ Route::middleware(['web'])->group(function () {
     })->middleware(['auth:admission_handler', 'role:admission_handler'])->name('accepted.applicants');
 
     
-});
+
 
 
 
