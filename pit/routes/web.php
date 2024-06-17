@@ -23,6 +23,10 @@ Route::get('/admission-form', function () {
     return Inertia::render('AdmissionComponents/AdmissionForm');
 })->name('admission-form');;
 
+Route::get('/thankyou-page', function () {
+    return Inertia::render('AdmissionComponents/ThankYouPage');
+})->name('thank.you');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

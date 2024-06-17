@@ -46,7 +46,7 @@ const Adheader = () => {
                 </div>
                 <div className="text-blue-800 flex-grow text-center">
                     <img
-                        src="https://pouch.jumpshare.com/preview/ibZnk8VMgadvzIubs3Zd63NkMbQABMhC7FNrL1lmTj-YnBL_JM-7fChLZocvIzuIaAT1sbsPkq1YXNhLbL4e218rtmGhpEw82bbevfQBekk"
+                        src="https://i.ibb.co/8xPny73/NNN-logo.png"
                         alt="Logo"
                         className="h-10 w-10 object-contain mr-2 inline-block"
                     />
