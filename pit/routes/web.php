@@ -69,6 +69,7 @@ Route::middleware(['web'])->group(function () {
     Route::get('/department-dashboard', function () {
         return Inertia::render('DepartmentComponents/Department');
     })->middleware(['auth:department_staff', 'role:department_staff'])->name('department.dashboard');
+
     // Cashier Dashboard
     Route::get('/cashier-dashboard', function () {
         return Inertia::render('CashierComponents/Cashier');
@@ -83,6 +84,10 @@ Route::middleware(['web'])->group(function () {
     Route::get('/registrar-dashboard', function () {
         return Inertia::render('RegistrarComponents/Registrar');
     })->middleware(['auth:registrar', 'role:registrar'])->name('registrar.dashboard');
+
+    Route::get('/new-en-stud', function () {
+        return Inertia::render('RegistrarComponents/NewEnrolStudWindow/NEStudApp');
+    })->middleware(['auth:registrar', 'role:registrar'])->name('new-en-stud');
 
     // Admission Handler Dashboard
     Route::get('/admin-dashboard', function () {
