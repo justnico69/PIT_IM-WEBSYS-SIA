@@ -13,7 +13,7 @@ const MainContent = () => {
                 </div>
             </div>
             <div className="grid grid-cols-4 grid-rows-12 gap-5 mr-8">
-                <div className="row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[200px]">
+                <div className="row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[330px]">
                     <a href="enrollment-process" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
