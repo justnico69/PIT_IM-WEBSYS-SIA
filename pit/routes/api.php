@@ -38,8 +38,13 @@ use App\Http\Controllers\EnrolledStudentController;
 
 Route::post('/enroll', [EnrolledStudentController::class, 'store']);
 Route::patch('/enroll/{id}/pay', [EnrolledStudentController::class, 'pay']);
-Route::get('/processing-enrollment', [EnrolledStudentController::class, 'showProcessingEnrollment']);
+
 
 use App\Http\Controllers\SectionController;
 
 Route::get('/sections', [SectionController::class, 'getSections']);
+
+use App\Http\Controllers\ProcessingEnrollmentController;
+
+Route::get('/processing_enrollment', [ProcessingEnrollmentController::class, 'index']);
+Route::post('/processing_enrollment/pay/{id}', [ProcessingEnrollmentController::class, 'pay']);
