@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import corImage from 'C:/Users/ADMIN/Documents/reactor/oten/PIT_IM-WEBSYS-SIA/pit/images/CORAWIT.jpg'; // Import your specific image for COR distribution
+import corImage from 'C:/Users/ADMIN/Documents/reactor/oten/PIT_IM-WEBSYS-SIA/pit/images/CORAWIT.jpg';
 
-Modal.setAppElement('#root'); // Set the root element for accessibility
+Modal.setAppElement('#root');
 
 const MainContent = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -12,7 +12,6 @@ const MainContent = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
-        // Fetch accepted applicants
         fetch('http://localhost:8000/api/applicantshow')
             .then((response) => response.json())
             .then((data) => setAcceptedApplicants(data));
@@ -37,7 +36,7 @@ const MainContent = () => {
             <img
                 src={corImage}
                 alt="Distribution of COR"
-                style={{ maxWidth: '100%', maxHeight: '100%' }}
+                className="max-w-full max-h-full"
             />
         );
         setShowPopup(true);
@@ -106,10 +105,10 @@ const MainContent = () => {
 
             {showPopup && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
-                    <div className="bg-white rounded-xl shadow-lg px-6 py-4">
+                    <div className="bg-white rounded-xl shadow-lg px-6 py-4 max-w-lg mx-auto">
                         <div>{popupContent}</div>
                         <button
-                            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4"
                             onClick={() => setShowPopup(false)}
                         >
                             Close
@@ -122,11 +121,11 @@ const MainContent = () => {
                 isOpen={isModalOpen}
                 onRequestClose={closeModal}
                 contentLabel="Student Information"
-                className="modal"
-                overlayClassName="overlay"
+                className="fixed inset-0 z-50 flex items-center justify-center"
+                overlayClassName="fixed inset-0 bg-gray-900 bg-opacity-75"
             >
                 {selectedStudent && (
-                    <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+                    <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-3xl mx-auto">
                         <div className="px-4 py-5 sm:px-6">
                             <h3 className="text-lg leading-6 font-medium text-gray-900">Applicant Information</h3>
                         </div>
@@ -164,10 +163,13 @@ const MainContent = () => {
                                 </div>
                                 <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-500">School Last Attended</dt>
-                                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.schoolLastAttended}</dd>
+                                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.schoollastattended}</dd>
                                 </div>
                             </dl>
-                            <button onClick={closeModal} className="text-red-500 hover:underline mx-4 mb-4 block text-right">
+                            <button
+                                onClick={closeModal}
+                                className="text-red-500 hover:underline mx-4 mb-4 block text-right"
+                            >
                                 Close
                             </button>
                         </div>
