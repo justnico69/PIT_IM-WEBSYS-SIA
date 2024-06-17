@@ -36,7 +36,7 @@ function ItSidebar() {
 
               {/* Sidebar Navigation */}
               <div className="mt-10 px-2 text-blue-600 text-lg font-semibold">
-                <a href="admin-dashboard" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-600 hover:text-blue-50">
+                <a href="department-dashboard" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-600 hover:text-blue-50">
                   <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
                     <span className="material-icons-outlined">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
@@ -59,7 +59,7 @@ function ItSidebar() {
                   </span>
                 </a>
 
-                <a href={window.routes.applicationProcess} className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-600 hover:text-blue-50">
+                <a href='#' className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-600 hover:text-blue-50">
                   <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
                     <span className="material-icons-outlined">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
