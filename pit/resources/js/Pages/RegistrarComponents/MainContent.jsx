@@ -1,53 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import Modal from 'react-modal';
-import corImage from 'C:/Users/ADMIN/Documents/reactor/oten/PIT_IM-WEBSYS-SIA/pit/images/CORAWIT.jpg';
-
-Modal.setAppElement('#root');
-
 const MainContent = () => {
-    const [showPopup, setShowPopup] = useState(false);
-    const [popupContent, setPopupContent] = useState('');
-    const [acceptedApplicants, setAcceptedApplicants] = useState([]);
-    const [selectedStudent, setSelectedStudent] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    useEffect(() => {
-        fetch('http://localhost:8000/api/applicantshow')
-            .then((response) => response.json())
-            .then((data) => setAcceptedApplicants(data));
-    }, []);
-
-    const handleStudentClick = (student) => {
-        setSelectedStudent(student);
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
-
-    const handlePopupClick = (content) => {
-        setPopupContent(content);
-        setShowPopup(true);
-    };
-
-    const handleCorClick = () => {
-        setPopupContent(
-            <img
-                src={corImage}
-                alt="Distribution of COR"
-                className="max-w-full max-h-full"
-            />
-        );
-        setShowPopup(true);
-    };
-
     return (
         <div className="w-full ml-5">
             <div className="flex flex-row">
                 <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 flex-grow">
-                    <p className="text-3xl mt-3 font-bold text-blue-800">Registrar Dashboard</p>
-                    <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, Registrar Staff!</p>
+                    <p className="text-3xl mt-3 font-bold text-blue-800">Dashboard / Home</p>
+                    <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, Registrar!</p>
                 </div>
             </div>
             <div className="grid grid-cols-3 mb-3">
@@ -55,127 +12,33 @@ const MainContent = () => {
                     <p className="text-base font-bold text-white">Registrar Panel</p>
                 </div>
             </div>
-            <div className="grid grid-cols-1 gap-4 mr-14">
-                <div className="bg-black rounded-xl shadow-lg flex items-center justify-start mb-4 w-full h-60">
-                    <a
-                        href="#"
-                        className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            handlePopupClick(
-                                <div>
-                                    {acceptedApplicants.map((applicant) => (
-                                        <div key={applicant.id} className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                            <dt className="text-sm font-medium text-gray-500">
-                                                {applicant.firstName} {applicant.lastName}
-                                            </dt>
-                                            <button onClick={() => handleStudentClick(applicant)} className="text-blue-500 hover:underline ml-2 focus:outline-none">View Details</button>
-                                        </div>
-                                    ))}
-                                </div>
-                            );
-                        }}
-                    >
+            <div className="grid grid-cols-4 grid-rows-12 gap-5 mr-8">
+                <div className="row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[200px]">
+                    <a href="enrollment-process" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
-                            {/* SVG code for the icon */}
-                            {/* Insert SVG code here */}
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+                                <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
+                                <path d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z" />
+                                <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
+                            </svg>
                         </span>
                         <span className="ml-2 text-2xl font-semibold">Newly Enrolled Students</span>
                     </a>
                 </div>
-                <div className="grid grid-cols-1 gap-4 mr-14">
-                    <div className="bg-black rounded-xl shadow-lg flex items-center justify-start mb-4 w-full h-60">
-                        <a
-                            href="#"
-                            className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                handleCorClick();
-                            }}
-                        >
-                            <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
-                                {/* SVG code for the icon */}
-                                {/* Insert SVG code here */}
-                            </span>
-                            <span className="ml-2 text-2xl font-semibold">Distribution of COR</span>
-                        </a>
-                    </div>
+                <div className="row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[100px]">
+                    <a href="certofreg" className="text-blue-600 hover:text-blue-800 flex items-center justify-center w-full h-full">
+                        <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+                                <path fill-rule="evenodd" d="M4.125 3C3.089 3 2.25 3.84 2.25 4.875V18a3 3 0 0 0 3 3h15a3 3 0 0 1-3-3V4.875C17.25 3.839 16.41 3 15.375 3H4.125ZM12 9.75a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5H12Zm-.75-2.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75ZM6 12.75a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5H6Zm-.75 3.75a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75ZM6 6.75a.75.75 0 0 0-.75.75v3c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75v-3A.75.75 0 0 0 9 6.75H6Z" clip-rule="evenodd" />
+                                <path d="M18.75 6.75h1.875c.621 0 1.125.504 1.125 1.125V18a1.5 1.5 0 0 1-3 0V6.75Z" />
+                            </svg>
+                        </span>
+                        <span className="ml-2 text-2xl font-semibold">Distribution of CoR</span>
+                    </a>
                 </div>
+                
+                
             </div>
-
-            {showPopup && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
-                    <div className="bg-white rounded-xl shadow-lg px-6 py-4 max-w-lg mx-auto">
-                        <div>{popupContent}</div>
-                        <button
-                            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4"
-                            onClick={() => setShowPopup(false)}
-                        >
-                            Close
-                        </button>
-                    </div>
-                </div>
-            )}
-
-            <Modal
-                isOpen={isModalOpen}
-                onRequestClose={closeModal}
-                contentLabel="Student Information"
-                className="fixed inset-0 z-50 flex items-center justify-center"
-                overlayClassName="fixed inset-0 bg-gray-900 bg-opacity-75"
-            >
-                {selectedStudent && (
-                    <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-3xl mx-auto">
-                        <div className="px-4 py-5 sm:px-6">
-                            <h3 className="text-lg leading-6 font-medium text-gray-900">Applicant Information</h3>
-                        </div>
-                        <div className="border-t border-gray-200">
-                            <dl>
-                                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt className="text-sm font-medium text-gray-500">Student Number</dt>
-                                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.student_number}</dd>
-                                </div>
-                                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt className="text-sm font-medium text-gray-500">Full Name</dt>
-                                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                        {selectedStudent.firstName} {selectedStudent.middleName} {selectedStudent.lastName}
-                                    </dd>
-                                </div>
-                                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt className="text-sm font-medium text-gray-500">Email</dt>
-                                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.email}</dd>
-                                </div>
-                                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt className="text-sm font-medium text-gray-500">Contact Number</dt>
-                                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.contactno}</dd>
-                                </div>
-                                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt className="text-sm font-medium text-gray-500">Address</dt>
-                                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                        {selectedStudent.streetadd}, {selectedStudent.city}, {selectedStudent.province}, {selectedStudent.zipcode}
-                                    </dd>
-                                </div>
-                                <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt className="text-sm font-medium text-gray-500">Emergency Contact</dt>
-                                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                        {selectedStudent.emergencyName} ({selectedStudent.relationship}) - {selectedStudent.emergencyContactNumber}
-                                    </dd>
-                                </div>
-                                <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt className="text-sm font-medium text-gray-500">School Last Attended</dt>
-                                    <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.schoollastattended}</dd>
-                                </div>
-                            </dl>
-                            <button
-                                onClick={closeModal}
-                                className="text-red-500 hover:underline mx-4 mb-4 block text-right"
-                            >
-                                Close
-                            </button>
-                        </div>
-                    </div>
-                )}
-            </Modal>
         </div>
     );
 };
