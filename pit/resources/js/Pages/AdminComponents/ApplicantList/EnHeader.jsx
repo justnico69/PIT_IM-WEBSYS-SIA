@@ -9,7 +9,7 @@ function EnHeader() {
           <img
                   src="https://i.ibb.co/Q6SrF6M/Edutech.png"
                   alt="EduTech Logo"
-                  className="h-8 w-30 object-contain mr-2 mb-3-2"
+                  className="h-8 w-30 object-contain mr-5 mb-3-2"
                   />
             <span className="text-xl font-bold"> {/* Adjusted text size */}
               NNN College of Information Technology and Computing Admission Form
