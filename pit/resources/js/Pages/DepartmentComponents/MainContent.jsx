@@ -2,7 +2,7 @@ const MainContent = () => {
     return (
         <div className="w-full ml-5">
             <div className="flex flex-row">
-                <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 flex-grow">
+                <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-10 flex-grow">
                     <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Dashboard / Home</p>
                     <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, Department!</p>
                 </div>
@@ -26,7 +26,7 @@ const MainContent = () => {
                     </a>
                 </div>
                 <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-30">
-                    <a href="#" className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
+                    <a href="it-department" className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
                                 <path fill-rule="evenodd" d="M4.125 3C3.089 3 2.25 3.84 2.25 4.875V18a3 3 0 0 0 3 3h15a3 3 0 0 1-3-3V4.875C17.25 3.839 16.41 3 15.375 3H4.125ZM12 9.75a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5H12Zm-.75-2.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75ZM6 12.75a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5H6Zm-.75 3.75a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75ZM6 6.75a.75.75 0 0 0-.75.75v3c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75v-3A.75.75 0 0 0 9 6.75H6Z" clip-rule="evenodd" />
@@ -36,7 +36,7 @@ const MainContent = () => {
                         <span className="ml-2 text-2xl font-semibold">Information Technology</span>
                     </a>
                 </div>
-                <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-20">
+                <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-10">
                     <a href="#" className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
@@ -58,7 +58,7 @@ const MainContent = () => {
                         <span className="ml-2 text-xl font-semibold">Computer Science</span>
                     </a>
                 </div>
-                <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-20 row-3 col-end-4">
+                <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-10 row-3 col-end-4">
                 <a href="#" className="text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
                     <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
