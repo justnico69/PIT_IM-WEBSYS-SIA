@@ -4,8 +4,8 @@ const MainContent = () => {
   const [activeLink, setActiveLink] = useState(null);
 
   const handleLinkClick = (link) => {
-    setActiveLink(link);
-    setTimeout(() => setActiveLink(null), 300); // Reset after animation duration
+      setActiveLink(link);
+      setTimeout(() => setActiveLink(null), 300); // Reset after animation duration
   };
 
   return (
