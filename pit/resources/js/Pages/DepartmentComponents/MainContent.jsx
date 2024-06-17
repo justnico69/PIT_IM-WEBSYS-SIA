@@ -7,9 +7,9 @@ const MainContent = () => {
                     <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, Department!</p>
                 </div>
             </div>
-            <div className="grid grid-cols-3 mb-3">
+            <div className="grid grid-cols-2 mb-3">
                 <div className="mt-10">
-                    <p className="text-base font-bold text-white">Department Panel</p>
+                    <p className="text-lg font-bold text-white">College of Information Technology and Computing Department</p>
                 </div>
             </div>
             <div className="grid grid-cols-3 gap-4">
@@ -22,7 +22,7 @@ const MainContent = () => {
                                 <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
                             </svg>
                         </span>
-                        <span className="ml-2 text-2xl font-semibold">Enrollment Status</span>
+                        <span className="ml-4 text-2xl font-semibold">Student Course <br/>Management</span>
                     </a>
                 </div>
                 <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-30">
