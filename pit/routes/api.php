@@ -31,4 +31,15 @@ Route::get('/applicantshow/accept/{id}', [AcceptedApplicantController::class, 's
 Route::get('/applicantshow', [AcceptedApplicantController::class, 'index']);
 
 
-Route::post('send-email',[MailController::class,'sendMail']);
+Route::post('/send-email', [MailController::class, 'sendMail']);
+
+
+use App\Http\Controllers\EnrolledStudentController;
+
+Route::post('/enroll', [EnrolledStudentController::class, 'store']);
+Route::patch('/enroll/{id}/pay', [EnrolledStudentController::class, 'pay']);
+Route::get('/processing-enrollment', [EnrolledStudentController::class, 'showProcessingEnrollment']);
+
+use App\Http\Controllers\SectionController;
+
+Route::get('/sections', [SectionController::class, 'getSections']);
