@@ -44,7 +44,7 @@ function MainContent() {
     <div className="flex h-screen"> {/* Use h-screen to make the parent div take full screen height */}
       <AlSidebar /> {/* Sidebar component */}
 
-      <div className="flex-grow ml-1 h-full overflow-hidden mt-5"> {/* Ensure flex-grow and h-full are applied */}
+      <div className="flex-grow ml-0 h-full overflow-hidden mt-5"> {/* Ensure flex-grow and h-full are applied */}
         <div className="flex flex-row">
           <div className="bg-white rounded-xl shadow-lg px-6 py-4 mt-6 mr-10 flex-grow">
             <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Accepted Applicants</p>

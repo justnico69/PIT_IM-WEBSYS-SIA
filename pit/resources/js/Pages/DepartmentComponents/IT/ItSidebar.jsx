@@ -17,7 +17,7 @@ const handleLogout = async (e) => {
 };
 
 
-function AlSidebar() {
+function ItSidebar() {
   return (
     <aside className="flex flex-col w-80 h-full px-8 overflow-y-auto mr-2 border-blue-100" style={{ backgroundImage: 'url()' }}>
       <div className="flex flex-col justify-between flex-1 mt-10">
@@ -31,7 +31,7 @@ function AlSidebar() {
                     </svg>
                 </button>
 
-                  <span className="mt-5 px-3 font-bold mb-4 text-center text-xl">Welcome, Admin!</span>
+                  <span className="mt-5 px-3 font-bold mb-4 text-center text-xl">Welcome, <br/> IT Department!</span>
             </a>
 
               {/* Sidebar Navigation */}
@@ -79,4 +79,4 @@ function AlSidebar() {
   );
 }
 
-export default AlSidebar;
+export default ItSidebar;

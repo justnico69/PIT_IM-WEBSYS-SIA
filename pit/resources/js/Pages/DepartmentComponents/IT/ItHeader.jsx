@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AdHeader() {
+function ItHeader() {
   return (
     <header>
       <nav className="bg-white">
@@ -23,4 +23,4 @@ function AdHeader() {
   );
 }
 
-export default AdHeader;
+export default ItHeader;
