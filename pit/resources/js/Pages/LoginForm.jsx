@@ -26,7 +26,7 @@ function Login({ csrfToken }) {
     return (
         <div className="relative h-screen flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8 px-6">
             <div className="absolute inset-0 bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/7067d0170920411.646604dc0db99.jpg)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.9'}}></div>
-            <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-lg border-2 border-white bg-white/20 backdrop-blur-lg py-8 px-4 shadow sm:rounded-3xl sm:px-10">
+            <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-lg border-2 border-white bg-white/30 backdrop-blur-lg py-8 px-4 shadow sm:rounded-3xl sm:px-10">
             <div className="text-center">
                 <img width="200" height="200" src="https://pouch.jumpshare.com/preview/Ttl4yMYCp2MxESEjCCDLeuJlTprbTYEdaE2mE3Tq_UpNZLGvm3srtq0r5_ctz8TXHp3KCspIuujQec8vecPrffk_3ZbqpPRYDU7SYKSgNo8" alt="EduTech Logo" 
                 className="mx-auto h-auto mt-5 mb-5" />                
@@ -41,7 +41,7 @@ function Login({ csrfToken }) {
                 <form onSubmit={handleSubmit}>
                 <input type="hidden" name="_token" value={csrfToken} />
                 <div>
-                    <label htmlFor="email" className="block text-sm font-medium leading-5 text-white">Email Address</label>
+                    <label htmlFor="email" className="block text-sm font-medium leading-5 text-gray-600">Email Address</label>
                     <div className="mt-1 relative rounded-md shadow-sm">
                     <input
                         id="email"
@@ -51,7 +51,7 @@ function Login({ csrfToken }) {
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="appearance-none block w-full pr-10 pl-3 py-2 border border-white rounded-full placeholder-white focus:outline-none focus:shadow-outline-blue focus:border-blue-500 text-white bg-transparent transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                        className="appearance-none block w-full pr-10 pl-3 py-2 border border-white rounded-full placeholder-white focus:outline-none focus:shadow-outline-blue focus:border-blue-500 text-gray-600 bg-transparent transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                     />
                     <div className="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none">
                         <span className="material-icons-outlined focus:outline-none text-white" style={{ fontSize: '1.5rem'}}>
@@ -66,7 +66,7 @@ function Login({ csrfToken }) {
 
 
                 <div className="mt-5 mb-8">
-                    <label htmlFor="email" className="block text-sm font-medium leading-5 text-white">Password</label>
+                    <label htmlFor="email" className="block text-sm font-medium leading-5 text-gray-600">Password</label>
                     <div className="mt-1 relative rounded-md shadow-sm">
                     <input
                         id="password"
@@ -76,7 +76,7 @@ function Login({ csrfToken }) {
                         required
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="appearance-none block w-full pr-10 pl-3 py-2 border border-white rounded-full placeholder-white focus:outline-none focus:shadow-outline-blue focus:border-blue-500 text-white bg-transparent transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                        className="appearance-none block w-full pr-10 pl-3 py-2 border border-white rounded-full placeholder-white focus:outline-none focus:shadow-outline-blue focus:border-blue-500 text-gray-600 bg-transparent transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                     />
                     <div className="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none">
                         <span className="material-icons-outlined focus:outline-none text-white" style={{ fontSize: '1.5rem'}}>
@@ -100,7 +100,7 @@ function Login({ csrfToken }) {
                                 className="form-checkbox h-4 w-4 text-blue-600 transition duration-150 ease-in-out peer"
                                 style={{ borderRadius: '0.25rem' }}
                             />
-                            <label htmlFor="remember_me" className="ml-2 rounded-sm block text-sm leading-5 text-white">Remember me</label>
+                            <label htmlFor="remember_me" className="ml-2 rounded-sm block text-sm leading-5 text-gray-600">Remember me</label>
                         </div>
                         
                         <style jsx>{`
@@ -110,7 +110,7 @@ function Login({ csrfToken }) {
 
                         <div className="text-sm leading-5">
                             <a href="#"
-                               className="font-medium text-white hover:text-blue-800 focus:outline-none focus:underline transition ease-in-out duration-150">
+                               className="font-medium text-gray-600 hover:text-blue-800 focus:outline-none focus:underline transition ease-in-out duration-150">
                                 Forgot your password?
                             </a>
                         </div>
