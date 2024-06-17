@@ -91,8 +91,9 @@ Route::middleware(['web'])->group(function () {
 
     
 
-
-
+    Route::get('/thankyou-page', function () {
+        return Inertia::render('AdmissionComponents/ThankYouPage');
+    })->name('thank.you');
 
 Route::post('/submitForm', [AdmissionInfoController::class, 'store'])->name('submitForm');
 

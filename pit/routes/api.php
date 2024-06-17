@@ -34,7 +34,12 @@ Route::get('/applicantshow', [AcceptedApplicantController::class, 'index']);
 Route::post('/send-email', [MailController::class, 'sendMail']);
 
 
-use App\Http\Controllers\NewlyEnrolleeController;
+use App\Http\Controllers\EnrolledStudentController;
 
-Route::post('/enroll', [NewlyEnrolleeController::class, 'store']);
-Route::get('/enrollee/image/{id}', [NewlyEnrolleeController::class, 'showImage'])->name('enrollee.image');
+Route::post('/enroll', [EnrolledStudentController::class, 'store']);
+Route::patch('/enroll/{id}/pay', [EnrolledStudentController::class, 'pay']);
+Route::get('/processing-enrollment', [EnrolledStudentController::class, 'showProcessingEnrollment']);
+
+use App\Http\Controllers\SectionController;
+
+Route::get('/sections', [SectionController::class, 'getSections']);

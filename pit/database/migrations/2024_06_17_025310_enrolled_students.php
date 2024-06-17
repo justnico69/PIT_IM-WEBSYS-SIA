@@ -4,24 +4,24 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class NewlyEnrollees extends Migration
+class EnrolledStudents extends Migration
 {
     public function up()
     {
-        Schema::create('newly_enrollees', function (Blueprint $table) {
+        Schema::create('enrolled_students', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('student_number')->index(); 
-            $table->foreign('student_number')->references('student_number')->on('student_account')->onDelete('cascade');
+            $table->string('student_number')->unique();
             $table->string('program');
             $table->string('yrlevel');
             $table->string('semester');
-            $table->string('id_image'); 
+            $table->string('section');
+            $table->string('id_image')->nullable();
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('newly_enrollees');
+        Schema::dropIfExists('enrolled_students');
     }
 }
