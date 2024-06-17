@@ -205,7 +205,7 @@ function MainContent() {
                     className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 sm:ml-3 sm:w-auto sm:text-sm"
                     onClick={handlePayBalance}
                   >
-                    Pay Balance
+                    Confirm Payment
                   </button>
                   <button
                     type="button"

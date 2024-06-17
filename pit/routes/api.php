@@ -48,3 +48,9 @@ use App\Http\Controllers\ProcessingEnrollmentController;
 
 Route::get('/processing_enrollment', [ProcessingEnrollmentController::class, 'index']);
 Route::post('/processing_enrollment/pay/{id}', [ProcessingEnrollmentController::class, 'pay']);
+
+use App\Http\Controllers\DepartmentITController;
+
+Route::get('/it-students', [DepartmentITController::class, 'getITStudents']);
+
+Route::get('/accepted-applicants/{studentNumber}', [DepartmentITController::class, 'getAcceptedApplicant']);
