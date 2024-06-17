@@ -17,6 +17,7 @@ function EnrollMainContent() {
   });
 
   const [sections, setSections] = useState([]);
+  const [duplicateWarning, setDuplicateWarning] = useState(false); // State to manage duplicate warning
 
   useEffect(() => {
     if (newStudent.program && newStudent.yrlevel) {
@@ -52,37 +53,46 @@ function EnrollMainContent() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    for (const key in newStudent) {
-      formData.append(key, newStudent[key]);
-    }
-
-    console.log('Submitting form data:', Object.fromEntries(formData.entries()));
-
     try {
-      const response = await axios.post('/api/enroll', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      console.log(response.data.message);
+      // Check if student number already exists
+      const duplicateCheckResponse = await axios.get(`/api/check_duplicate_student_number/${newStudent.student_number}`);
+      if (duplicateCheckResponse.status === 200) {
+        // Student number is available, proceed with enrollment
+        const formData = new FormData();
+        for (const key in newStudent) {
+          formData.append(key, newStudent[key]);
+        }
 
-      // Display success message
-      toast.success('Submission Sent Successfully. Please complete your payments to be enrolled in your department and section');
+        console.log('Submitting form data:', Object.fromEntries(formData.entries()));
 
-      // Reset form fields
-      setNewStudent({
-        student_number: '',
-        program: '',
-        yrlevel: '',
-        semester: '',
-        section: '',
-        id_image: ''
-      });
+        const response = await axios.post('/api/enroll', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+        console.log(response.data.message);
+
+        // Display success message
+        toast.success('Submission Sent Successfully. Please complete your payments to be enrolled in your department and section');
+
+        // Reset form fields
+        setNewStudent({
+          student_number: '',
+          program: '',
+          yrlevel: '',
+          semester: '',
+          section: '',
+          id_image: ''
+        });
+      } else {
+        // Student number already exists, show warning
+        setDuplicateWarning(true);
+      }
     } catch (error) {
       console.error('There was an error!', error);
       if (error.response) {
         console.error('Error details:', error.response.data);
+       
 
         // Display appropriate error message
         if (error.response.status === 400 && error.response.data.message === 'You have already submitted the enrollment form.') {
@@ -160,6 +170,19 @@ function EnrollMainContent() {
               )}
             </div>
           </div>
+
+          {duplicateWarning && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4" role="alert">
+              <strong className="font-bold">Warning!</strong>
+              <span className="block sm:inline"> You have already enrolled!</span>
+              <span className="absolute top-0 bottom-0 right-0 px-4 py-3" onClick={() => setDuplicateWarning(false)}>
+                <svg className="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <title>Close</title>
+                  <path fillRule="evenodd" d="M14.348 5.652a.5.5 0 0 1 0 .707L10.707 10l3.64 3.64a.5.5 0 0 1-.708.708L10 10.707l-3.64 3.64a.5.5 0 0 1-.708-.708L9.293 10 5.652 6.36a.5.5 0 0 1 .708-.708L10 9.293l3.64-3.64a.5.5 0 0 1 .708 0z"/>
+                </svg>
+              </span>
+            </div>
+          )}
 
           <button type="submit" className="mt-8 w-full flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded">
             Submit Enrollment Form

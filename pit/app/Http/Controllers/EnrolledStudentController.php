@@ -83,9 +83,5 @@ class EnrolledStudentController extends Controller
         return response()->json(['message' => 'Enrollment paid and successfully moved to enrolled students', 'enrolled_student' => $enrolledStudent]);
     }
 
-    public function showProcessingEnrollment()
-    {
-        $enrollments = ProcessingEnrollment::all();
-        return response()->json(['enrollments' => $enrollments]);
-    }
+  
 }

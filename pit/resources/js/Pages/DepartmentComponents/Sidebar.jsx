@@ -20,7 +20,7 @@ function Sidebar() {
     <div className="flex flex-col justify-between flex-1 ml-3 mt-14">
         <nav className="-mx-3 space-y-6">
             <div className="space-y-3">
-                <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[625px] py-4">
+                <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[630px] py-4">
                     <a href="#" className="text-blue-800 hover:text-blue-600 my-4 w-full flex flex-col items-center justify-center" onClick={handleLogout}>
                         <button className="material-icons-outlined focus:outline-none" style={{ fontSize: '3rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-14">

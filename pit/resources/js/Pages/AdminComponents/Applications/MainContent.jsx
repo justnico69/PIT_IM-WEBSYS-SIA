@@ -71,7 +71,7 @@ function MainContent() {
     }
   };
 
-  const rejectApplicant = (id) => {
+  const rejectApplicant = (id, email) => {
     if (window.confirm("Are you sure you want to reject this applicant?")) {
       fetch(`http://localhost:8000/api/applications/${id}`, {
         method: 'DELETE',
@@ -83,9 +83,26 @@ function MainContent() {
       .then(() => {
         setStudentNames(studentNames.filter(student => student.id !== id));
         closeModal();
+  
+        // Send rejection email
+        fetch(`http://localhost:8000/api/send-rejection-email`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email: email }), // Pass the email here
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          alert(data.message); // Display success message for email sending
+        })
+        .catch((error) => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
       });
     }
   };
+  
 
   return (
 	<div className="flex h-screen"> {/* Use h-screen to make the parent div take full screen height */}

@@ -24,9 +24,4 @@ class ProcessingEnrollment extends Model
         'paid',
     ];
 
-    // Define the relationship to the AcceptedApplicant model if needed
-    public function acceptedApplicant()
-    {
-        return $this->belongsTo(AcceptedApplicant::class, 'student_number', 'student_number');
-    }
 }

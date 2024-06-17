@@ -70,6 +70,10 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('DepartmentComponents/Department');
     })->middleware(['auth:department_staff', 'role:department_staff'])->name('department.dashboard');
 
+    Route::get('/it-department', function () {
+        return Inertia::render('DepartmentComponents/IT/ItApp');
+    })->middleware(['auth:department_staff', 'role:department_staff'])->name('it.department');
+
     // Cashier Dashboard
     Route::get('/cashier-dashboard', function () {
         return Inertia::render('CashierComponents/Cashier');
