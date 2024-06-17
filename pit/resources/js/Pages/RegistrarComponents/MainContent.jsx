@@ -41,9 +41,9 @@ const MainContent = () => {
 
                 <div className="row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[290px]">
                     <a
-                        href="payprocess"
+                        href="distofcor"
                         className={`text-blue-600 hover:text-blue-900 flex items-center justify-center w-full h-full transition-transform transform ${activeLink === 'payprocess' ? 'scale-105' : ''}`}
-                        onClick={() => handleLinkClick('payprocess')}
+                        onClick={() => handleLinkClick('distofcor')}
                     >
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">

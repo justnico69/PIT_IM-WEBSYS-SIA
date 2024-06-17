@@ -9,6 +9,7 @@ const MainContent = () => {
   const [acceptedApplicants, setAcceptedApplicants] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [corSent, setCorSent] = useState(false); // State to track if CoR is sent
 
   useEffect(() => {
     fetch('http://localhost:8000/api/applicantshow')
@@ -34,6 +35,13 @@ const MainContent = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setCorSent(false); // Reset state when modal closes
+  };
+
+  const handleSendCor = () => {
+    // Here you can implement the logic to send CoR
+    // For demonstration, I'm setting a state to simulate sending
+    setCorSent(true);
   };
 
   return (
@@ -41,8 +49,8 @@ const MainContent = () => {
       {/* Your existing UI code */}
       <div className="flex flex-row">
         <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 mb-5 flex-grow">
-          <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Newly Enrolled Students</p>
-          <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Overview of Recent Accepted Applicants</p>
+          <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Distribution of CoR</p>
+          <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Distribution of Official Certificate of Registration to Recent Accepted Applicants</p>
         </div>
       </div>
 
@@ -162,15 +170,22 @@ const MainContent = () => {
                 </div>
 
             <div className="p-6">
-              {/* Close button */}
-              <div className="flex justify-end mt-5">
-                <button
-                    onClick={closeModal}
-                    className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-8000 ease-in-out"
-                >
-                    Close
-                </button>
-                </div>
+               {/* Close and Send CoR buttons */}
+               <div className="flex justify-between mt-5">
+                    <button
+                      onClick={handleSendCor}
+                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    >
+                      Send CoR to Student Email
+                    </button>
+                    <button
+                      onClick={closeModal}
+                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                    >
+                      Close
+                    </button>
+                  </div>
+
 
 
             </div>

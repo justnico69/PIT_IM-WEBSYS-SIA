@@ -89,6 +89,10 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('RegistrarComponents/NewEnrolStudWindow/NEStudApp');
     })->middleware(['auth:registrar', 'role:registrar'])->name('new-en-stud');
 
+    Route::get('/distofcor', function () {
+        return Inertia::render('RegistrarComponents/DistributionCORWindow/DistOfCORApp');
+    })->middleware(['auth:registrar', 'role:registrar'])->name('distofcor');
+
     // Admission Handler Dashboard
     Route::get('/admin-dashboard', function () {
         return Inertia::render('AdminComponents/AllAdComps');
