@@ -10,6 +10,8 @@ const MainContent = () => {
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [corSent, setCorSent] = useState(false); // State to track if CoR is sent
+  const [showAlert, setShowAlert] = useState(false); // State to manage alert visibility
+
 
   useEffect(() => {
     fetch('http://localhost:8000/api/applicantshow')
@@ -42,6 +44,11 @@ const MainContent = () => {
     // Here you can implement the logic to send CoR
     // For demonstration, I'm setting a state to simulate sending
     setCorSent(true);
+    setShowAlert(true); // Show alert message
+  };
+
+  const closeAlert = () => {
+    setShowAlert(false); // Hide alert message
   };
 
   return (
@@ -112,89 +119,112 @@ const MainContent = () => {
         </div>
       </div>
 
-      {/* Modal for displaying student details */}
-      <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        contentLabel="Student Information"
-        className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto"
-        overlayClassName="fixed inset-0 bg-gray-900 bg-opacity-75"
-      >
-        {selectedStudent && (
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-3xl mx-auto">
-            <div className="relative h-[130px]">
-              <img src={modalHeaderImageUrl} alt="Modal Header" className="w-full h-full object-cover rounded-t-lg" />
-            </div>
-
-            <div className="relative px-4 py-5 sm:px-10 mt-1">
-                  <h3 className="text-lg leading-6 font-medium text-black">Applicant Information</h3>
-                </div>
-                <div className="border-t border-gray-200">
-                <dl>
-                    <div className="bg-gray-100 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
-                      <dt className="text-sm font-bold text-gray-500">Student Number</dt>
-                      <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.student_number}</dd>
-                    </div>
-
-                    <div className="bg-gray-200 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
-                      <dt className="text-sm font-bold text-gray-500">Student Name</dt>
-                      <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.firstName} {selectedStudent.middleName} {selectedStudent.lastName}</dd>
-                    </div>
-
-                    <div className="bg-gray-100 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
-                      <dt className="text-sm font-bold text-gray-500">Email</dt>
-                      <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.email}</dd>
-                    </div>
-
-                    <div className="bg-gray-200 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
-                      <dt className="text-sm font-bold text-gray-500">Contact Number</dt>
-                      <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.contactno}</dd>
-                    </div>
-
-                    <div className="bg-gray-100 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
-                      <dt className="text-sm font-bold text-gray-500">Address</dt>
-                      <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.streetadd}, {selectedStudent.city}, {selectedStudent.province}, {selectedStudent.zipcode}</dd>
-                    </div>
-
-                    <div className="bg-gray-200 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
-                      <dt className="text-sm font-bold text-gray-500">Emergency Contact</dt>
-                      <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.emergencyName} ({selectedStudent.relationship}) - {selectedStudent.emergencyContactNumber}</dd>
-                    </div>
-
-                    <div className="bg-gray-100 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
-                      <dt className="text-sm font-bold text-gray-500">School Last Attended</dt>
-                      <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.schoollastattended}</dd>
-                    </div>
-
-                    </dl>
-                </div>
-
-            <div className="p-6">
-               {/* Close and Send CoR buttons */}
-               <div className="flex justify-between mt-5">
-                    <button
-                      onClick={handleSendCor}
-                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                    >
-                      Send CoR to Student Email
-                    </button>
-                    <button
-                      onClick={closeModal}
-                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-                    >
-                      Close
-                    </button>
-                  </div>
-
-
-
-            </div>
+{/* Modal for displaying student details */}
+<Modal
+  isOpen={isModalOpen}
+  onRequestClose={closeModal}
+  contentLabel="Student Information"
+  className="fixed inset-0 z-50 flex items-center justify-center"
+  overlayClassName="fixed inset-0 bg-gray-900 bg-opacity-75"
+>
+  {selectedStudent && (
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-3xl mx-auto">
+      <div className="relative h-[130px]">
+        <img src={modalHeaderImageUrl} alt="Modal Header" className="w-full h-full object-cover rounded-t-lg" />
+      </div>
+      <div className="relative px-4 py-5 sm:px-10 mt-1">
+        <h3 className="text-lg leading-6 font-medium text-black">Applicant Information</h3>
+      </div>
+      <div className="border-t border-gray-200 overflow-y-auto" style={{ maxHeight: '50vh' }}>
+        <dl>
+          <div className="bg-gray-100 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+            <dt className="text-sm font-bold text-gray-500">Student Number</dt>
+            <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.student_number}</dd>
           </div>
 
-          
+          <div className="bg-gray-200 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+            <dt className="text-sm font-bold text-gray-500">Student Name</dt>
+            <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.firstName} {selectedStudent.middleName} {selectedStudent.lastName}</dd>
+          </div>
 
-      )}
-      </Modal>
+          <div className="bg-gray-100 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+            <dt className="text-sm font-bold text-gray-500">Program</dt>
+            <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2"></dd>
+          </div>
+
+          <div className="bg-gray-200 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+            <dt className="text-sm font-bold text-gray-500">Year Level</dt>
+            <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2"></dd>
+          </div>
+
+          <div className="bg-gray-100 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+            <dt className="text-sm font-bold text-gray-500">Email</dt>
+            <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.email}</dd>
+          </div>
+
+          <div className="bg-gray-200 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+            <dt className="text-sm font-bold text-gray-500">Contact Number</dt>
+            <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.contactno}</dd>
+          </div>
+
+          <div className="bg-gray-100 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+            <dt className="text-sm font-bold text-gray-500">Address</dt>
+            <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.streetadd}, {selectedStudent.city}, {selectedStudent.province}, {selectedStudent.zipcode}</dd>
+          </div>
+
+          <div className="bg-gray-200 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+            <dt className="text-sm font-bold text-gray-500">Emergency Contact</dt>
+            <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.emergencyName} ({selectedStudent.relationship}) - {selectedStudent.emergencyContactNumber}</dd>
+          </div>
+
+          <div className="bg-gray-100 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
+            <dt className="text-sm font-bold text-gray-500">School Last Attended</dt>
+            <dd className="mt-1 text-medium text-black sm:mt-0 sm:col-span-2">{selectedStudent.schoollastattended}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div className="p-6">
+        {/* CLOSE AND SEND COR BUTTON */}
+          <div className="bg-gray-50 px-4 py-3 sm:px-6 flex justify-between">
+            <button
+              type="button"
+              className="inline-flex justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-100 transition-colors duration-300"
+              onClick={closeModal}
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 transition-colors duration-300"
+              onClick={handleSendCor}
+            >
+              Send CoR to Student Email
+            </button>
+          </div>
+
+
+        {/* ALERT MESSAGE */}
+        {showAlert && (
+          <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mt-4 relative" role="alert">
+            <p className="font-bold">Success</p>
+            <p>Certificate of Registration sent successfully!</p>
+            <button
+              type="button"
+              className="absolute top-0 right-0 mt-2 mr-2 text-green-700 hover:text-green-900"
+              onClick={closeAlert}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  )}
+</Modal>
+
 
     </main>
   );
