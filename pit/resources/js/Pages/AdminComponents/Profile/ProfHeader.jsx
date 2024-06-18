@@ -4,7 +4,7 @@ function ProfHeader() {
   return (
     <header>
       <nav className="bg-white">
-        <div className="text-blue-800 px-10 py-5 z-10 w-full border-blue-200">
+        <div className="text-blue-800 px-10 py-[26px] shadow-md z-10 w-full border-blue-200">
           <div className="flex items-center justify-between py-2 text-5x1"> {/* Fixed typo: text-5x1 should be text-xl */}
           <img
                   src="https://i.ibb.co/Q6SrF6M/Edutech.png"
