@@ -23,6 +23,10 @@ Route::get('/admission-form', function () {
     return Inertia::render('AdmissionComponents/AdmissionForm');
 })->name('admission-form');;
 
+Route::get('/thankyou-page', function () {
+    return Inertia::render('AdmissionComponents/ThankYouPage');
+})->name('thank.you');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -65,15 +69,33 @@ Route::middleware(['web'])->group(function () {
     Route::get('/department-dashboard', function () {
         return Inertia::render('DepartmentComponents/Department');
     })->middleware(['auth:department_staff', 'role:department_staff'])->name('department.dashboard');
+
+    Route::get('/it-department', function () {
+        return Inertia::render('DepartmentComponents/IT/ItApp');
+    })->middleware(['auth:department_staff', 'role:department_staff'])->name('it.department');
+
     // Cashier Dashboard
     Route::get('/cashier-dashboard', function () {
         return Inertia::render('CashierComponents/Cashier');
     })->middleware(['auth:cashier', 'role:cashier'])->name('cashier.dashboard');
 
+    Route::get('/payprocess', function () {
+        return Inertia::render('CashierComponents/PayProcessWindow/PayProcessApp');
+    })->middleware(['auth:cashier', 'role:cashier'])->name('payment-process');
+
+    
     // Registrar Dashboard
     Route::get('/registrar-dashboard', function () {
         return Inertia::render('RegistrarComponents/Registrar');
     })->middleware(['auth:registrar', 'role:registrar'])->name('registrar.dashboard');
+
+    Route::get('/new-en-stud', function () {
+        return Inertia::render('RegistrarComponents/NewEnrolStudWindow/NEStudApp');
+    })->middleware(['auth:registrar', 'role:registrar'])->name('new-en-stud');
+
+    Route::get('/distofcor', function () {
+        return Inertia::render('RegistrarComponents/DistributionCORWindow/DistOfCORApp');
+    })->middleware(['auth:registrar', 'role:registrar'])->name('distofcor');
 
     // Admission Handler Dashboard
     Route::get('/admin-dashboard', function () {
@@ -91,8 +113,9 @@ Route::middleware(['web'])->group(function () {
 
     
 
-
-
+    Route::get('/thankyou-page', function () {
+        return Inertia::render('AdmissionComponents/ThankYouPage');
+    })->name('thank.you');
 
 Route::post('/submitForm', [AdmissionInfoController::class, 'store'])->name('submitForm');
 
