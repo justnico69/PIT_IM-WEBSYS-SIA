@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import StudSidebar from './StudSidebar';
 
+
 Modal.setAppElement('#root'); // Set the root element for accessibility
+
 
 function MainContent() {
   const [studentNames, setStudentNames] = useState([]);
@@ -10,11 +12,13 @@ function MainContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newStudentNumber, setNewStudentNumber] = useState(null); // State to hold the new student number
 
+
   useEffect(() => {
     fetch('http://localhost:8000/api/applicants')
       .then((response) => response.json())
       .then((data) => setStudentNames(data));
   }, []);
+
 
   const handleStudentClick = (id) => {
     fetch(`http://localhost:8000/api/applicants/${id}`)
@@ -25,9 +29,11 @@ function MainContent() {
       });
   };
 
+
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
 
   const acceptApplicant = (id, email) => {
     if (window.confirm("Do you confirm this?")) {
@@ -48,6 +54,7 @@ function MainContent() {
         closeModal();
         alert(data.message); // Display the success message
         setNewStudentNumber(data.newStudentNumber); // Set the new student number
+
 
         // Send acceptance email
         fetch(`http://localhost:8000/api/send-email`, {
@@ -71,6 +78,7 @@ function MainContent() {
     }
   };
 
+
   const rejectApplicant = (id, email) => {
     if (window.confirm("Are you sure you want to reject this applicant?")) {
       fetch(`http://localhost:8000/api/applications/${id}`, {
@@ -83,7 +91,7 @@ function MainContent() {
       .then(() => {
         setStudentNames(studentNames.filter(student => student.id !== id));
         closeModal();
-  
+ 
         // Send rejection email
         fetch(`http://localhost:8000/api/send-rejection-email`, {
           method: 'POST',
@@ -102,26 +110,29 @@ function MainContent() {
       });
     }
   };
-  
+ 
+
 
   return (
-	<div className="flex h-screen"> {/* Use h-screen to make the parent div take full screen height */}
+  <div className="flex h-screen"> {/* Use h-screen to make the parent div take full screen height */}
       <StudSidebar /> {/* Sidebar component */}
 
-      <div className="flex-grow ml-2 h-full overflow-hidden mt-5"> {/* Ensure flex-grow and h-full are applied */}
+
+      <div className="flex-grow ml-5 h-full overflow-hidden mt-5"> {/* Ensure flex-grow and h-full are applied */}
         <div className="flex flex-row">
-          <div className="bg-white rounded-xl shadow-lg px-6 py-4 mt-6 mr-10 flex-grow">
-            <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Student Application Processing</p>
-            <p className="mt-3 mb-2 text-base font-semibold text-indigo-900">See the list of pending applicants here!</p>
-          </div>
+          <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[120px] mr-8 flex-grow">
+                    <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Student Application Processing</p>
+                    <p className="mt-3 mb-3 text-base font-semibold text-blue-800">See the list of pending applicants here!</p>
+                </div>
         </div>
-	
-	        <div className="grid grid-cols-3">
+ 
+          <div className="grid grid-cols-3">
           {/* Student Status */}
           <div className="mt-10 ml-2">
             <p className="text-xl font-extrabold text-white">List of Pending Applicants</p>
           </div>
         </div>
+
 
     <main className="container mx-auto py-2">
       <style>
@@ -142,6 +153,7 @@ function MainContent() {
             width: 100%;
           }
 
+
           .overlay {
             background-color: rgba(0, 0, 0, 0.75);
             position: fixed;
@@ -153,6 +165,7 @@ function MainContent() {
           }
         `}
       </style>
+
 
       <div className="bg-white border-2 shadow overflow-hidden sm:rounded-lg ml-1 mr-10">
         <div className="px-4 py-5 sm:px-6">
@@ -172,6 +185,7 @@ function MainContent() {
           </dl>
         </div>
       </div>
+
 
       <Modal
         isOpen={isModalOpen}
@@ -219,6 +233,7 @@ function MainContent() {
                 </div>
               </dl>
 
+
               {/* Accept and reject buttons */}
               <div className="flex justify-end px-4 py-3 sm:px-6 mt-2">
                 <button onClick={() => acceptApplicant(selectedStudent.id, selectedStudent.email)} className="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
@@ -242,4 +257,7 @@ function MainContent() {
   );
 }
 
+
 export default MainContent;
+
+
