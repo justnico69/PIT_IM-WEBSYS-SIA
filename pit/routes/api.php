@@ -55,3 +55,22 @@ use App\Http\Controllers\DepartmentITController;
 Route::get('/it-students', [DepartmentITController::class, 'getITStudents']);
 
 Route::get('/accepted-applicants/{studentNumber}', [DepartmentITController::class, 'getAcceptedApplicant']);
+
+use App\Http\Controllers\DepartmentTCMController;
+
+Route::get('/tcm-students', [DepartmentTCMController::class, 'getTCMStudents']);
+
+Route::get('/accepted-applicants/{studentNumber}', [DepartmentTCMController::class, 'getAcceptedApplicant']);
+
+use App\Http\Controllers\DepartmentDSController;
+
+Route::get('/ds-students', [DepartmentDSController::class, 'getDSStudents']);
+
+Route::get('/accepted-applicants/{studentNumber}', [DepartmentDSController::class, 'getAcceptedApplicant']);
+
+use App\Http\Controllers\DepartmentCSController;
+
+Route::get('/cs-students', [DepartmentCSController::class, 'getCSStudents']);
+
+Route::get('/accepted-applicants/{studentNumber}', [DepartmentCSController::class, 'getAcceptedApplicant']);
+
