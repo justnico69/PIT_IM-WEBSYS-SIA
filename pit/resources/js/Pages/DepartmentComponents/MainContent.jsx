@@ -55,7 +55,7 @@ const MainContent = () => {
                         <span className="ml-4 text-2xl font-semibold">Student Course <br/>Management</span>
                     </a>
                 </div>
-                <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-30">
+                <div className="h-[250px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-30">
                     <a href="it-department" className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8">
@@ -66,7 +66,7 @@ const MainContent = () => {
                         <span className="ml-2 text-2xl font-semibold">Information Technology</span>
                     </a>
                 </div>
-                <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-10">
+                <div className="h-[250px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-10">
                     <a href="#" className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8">
@@ -87,7 +87,7 @@ const MainContent = () => {
                         <span className="ml-2 text-2xl font-semibold">Data Science</span>
                     </a>
                 </div>
-                <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-10 row-3 col-end-4">
+                <div className="h-[250px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-10 row-3 col-end-4">
                 <a href="#" className="text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
                     <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
