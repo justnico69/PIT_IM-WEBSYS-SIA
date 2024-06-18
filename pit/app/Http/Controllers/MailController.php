@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\AcceptedApplicant;
 use App\Mail\RejectedApplicant;
-use App\Models\RejectedApplicants;
+use App\Models\AcceptedApplicants;
+use App\Models\StudentAccount;
 use Illuminate\Http\Request;
 
 class MailController extends Controller
