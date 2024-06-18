@@ -111,6 +111,10 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('AdminComponents/ApplicantList/App');
     })->middleware(['auth:admission_handler', 'role:admission_handler'])->name('accepted.applicants');
 
+    Route::get('/profile', function () {
+        return Inertia::render('AdminComponents/Profile/ProfApp');
+      })->middleware(['auth:admission_handler', 'role:admission_handler'])->name('profile');
+
     
 
     Route::get('/thankyou-page', function () {
