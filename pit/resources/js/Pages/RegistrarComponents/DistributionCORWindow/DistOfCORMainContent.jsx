@@ -128,14 +128,14 @@ const MainContent = () => {
   overlayClassName="fixed inset-0 bg-gray-900 bg-opacity-75"
 >
   {selectedStudent && (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-3xl mx-auto">
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-2xl mx-auto">
       <div className="relative h-[130px]">
         <img src={modalHeaderImageUrl} alt="Modal Header" className="w-full h-full object-cover rounded-t-lg" />
       </div>
       <div className="relative px-4 py-5 sm:px-10 mt-1">
         <h3 className="text-lg leading-6 font-medium text-black">Applicant Information</h3>
       </div>
-      <div className="border-t border-gray-200 overflow-y-auto" style={{ maxHeight: '50vh' }}>
+      <div className="border-t border-gray-200 overflow-y-auto" style={{ maxHeight: '30vh' }}>
         <dl>
           <div className="bg-gray-100 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-10">
             <dt className="text-sm font-bold text-gray-500">Student Number</dt>
