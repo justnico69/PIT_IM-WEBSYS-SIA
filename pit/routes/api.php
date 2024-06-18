@@ -11,6 +11,9 @@ Route::get('/enrollment-status', function () {
 
 Route::get('/applicants', [ApplicantsController::class, 'index']);
 Route::get('/applicants/{id}', [ApplicantsController::class, 'show']); 
+Route::post('/applicants/reject/{id}', [App\Http\Controllers\ApplicantsController::class, 'reject']);
+
+
 
 Route::post('/login', 'Auth\LoginEnController@login');
 
@@ -31,8 +34,11 @@ Route::get('/applicantshow/accept/{id}', [AcceptedApplicantController::class, 's
 Route::get('/applicantshow', [AcceptedApplicantController::class, 'index']);
 
 
+
+
 Route::post('/send-email', [MailController::class, 'sendMail']);
 Route::post('/send-rejection-email', [MailController::class, 'sendRejectionMail']);
+Route::post('/reject-applicant/{id}', [RejectedApplicantController::class, 'rejectApplicant']); 
 
 use App\Http\Controllers\EnrolledStudentController;
 

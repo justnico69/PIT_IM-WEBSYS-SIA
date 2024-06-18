@@ -81,8 +81,8 @@ function MainContent() {
 
   const rejectApplicant = (id, email) => {
     if (window.confirm("Are you sure you want to reject this applicant?")) {
-      fetch(`http://localhost:8000/api/applications/${id}`, {
-        method: 'DELETE',
+      fetch(`http://localhost:8000/api/applicants/reject/${id}`, {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -91,14 +91,14 @@ function MainContent() {
       .then(() => {
         setStudentNames(studentNames.filter(student => student.id !== id));
         closeModal();
- 
+
         // Send rejection email
         fetch(`http://localhost:8000/api/send-rejection-email`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ email: email }), // Pass the email here
+          body: JSON.stringify({ applicant_id: id, email: email }), // Pass the applicant_id and email here
         })
         .then((response) => response.json())
         .then((data) => {
@@ -110,6 +110,9 @@ function MainContent() {
       });
     }
   };
+
+
+
  
 
 
@@ -190,7 +193,7 @@ function MainContent() {
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        contentLabel="Student Information"
+        content Label="Student Information"
         className="modal"
         overlayClassName="overlay"
       >
@@ -239,7 +242,7 @@ function MainContent() {
                 <button onClick={() => acceptApplicant(selectedStudent.id, selectedStudent.email)} className="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                   Accept
                 </button>
-                <button onClick={() => rejectApplicant(selectedStudent.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                <button onClick={() => rejectApplicant(selectedStudent.id, selectedStudent.email)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                   Reject
                 </button>
               </div>
