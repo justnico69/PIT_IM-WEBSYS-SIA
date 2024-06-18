@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
 
+
 const MainContent = () => {
   const [activeLink, setActiveLink] = useState(null);
+
 
   const handleLinkClick = (link) => {
       setActiveLink(link);
       setTimeout(() => setActiveLink(null), 300); // Reset after animation duration
   };
 
-  return (
-    <div className="w-full ml-[52px] h-screen overflow-hidden mt-5"> {/* Ensure h-screen and overflow-hidden are applied */}
-      <div className="flex flex-row">
-        <div className="bg-white rounded-xl shadow-lg px-6 py-4 mt-6 mr-10 flex-grow">
-          <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Admission Dashboard</p>
-          <p className="mt-3 mb-2 text-base font-semibold text-indigo-900">Welcome, admin!</p>
-        </div>
-      </div>
 
-      <div className="grid grid-cols-3 mb-2">
-        {/* Student Status */}
-        <div className="mt-10 ml-2">
-          <p className="text-xl font-extrabold text-white">Student Status</p>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 gap-1">
+    return (
+        <div className="w-full ml-5">
+            <div className="flex flex-row">
+                <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 flex-grow">
+                    <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Admission Dashboard</p>
+                    <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, admin!</p>
+                </div>
+            </div>
+            <div className="grid grid-cols-3 mb-3">
+                <div className="mt-10">
+                    <p className="text-base font-bold col-span-2 text-white">Student Status</p>
+                </div>
+            </div>
+            <div className="grid grid-cols-2 gap-1">
         {/* Student Application Processing */}
         <div className={`h-[250px] mr-10 mt-2 col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center ${activeLink === 'applicationProcess' ? 'border-4 border-blue-500 transition-transform duration-300 transform translate-y-4' : ''}`}>
           <a href={window.routes.applicationProcess} className="text-blue-600 hover:text-blue-800 w-full flex items-center justify-center" onClick={() => handleLinkClick('applicationProcess')}>
@@ -36,6 +36,7 @@ const MainContent = () => {
             <span className="ml-2 text-2xl font-semibold">Student Application Processing</span>
           </a>
         </div>
+
 
         {/* Accepted Applicants */}
         <div className={`h-[250px] mt-2 mr-10 col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center ${activeLink === 'acceptedApplicants' ? 'border-4 border-blue-500 transition-transform duration-300 transform translate-y-4' : ''}`}>
@@ -53,5 +54,6 @@ const MainContent = () => {
     </div>
   );
 };
+
 
 export default MainContent;

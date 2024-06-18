@@ -12,17 +12,17 @@ const MainContent = () => {
         <div className="w-full ml-5">
             <div className="flex flex-row">
                 <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 flex-grow">
-                    <p className="text-3xl mt-3 font-bold text-blue-800">Dashboard / Home</p>
-                    <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, Cashier!</p>
+                    <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Dashboard / Home</p>
+                    <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, Registrar!</p>
                 </div>
             </div>
             <div className="grid grid-cols-3 mb-3">
                 <div className="mt-10">
-                    <p className="text-base font-bold col-span-2 text-white">Cashier Panel</p>
+                    <p className="text-base font-bold col-span-2 text-white">Registrar Panel</p>
                 </div>
             </div>
             <div className="grid grid-cols-4 grid-rows-12 gap-5 mr-8">
-                <div className="row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[290px]">
+                <div className="row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[328px]">
                     <a
                         href="new-en-stud"
                         className={`text-blue-600 hover:text-blue-900 flex items-center justify-center w-full h-full transition-transform transform ${activeLink === 'payprocess' ? 'scale-105' : ''}`}
