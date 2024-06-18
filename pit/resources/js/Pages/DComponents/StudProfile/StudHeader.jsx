@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProfHeader() {
+function StudHeader() {
   return (
     <header>
       <nav className="bg-white">
@@ -23,4 +23,4 @@ function ProfHeader() {
   );
 }
 
-export default ProfHeader;
+export default StudHeader;
