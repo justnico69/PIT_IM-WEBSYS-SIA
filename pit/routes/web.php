@@ -63,6 +63,10 @@ Route::middleware(['web'])->group(function () {
     Route::get('/assess-billing', function () {
         return Inertia::render('DComponents/AssessBillingWindow/AssessBillingApp');
     })->name('assessment-billing');
+
+    Route::get('/student-profile', function () {
+        return Inertia::render('DComponents/StudProfile/StudApp');
+    })->name('student-profile');
     
 
     // Department Staff Dashboard
@@ -115,6 +119,10 @@ Route::middleware(['web'])->group(function () {
     Route::get('/accepted-applicants', function () {
         return Inertia::render('AdminComponents/ApplicantList/App');
     })->middleware(['auth:admission_handler', 'role:admission_handler'])->name('accepted.applicants');
+
+    Route::get('/profile', function () {
+        return Inertia::render('AdminComponents/Profile/ProfApp');
+      })->middleware(['auth:admission_handler', 'role:admission_handler'])->name('profile');
 
     
 
