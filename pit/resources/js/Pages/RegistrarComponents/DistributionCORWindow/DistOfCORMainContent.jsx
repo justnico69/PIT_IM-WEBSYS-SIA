@@ -6,6 +6,7 @@ Modal.setAppElement('#root');
 const MainContent = () => {
   const [selectedProgram, setSelectedProgram] = useState('');
   const [selectedYearLevel, setSelectedYearLevel] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const [acceptedApplicants, setAcceptedApplicants] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,12 +22,8 @@ const MainContent = () => {
 
   const modalHeaderImageUrl = 'https://scontent.fcgy2-3.fna.fbcdn.net/v/t1.15752-9/448178098_453022927478220_490241507524360263_n.png?stp=dst-png_s2048x2048&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFR01OQUJpUZ-MuIg2ZXg5bowvWsUnT1tejC9axSdPW16XBAzVoNF4vXfwVYfchd0vVxb6Dd19oWPyTn45QrpuC&_nc_ohc=6ySIFggsLloQ7kNvgFxsEW1&_nc_ht=scontent.fcgy2-3.fna&cb_e2o_trans=t&oh=03_Q7cD1QE1CFziXC-1WW2ipwLrD31MfTBcYcsqCikPdES1jhNp-g&oe=6697E994';
 
-  const handleProgramFilter = (e) => {
-    setSelectedProgram(e.target.value);
-  };
-
-  const handleYearLevelFilter = (e) => {
-    setSelectedYearLevel(e.target.value);
+  const handleSearchQuery = (e) => {
+    setSearchQuery(e.target.value);
   };
 
   const handleStudentClick = (student) => {
@@ -62,12 +59,18 @@ const MainContent = () => {
     setShowAlert(false);
   };
 
+  const filteredApplicants = acceptedApplicants.filter((student) => {
+    const fullName = `${student.firstName} ${student.middleName} ${student.lastName}`.toLowerCase();
+    return fullName.includes(searchQuery.toLowerCase()) &&
+      (selectedProgram ? student.program === selectedProgram : true) &&
+      (selectedYearLevel ? student.yearLevel === selectedYearLevel : true);
+  });
+
   return (
     <main className="w-full ml-5">
-      {/* Your existing UI code */}
       <div className="flex flex-row">
         <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 mb-5 flex-grow">
-          <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Distribution of CoR</p>
+          <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Distribution of COR</p>
           <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Distribution of Official Certificate of Registration to Recent Accepted Applicants</p>
         </div>
       </div>
@@ -79,32 +82,15 @@ const MainContent = () => {
       </div>
 
       <div className="bg-white p-5 mb-5 shadow overflow-hidden sm:rounded-xl mr-8 px-3">
-        <p className="block text-gray-500 text-base font-bold mt-4 ml-4">Search and Filter</p>
         <div className="grid grid-cols-3 gap-3 p-4">
-          <select
-            value={selectedProgram}
-            onChange={handleProgramFilter}
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={handleSearchQuery}
+            placeholder="Search by name"
             className="rounded-md col-span-1 px-3 py-2"
-          >
-            <option value="">All Programs</option>
-            <option value="BSIT">BSIT</option>
-            <option value="BSTCM">BSTCM</option>
-            <option value="BSCS">BSCS</option>
-            <option value="BSDS">BSDS</option>
-          </select>
-
-          <select
-            value={selectedYearLevel}
-            onChange={handleYearLevelFilter}
-            className="rounded-md col-span-1 px-3 py-2"
-          >
-            <option value="">All Year Levels</option>
-            <option value="1st Year">1st Year</option>
-            <option value="2nd Year">2nd Year</option>
-            <option value="3rd Year">3rd Year</option>
-            <option value="4th Year">4th Year</option>
-          </select>
-        </div>
+          />
+      </div>
 
         <div className="grid grid-cols-3 gap-3 p-4">
           <table className="col-span-3 mb-5 table-fixed">
@@ -112,12 +98,10 @@ const MainContent = () => {
               <tr>
                 <th className="col-span-1 px-4 py-2 text-left">Student ID</th>
                 <th className="col-span-1 px-4 py-2 text-left">Full Name</th>
-                <th className="col-span-1 px-4 py-2 text-left">Program</th>
-                <th className="col-span-1 px-4 py-2 text-left">Year Level</th>
               </tr>
             </thead>
             <tbody>
-              {acceptedApplicants.map((student) => (
+              {filteredApplicants.map((student) => (
                 <tr key={student.id} onClick={() => handleStudentClick(student)} className="cursor-pointer hover:bg-gray-200">
                   <td className="px-4 py-2">{student.student_number}</td>
                   <td className="px-4 py-2">{student.firstName} {student.middleName} {student.lastName}</td>
