@@ -6,9 +6,11 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\AcceptedApplicant;
 use App\Mail\RejectedApplicant;
+use App\Models\RejectedApplicants;
 use App\Models\AcceptedApplicants;
 use App\Models\StudentAccount;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MailController extends Controller
 {
@@ -21,14 +23,14 @@ class MailController extends Controller
         Log::info('New Student Number: ' . $newStudentNumber);
 
         // Enable query logging
-        \DB::enableQueryLog();
+        DB::enableQueryLog();
 
         // Find the applicant using the new student number
         $applicant = AcceptedApplicants::where('student_number', $newStudentNumber)->first();
         $studentAccount = StudentAccount::where('student_number', $newStudentNumber)->first(); 
 
         // Log the query
-        $queries = \DB::getQueryLog();
+        $queries = DB::getQueryLog();
         Log::info('Executed query: ' . json_encode($queries));
 
         Log::info('Applicant: ' . json_encode($applicant));
@@ -51,28 +53,41 @@ class MailController extends Controller
         }
         
     }
+
     public function sendRejectionMail(Request $request)
     {
         Log::info('sendRejectionMail function called');
         
+        // Use applicant_id to find the applicant
         $applicantId = $request->input('applicant_id');
-        $applicantEmail = $request->input('email');
+        Log::info('Applicant ID: ' . $applicantId);
 
-        $applicant = AcceptedApplicants::find($applicantId);
+        // Enable query logging
+        DB::enableQueryLog();
+
+        // Find the applicant using the applicant ID
+        $applicant = RejectedApplicants::where('id', $applicantId)->first();
+
+        // Log the query
+        $queries = DB::getQueryLog();
+        Log::info('Executed query: ' . json_encode($queries));
+
+        Log::info('Applicant: ' . json_encode($applicant));
 
         if ($applicant) {
             $title = strtolower($applicant->gender) == 'male' ? 'Mr.' : 'Ms.';
             $fullName = "{$applicant->firstName} {$applicant->middleName} {$applicant->lastName}";
             $subject = "Dear {$title} {$fullName}, we regret to inform you...";
+
             $message = "We regret to inform you that your application has been rejected. We appreciate your interest in our university and encourage you to apply again in the future. Thank you.";
 
             // Ensure the email is set correctly
-            Mail::to($applicantEmail)->send(new RejectedApplicant($message, $subject));
+            Mail::to($applicant->email)->send(new RejectedApplicant($message, $subject));
             Log::info('Rejection mail sent successfully');
+            return response()->json(['message' => 'Rejection email sent successfully'], 200);
         } else {
             Log::error('Applicant not found');
+            return response()->json(['message' => 'Applicant not found'], 404);
         }
     }
 }
-
-
