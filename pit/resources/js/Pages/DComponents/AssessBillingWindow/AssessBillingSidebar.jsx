@@ -61,7 +61,7 @@ const Sidebar = () => {
                                     </svg>
 
                                       </span>
-                                      <span className="ml-2 text-base">Request CoR </span>
+                                      <span className="ml-2 text-base">Request CoR</span>
                                     </span>
                                   </a>
 
