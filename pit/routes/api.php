@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginEnController;
+
 use App\Http\Controllers\ApplicantsController;
 use App\Http\Controllers\MailController;
 
@@ -38,7 +38,7 @@ Route::get('/applicantshow', [AcceptedApplicantController::class, 'index']);
 
 Route::post('/send-email', [MailController::class, 'sendMail']);
 Route::post('/send-rejection-email', [MailController::class, 'sendRejectionMail']);
-Route::post('/reject-applicant/{id}', [RejectedApplicantController::class, 'rejectApplicant']); 
+
 
 use App\Http\Controllers\EnrolledStudentController;
 
