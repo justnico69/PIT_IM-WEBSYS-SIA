@@ -20,10 +20,9 @@ function MainContent() {
       </div>
 
       <div className="bg-white p-5 shadow overflow-hidden sm:rounded-xl mr-8">
-        <div className="flex items-start">
           <div className="ml-8 mr-8 flex flex-col items-center justify-center">
-            <p className="text-xl mt-3 font-bold text-blue-900 ">Congratulations!</p>
-            <p className="text-sm text-center mb-5 font-bold text-gray-600 mt-3">We would like to inform you that you are now officially enrolled to the
+            <p className="text-2xl mt-8 mb-5 font-bold text-blue-900 ">Congratulations!</p>
+            <p className="text-base text-center mb-5 font-bold text-gray-600 mt-3">We would like to inform you that you are now officially enrolled to the
                 <span className="text-blue-700 font-bold"> NNN</span> <span className="text-blue-800 font"> College Of Information Technology and Computing!</span></p>
             
             <div className="flex items-center justify-center mt-3 py-3">
@@ -53,12 +52,14 @@ function MainContent() {
 
             </div>
 
-            <button type="submit" 
-            className="mt-8 w-full flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded">
-              Download CoR
-            </button>
+            <p className="mt-5 mb-5 w-80 py-[10px] flex items-center justify-center text-sm font-semibold p-2 rounded-full bg-gradient-to-r from-blue-300 to-blue-700 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" class="size-5">
+              <path fill-rule="evenodd" d="M5.478 5.559A1.5 1.5 0 0 1 6.912 4.5H9A.75.75 0 0 0 9 3H6.912a3 3 0 0 0-2.868 2.118l-2.411 7.838a3 3 0 0 0-.133.882V18a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-4.162c0-.299-.045-.596-.133-.882l-2.412-7.838A3 3 0 0 0 17.088 3H15a.75.75 0 0 0 0 1.5h2.088a1.5 1.5 0 0 1 1.434 1.059l2.213 7.191H17.89a3 3 0 0 0-2.684 1.658l-.256.513a1.5 1.5 0 0 1-1.342.829h-3.218a1.5 1.5 0 0 1-1.342-.83l-.256-.512a3 3 0 0 0-2.684-1.658H3.265l2.213-7.191Z" clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M12 2.25a.75.75 0 0 1 .75.75v6.44l1.72-1.72a.75.75 0 1 1 1.06 1.06l-3 3a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 0 1 1.06-1.06l1.72 1.72V3a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+            </svg>
+            <span className="ml-2">Check your email to view CoR</span>
+              </p>
 
-          </div>
         </div>
       </div>
     </main>
