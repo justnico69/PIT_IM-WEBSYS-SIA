@@ -35,7 +35,7 @@ const MainContent = () => {
                                 <path d="M10.5 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/>
                             </svg>
                         </span>
-                        <span className="ml-2 text-2xl font-semibold">Newly Enrolled Students</span>
+                        <span className="ml-2 text-2xl font-semibold">Newly Accepted Students</span>
                     </a>
                 </div>
 

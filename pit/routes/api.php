@@ -61,3 +61,7 @@ use App\Http\Controllers\DepartmentITController;
 Route::get('/it-students', [DepartmentITController::class, 'getITStudents']);
 
 Route::get('/accepted-applicants/{studentNumber}', [DepartmentITController::class, 'getAcceptedApplicant']);
+
+use App\Http\Controllers\SendCOR;
+
+Route::post('/send-cor', [SendCOR::class, 'sendCOR']);
