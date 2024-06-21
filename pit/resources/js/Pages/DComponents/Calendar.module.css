@@ -1,0 +1,15 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white; /* Ensure the background color matches your design */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow to the header */
+}
+
+.main-content {
+    padding-top: 60px; /* Adjust this value based on the header height */
+}
+
+.customCalendar {
+    z-index: 1;
+}

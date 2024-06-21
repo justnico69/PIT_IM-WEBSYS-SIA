@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginEnController;
+
 use App\Http\Controllers\ApplicantsController;
 use App\Http\Controllers\MailController;
 
@@ -38,7 +38,7 @@ Route::get('/applicantshow', [AcceptedApplicantController::class, 'index']);
 
 Route::post('/send-email', [MailController::class, 'sendMail']);
 Route::post('/send-rejection-email', [MailController::class, 'sendRejectionMail']);
-Route::post('/reject-applicant/{id}', [RejectedApplicantController::class, 'rejectApplicant']); 
+
 
 use App\Http\Controllers\EnrolledStudentController;
 
@@ -61,6 +61,7 @@ use App\Http\Controllers\DepartmentITController;
 Route::get('/it-students', [DepartmentITController::class, 'getITStudents']);
 
 Route::get('/accepted-applicants/{studentNumber}', [DepartmentITController::class, 'getAcceptedApplicant']);
+
 
 use App\Http\Controllers\DepartmentTCMController;
 
@@ -85,4 +86,9 @@ use App\Http\Controllers\DepartmentScmController;
 Route::get('/scm-students', [DepartmentScmController::class, 'getScm']);
 
 Route::get('/accepted-applicants/{studentNumber}', [DepartmentScmController::class, 'getAcceptedApplicant']);
+
+
+use App\Http\Controllers\SendCOR;
+
+Route::post('/send-cor', [SendCOR::class, 'sendCOR']);
 

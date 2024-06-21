@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\AcceptedApplicant;
 use App\Mail\RejectedApplicant;
 use App\Models\RejectedApplicants;
+use App\Models\AcceptedApplicants;
+use App\Models\RejectedApplicants;
+use App\Models\StudentAccount;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MailController extends Controller
 {
@@ -20,14 +25,14 @@ class MailController extends Controller
         Log::info('New Student Number: ' . $newStudentNumber);
 
         // Enable query logging
-        \DB::enableQueryLog();
+        DB::enableQueryLog();
 
         // Find the applicant using the new student number
         $applicant = AcceptedApplicants::where('student_number', $newStudentNumber)->first();
         $studentAccount = StudentAccount::where('student_number', $newStudentNumber)->first(); 
 
         // Log the query
-        $queries = \DB::getQueryLog();
+        $queries = DB::getQueryLog();
         Log::info('Executed query: ' . json_encode($queries));
 
         Log::info('Applicant: ' . json_encode($applicant));
@@ -60,13 +65,13 @@ class MailController extends Controller
         Log::info('Applicant ID: ' . $applicantId);
 
         // Enable query logging
-        \DB::enableQueryLog();
+        DB::enableQueryLog();
 
         // Find the applicant using the applicant ID
         $applicant = RejectedApplicants::where('id', $applicantId)->first();
 
         // Log the query
-        $queries = \DB::getQueryLog();
+        $queries = DB::getQueryLog();
         Log::info('Executed query: ' . json_encode($queries));
 
         Log::info('Applicant: ' . json_encode($applicant));

@@ -63,6 +63,10 @@ Route::middleware(['web'])->group(function () {
     Route::get('/assess-billing', function () {
         return Inertia::render('DComponents/AssessBillingWindow/AssessBillingApp');
     })->name('assessment-billing');
+
+    Route::get('/student-profile', function () {
+        return Inertia::render('DComponents/StudProfile/StudApp');
+    })->name('student-profile');
     
 
     // Department Staff Dashboard
@@ -101,6 +105,11 @@ Route::middleware(['web'])->group(function () {
 
     
     // Registrar Dashboard
+
+    Route::get('/send-cor', function () {
+        return view('sendCOR');
+    });
+    
     Route::get('/registrar-dashboard', function () {
         return Inertia::render('RegistrarComponents/Registrar');
     })->middleware(['auth:registrar', 'role:registrar'])->name('registrar.dashboard');
