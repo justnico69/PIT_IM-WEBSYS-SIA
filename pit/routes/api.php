@@ -80,3 +80,9 @@ Route::get('/cs-students', [DepartmentCSController::class, 'getCSStudents']);
 
 Route::get('/accepted-applicants/{studentNumber}', [DepartmentCSController::class, 'getAcceptedApplicant']);
 
+use App\Http\Controllers\DepartmentScmController;
+
+Route::get('/scm-students', [DepartmentScmController::class, 'getScm']);
+
+Route::get('/accepted-applicants/{studentNumber}', [DepartmentScmController::class, 'getAcceptedApplicant']);
+
