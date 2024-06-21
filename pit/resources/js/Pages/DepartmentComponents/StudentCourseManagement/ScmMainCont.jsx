@@ -1,25 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ItSidebar from './ItSidebar';
+import ScmSidebar from './ScmSidebar';
 
-function ItMainCont() {
+function ScmMainCont() {
   const [students, setStudents] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [error, setError] = useState(null);
   const modalHeaderImageUrl = 'https://i.ibb.co/yYWFXyM/image.png';
 
   useEffect(() => {
-    const fetchITStudents = async () => {
+    const fetchAllStudents = async () => {
       try {
-        const response = await axios.get('/api/it-students');
-        setStudents(response.data);
+        const [itResponse, tcmResponse, dsResponse, csResponse] = await Promise.all([
+          axios.get('/api/it-students'),
+          axios.get('/api/tcm-students'),
+          axios.get('/api/ds-students'),
+          axios.get('/api/cs-students'),
+        ]);
+
+        const allStudents = [
+          ...itResponse.data,
+          ...tcmResponse.data,
+          ...dsResponse.data,
+          ...csResponse.data,
+        ];
+        
+        setStudents(allStudents);
       } catch (error) {
-        console.error('Error fetching IT students:', error);
-        setError('Failed to fetch IT students. Please try again later.');
+        console.error('Error fetching all students:', error);
+        setError('Failed to fetch all students. Please try again later.');
       }
     };
 
-    fetchITStudents();
+    fetchAllStudents();
   }, []);
 
   const handleRowClick = async (studentNumber) => {
@@ -38,12 +51,12 @@ function ItMainCont() {
 
   return (
     <div className="flex min-h-screen">
-      <ItSidebar />
+      <ScmSidebar />
       <div className="flex-grow ml-2 min-h-full overflow-hidden mt-5">
         <div className="flex flex-row">
           <div className="bg-white rounded-xl shadow-lg px-6 py-4 mt-6 mr-10 flex-grow">
             <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Enrolled Students</p>
-            <p className="mt-3 mb-2 text-base font-semibold text-indigo-900">See the list of pending applicants here!</p>
+            <p className="mt-3 mb-2 text-base font-semibold text-indigo-900">See the list of all students in different Departments!</p>
           </div>
         </div>
 
@@ -197,4 +210,4 @@ function ItMainCont() {
   );
 }
 
-export default ItMainCont;
+export default ScmMainCont;
