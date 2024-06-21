@@ -15,18 +15,14 @@ function MainContent() {
 
       <div className="grid grid-cols-3 mb-3">
         <div className="mt-5">
-          <p className="text-base font-bold text-white">Certificate of Registration</p>
+          <p className="text-base font-bold text-white">Confirmation Message</p>
         </div>
       </div>
 
       <div className="bg-white p-5 shadow overflow-hidden sm:rounded-xl mr-8">
         <div className="flex items-start">
-          <img src="https://i.pinimg.com/736x/16/a0/f7/16a0f731c7fd2a9001e82766c8bee174.jpg" alt="COR" 
-          className="rounded-md mr-4 h-[600px]" />
-
-
           <div className="ml-8 mr-8 flex flex-col items-center justify-center">
-            <p className="text-xl mt-3 font-bold text-blue-900">Congratulations!</p>
+            <p className="text-xl mt-3 font-bold text-blue-900 ">Congratulations!</p>
             <p className="text-sm text-center mb-5 font-bold text-gray-600 mt-3">We would like to inform you that you are now officially enrolled to the
                 <span className="text-blue-700 font-bold"> NNN</span> <span className="text-blue-800 font"> College Of Information Technology and Computing!</span></p>
             
