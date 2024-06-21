@@ -78,6 +78,22 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('DepartmentComponents/IT/ItApp');
     })->middleware(['auth:department_staff', 'role:department_staff'])->name('it.department');
 
+    Route::get('/tcm-department', function () {
+        return Inertia::render('DepartmentComponents/TCM/TcmApp');
+    })->middleware(['auth:department_staff', 'role:department_staff'])->name('tcm.department');
+
+    Route::get('/ds-department', function () {
+        return Inertia::render('DepartmentComponents/DATASCI/DsApp');
+    })->middleware(['auth:department_staff', 'role:department_staff'])->name('ds.department');
+
+    Route::get('/cs-department', function () {
+        return Inertia::render('DepartmentComponents/COMPSCI/CsApp');
+    })->middleware(['auth:department_staff', 'role:department_staff'])->name('cs.department');
+
+    Route::get('/scm-department', function () {
+        return Inertia::render('DepartmentComponents/StudentCourseManagement/ScmApp');
+    })->middleware(['auth:department_staff', 'role:department_staff'])->name('Scm.department');
+
     // Cashier Dashboard
     Route::get('/cashier-dashboard', function () {
         return Inertia::render('CashierComponents/Cashier');

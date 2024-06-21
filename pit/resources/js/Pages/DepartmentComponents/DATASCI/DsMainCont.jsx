@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ItSidebar from './ItSidebar';
+import DsSidebar from './DsSidebar';
 
-function ItMainCont() {
+function DsMainCont() {
   const [students, setStudents] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [error, setError] = useState(null);
   const modalHeaderImageUrl = 'https://i.ibb.co/yYWFXyM/image.png';
 
   useEffect(() => {
-    const fetchITStudents = async () => {
+    const fetchDSStudents = async () => {
       try {
-        const response = await axios.get('/api/it-students');
+        const response = await axios.get('/api/ds-students');
         setStudents(response.data);
       } catch (error) {
-        console.error('Error fetching IT students:', error);
-        setError('Failed to fetch IT students. Please try again later.');
+        console.error('Error fetching DATA SCIENCE students:', error);
+        setError('Failed to fetch DATA SCIENCE students. Please try again later.');
       }
     };
 
-    fetchITStudents();
+    fetchDSStudents();
   }, []);
 
   const handleRowClick = async (studentNumber) => {
@@ -38,7 +38,7 @@ function ItMainCont() {
 
   return (
     <div className="flex min-h-screen">
-      <ItSidebar />
+      <DsSidebar />
       <div className="flex-grow ml-2 min-h-full overflow-hidden mt-5">
         <div className="flex flex-row">
           <div className="bg-white rounded-xl shadow-lg px-6 py-4 mt-6 mr-10 flex-grow">
@@ -197,4 +197,4 @@ function ItMainCont() {
   );
 }
 
-export default ItMainCont;
+export default DsMainCont;
