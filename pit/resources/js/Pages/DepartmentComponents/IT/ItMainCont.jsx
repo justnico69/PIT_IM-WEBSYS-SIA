@@ -42,7 +42,7 @@ function ItMainCont() {
       <div className="flex-grow ml-2 min-h-full overflow-hidden mt-5">
         <div className="flex flex-row">
           <div className="bg-white rounded-xl shadow-lg px-6 py-4 mt-6 mr-10 flex-grow">
-            <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Student Application Processing</p>
+            <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Enrolled Students</p>
             <p className="mt-3 mb-2 text-base font-semibold text-indigo-900">See the list of pending applicants here!</p>
           </div>
         </div>
