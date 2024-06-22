@@ -103,6 +103,10 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('CashierComponents/PayProcessWindow/PayProcessApp');
     })->middleware(['auth:cashier', 'role:cashier'])->name('payment-process');
 
+    Route::get('/cashier-profile', function () {
+        return Inertia::render('CashierComponents/CashProfile/CashApp');
+    })->middleware(['auth:cashier', 'role:cashier'])->name('cashier-profile');
+
     
     // Registrar Dashboard
 
@@ -121,6 +125,10 @@ Route::middleware(['web'])->group(function () {
     Route::get('/distofcor', function () {
         return Inertia::render('RegistrarComponents/DistributionCORWindow/DistOfCORApp');
     })->middleware(['auth:registrar', 'role:registrar'])->name('distofcor');
+
+    Route::get('/registrar-profile', function () {
+        return Inertia::render('RegistrarComponents/RegProfile/RegApp');
+    })->middleware(['auth:registrar', 'role:registrar'])->name('registrar-profile');
 
     // Admission Handler Dashboard
     Route::get('/admin-dashboard', function () {

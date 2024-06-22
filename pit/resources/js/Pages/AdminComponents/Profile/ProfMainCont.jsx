@@ -9,8 +9,8 @@ const ProfMainCont = () => {
         <div className="flex flex-row">
           <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-10 mr-16 flex-grow">
             <div className="">
-              <h1 className="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-poppins font-extrabold mb-2 text-black">
-                Profile
+              <h1 className="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-poppins font-extrabold mb-2 text-blue-800">
+                Admin Profile
               </h1>
               <h2 className="text-grey text-sm mb-4 dark:text-gray-400">Create Profile</h2>
               <form>
