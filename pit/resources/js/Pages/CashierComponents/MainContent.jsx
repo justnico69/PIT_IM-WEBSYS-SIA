@@ -85,8 +85,6 @@ const MainContent = () => {
                             </svg>
                             <span className="ml-2">{`${selectedDate.format('MMMM DD, YYYY')}`}</span>
                         </p>
-
-
                     </div>
                 </div>
                 

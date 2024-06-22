@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ScmSidebar from './ScmSidebar';
+import Modal from 'react-modal';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ScmMainCont() {
   const [students, setStudents] = useState([]);
@@ -24,7 +26,7 @@ function ScmMainCont() {
           ...dsResponse.data,
           ...csResponse.data,
         ];
-        
+
         setStudents(allStudents);
       } catch (error) {
         console.error('Error fetching all students:', error);
@@ -50,55 +52,54 @@ function ScmMainCont() {
   };
 
   return (
-    <div className="flex min-h-screen">
-      <ScmSidebar />
-      <div className="flex-grow ml-2 min-h-full overflow-hidden mt-5">
-        <div className="flex flex-row">
-          <div className="bg-white rounded-xl shadow-lg px-6 py-4 mt-6 mr-10 flex-grow">
-            <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Enrolled Students</p>
-            <p className="mt-3 mb-2 text-base font-semibold text-indigo-900">See the list of all students in different Departments!</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 mt-10 ml-2">
-          <div>
-            <p className="text-xl font-extrabold text-white">List of Accepted Applicants</p>
-            <div className="bg-white rounded-xl shadow-lg p-6 mt-6 mr-10">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead>
-                  <tr>
-                    <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Student Number
-                    </th>
-                    <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Year Level
-                    </th>
-                    <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Section
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  {students.map((student) => (
-                    <tr key={student.id} onClick={() => handleRowClick(student.student_number)} className="cursor-pointer">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {student.student_number}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {student.yrlevel}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {student.section}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+    <main className="w-full ml-5">
+      <ToastContainer />
+      <div className="flex flex-row">
+        <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 flex-grow">
+          <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Student Course Management</p>
+          <p className="mt-3 mb-3 text-base font-semibold text-blue-800">List of enrolled CITC students</p>
         </div>
       </div>
-
+  
+      <div className="grid grid-cols-3 mb-3">
+        <div className="mt-5">
+          <p className="text-base font-bold text-white">List of students</p>
+        </div>
+      </div>
+  
+      <div className="bg-white p-5 shadow overflow-hidden sm:rounded-xl mb-5 mr-8 px-3">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead>
+            <tr>
+              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Student Number
+              </th>
+              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Year Level
+              </th>
+              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Section
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {students.map((student) => (
+              <tr key={student.id} onClick={() => handleRowClick(student.student_number)} className="cursor-pointer">
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  {student.student_number}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {student.yrlevel}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {student.section}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+  
       {selectedStudent && (
         <div className="fixed z-10 inset-0 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -149,7 +150,7 @@ function ScmMainCont() {
                   </div>
                   <div className="bg-gray-100 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 py-2">
                     <dt className="text-sm font-bold text-gray-500">Emergency Contact</dt>
-                    <dd className="mt-1 text-medium text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.emergencyName} ({selectedStudent.relationship}) - {selectedStudent.emergencyContactNumber}</dd>
+                    <dd className="mt-1 text-medium text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.emergencyName} ({selectedStudent.relationship}) -                     {selectedStudent.emergencyContactNumber}</dd>
                   </div>
                   <div className="bg-gray-200 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 py-2">
                     <dt className="text-sm font-bold text-gray-500">Last School Attended</dt>
@@ -206,8 +207,9 @@ function ScmMainCont() {
           </div>
         </div>
       )}
-    </div>
+    </main>
   );
 }
 
 export default ScmMainCont;
+
