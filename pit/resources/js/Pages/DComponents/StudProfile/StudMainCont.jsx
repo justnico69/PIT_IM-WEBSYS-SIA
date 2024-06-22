@@ -26,15 +26,15 @@ const StudMainCont = () => {
         <div className="flex flex-row">
           <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-10 mr-16 flex-grow">
             <div className="">
-              <h1 className="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-poppins font-extrabold mb-2 text-black">
-                Profile
+              <h1 className="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-poppins font-extrabold mb-2 text-blue-800">
+               Student Profile
               </h1>
               <h2 className="text-grey text-sm mb-4 dark:text-gray-400">Create Profile</h2>
               <form>
                 {/*CoverImage */}
             <div className="w-full rounded-sm bg-[url('https://i.ibb.co/9sZVwZk/image.png')] bg-cover bg-center bg-no-repeat">
                 {/* Profile Image */}
-                <div className="flex justify-start ml-9 w-[141px] h-[141px] bg-blue-300/20 rounded-full bg-cover border-2 border-white bg-center bg-no-repeat"
+                <div className="flex justify-start ml-9 w-[165px] h-[165px] bg-blue-300/20 rounded-full bg-cover border-2 border-white bg-center bg-no-repeat"
                      style={{
                        backgroundImage: `url(${profileImage})`, // Set background image dynamically
                      }}>

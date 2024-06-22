@@ -44,7 +44,7 @@ const MainContent = () => {
             </div>
             <div className="grid grid-cols-3 gap-3 grid-rows-4">
                 <div className="col-start-1 col-span-1 row-start-1 row-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto">
-                    <a href="#" className="text-blue-600 hover:text-blue-800 w-full flex items-center justify-center" onClick={fetchData}>
+                    <a href="scm-department" className="text-blue-600 hover:text-blue-800 w-full flex items-center justify-center" onClick={fetchData}>
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8">
                                 <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
@@ -55,7 +55,7 @@ const MainContent = () => {
                         <span className="ml-4 text-2xl font-semibold">Student Course <br/>Management</span>
                     </a>
                 </div>
-                <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-30">
+                <div className="h-[250px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-30">
                     <a href="it-department" className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8">
@@ -66,8 +66,8 @@ const MainContent = () => {
                         <span className="ml-2 text-2xl font-semibold">Information Technology</span>
                     </a>
                 </div>
-                <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-10">
-                    <a href="#" className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
+                <div className="h-[250px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-10">
+                    <a href="tcm-department" className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8">
                             <path fillRule="evenodd" d="M4.125 3C3.089 3 2.25 3.84 2.25 4.875V18a3 3 0 0 0 3 3h15a3 3 0 0 1-3-3V4.875C17.25 3.839 16.41 3 15.375 3H4.125ZM12 9.75a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5H12Zm-.75-2.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75ZM6 12.75a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5H6Zm-.75 3.75a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75ZM6 6.75a.75.75 0 0 0-.75.75v3c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75v-3A.75.75 0 0 0 9 6.75H6Z" clipRule="evenodd" />
@@ -77,7 +77,7 @@ const MainContent = () => {
                     </a>
                 </div>
                 <div className="col-start-2 row-start-2 bg-white rounded-xl shadow-lg flex items-center justify-center h-[250px]">
-                    <a href="#" className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
+                    <a href="ds-department" className="ml-5 text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
                         <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8">
                                 <path fillRule="evenodd" d="M4.125 3C3.089 3 2.25 3.84 2.25 4.875V18a3 3 0 0 0 3 3h15a3 3 0 0 1-3-3V4.875C17.25 3.839 16.41 3 15.375 3H4.125ZM12 9.75a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5H12Zm-.75-2.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75ZM6 12.75a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5H6Zm-.75 3.75a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75ZM6 6.75a.75.75 0 0 0-.75.75v3c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75v-3A.75.75 0 0 0 9 6.75H6Z" clipRule="evenodd" />
@@ -87,8 +87,8 @@ const MainContent = () => {
                         <span className="ml-2 text-2xl font-semibold">Data Science</span>
                     </a>
                 </div>
-                <div className="h-[200px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-10 row-3 col-end-4">
-                <a href="#" className="text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
+                <div className="h-[250px] col-span-1 bg-white rounded-xl shadow-lg flex items-center justify-center w-auto mr-10 row-3 col-end-4">
+                <a href="cs-department" className="text-blue-600 hover:text-blue-800 w-full flex items-center justify-center">
                     <span className="material-icons-outlined focus:outline-none" style={{ fontSize: '2rem' }}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
                                 <path fill-rule="evenodd" d="M4.125 3C3.089 3 2.25 3.84 2.25 4.875V18a3 3 0 0 0 3 3h15a3 3 0 0 1-3-3V4.875C17.25 3.839 16.41 3 15.375 3H4.125ZM12 9.75a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5H12Zm-.75-2.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75ZM6 12.75a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5H6Zm-.75 3.75a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75ZM6 6.75a.75.75 0 0 0-.75.75v3c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75v-3A.75.75 0 0 0 9 6.75H6Z" clip-rule="evenodd" />

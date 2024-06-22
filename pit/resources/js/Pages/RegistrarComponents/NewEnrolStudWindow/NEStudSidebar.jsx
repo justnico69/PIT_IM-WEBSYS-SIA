@@ -19,7 +19,7 @@ const Sidebar = () => {
             <div className="flex flex-col justify-between flex-1 ml-3 mt-14">
                 <nav className="-mx-3 space-y-6">
                     <div className="space-y-3">
-                        <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[535px] py-4">
+                        <div id="sidebarGradient" className="bg-white rounded-xl shadow-lg mt-20 mb-6 ml-5 mr-5 h-[626px] py-4">
                             <a href="#" className="text-blue-800 hover:text-blue-600 my-4 w-full flex flex-col items-center justify-center" onClick={handleLogout}>
                                 <button className="material-icons-outlined focus:outline-none" style={{ fontSize: '3rem' }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-14">
@@ -52,6 +52,20 @@ const Sidebar = () => {
                                         <span className="ml-2">Settings</span>
                                     </span>
                                 </a>
+
+                                <a href="distofcor" className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
+                                    <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
+                                        <span className="material-icons-outlined">
+                                        <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path fillRule="evenodd" d="M7 6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-2v-4a3 3 0 0 0-3-3H7V6Z" clipRule="evenodd"/>
+                                            <path fillRule="evenodd" d="M2 11a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7Zm7.5 1a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Z" clipRule="evenodd"/>
+                                            <path d="M10.5 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/>
+                                        </svg>
+                                        </span>
+                                        <span className="ml-2">Distribution of CoR</span>
+                                    </span>
+                                </a>
+
                                 <a href="#" onClick={handleLogout} className="flex items-center space-x-1 rounded-md mx-4 px-2 py-2 hover:bg-blue-500 hover:text-white">
                                     <span className="bg-transparent p-0.5 transition-all duration-300 inline-flex items-center">
                                         <span className="material-icons-outlined">
