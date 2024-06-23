@@ -94,6 +94,10 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('DepartmentComponents/StudentCourseManagement/ScmApp');
     })->middleware(['auth:department_staff', 'role:department_staff'])->name('Scm.department');
 
+    Route::get('/department-profile', function () {
+        return Inertia::render('DepartmentComponents/DepProfile/DepApp');
+    })->middleware(['auth:department_staff', 'role:department_staff'])->name('department-profile');
+
     // Cashier Dashboard
     Route::get('/cashier-dashboard', function () {
         return Inertia::render('CashierComponents/Cashier');

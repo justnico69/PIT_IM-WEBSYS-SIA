@@ -72,6 +72,7 @@ const AdmissionForm = () => {
         setTimeout(() => setAlertMessage(''), 5000);
     };
 
+    
     if (isSubmitted) {
         return <ThankYouPage />;
     }
