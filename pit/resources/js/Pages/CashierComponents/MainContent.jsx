@@ -28,7 +28,7 @@ const MainContent = () => {
         <div className="w-full ml-5">
             <div className="flex flex-row">
                 <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 flex-grow">
-                    <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Dashboard / Home</p>
+                    <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Cashier Dashboard</p>
                     <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, Cashier!</p>
                 </div>
             </div>
@@ -41,7 +41,7 @@ const MainContent = () => {
                 </div>
             </div>
             <div className="grid grid-cols-6 grid-rows-12 gap-5 mr-8">
-                <div className="row-span-6 col-span-4 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[290px]">
+                <div className={`row-span-6 col-span-4 bg-white rounded-xl shadow-lg flex items-center justify-center ${activeLink === 'payprocess' ? 'border-4 border-blue-500 transition-transform duration-300 transform translate-y-4' : ''}`}>
                     <a
                         href="payprocess"
                         className={`text-blue-600 hover:text-blue-900 flex items-center justify-center w-full h-full transition-transform transform ${activeLink === 'payprocess' ? 'scale-105' : ''}`}
@@ -78,14 +78,13 @@ const MainContent = () => {
                             />
                         </LocalizationProvider>
 
-                        <p className={`mt-5 mb-5 w-60 py-[10px] flex items-center justify-center text-sm font-semibold p-2 rounded-full bg-gradient-to-r from-blue-300 to-blue-700 text-white`}>
-                        <svg className="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                            <path d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
-                            <path fillRule="evenodd" d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z" clipRule="evenodd" />
-                        </svg>
-                        {`${selectedDate.format('MMMM DD, YYYY')}`}
-                    </p>
-
+                        <p className="mt-5 mb-5 w-60 py-[10px] flex items-center justify-center text-sm font-semibold p-2 rounded-full bg-gradient-to-r from-blue-300 to-blue-700 text-white">
+                            <svg className="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
+                                <path fillRule="evenodd" d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z" clipRule="evenodd" />
+                            </svg>
+                            <span className="ml-2">{`${selectedDate.format('MMMM DD, YYYY')}`}</span>
+                        </p>
                     </div>
                 </div>
                 

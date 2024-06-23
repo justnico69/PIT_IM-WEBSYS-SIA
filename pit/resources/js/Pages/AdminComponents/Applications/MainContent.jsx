@@ -48,7 +48,7 @@ function MainContent() {
       .then((data) => {
         setStudentNames(studentNames.filter(student => student.id !== id));
         closeModal();
-        alert(data.message); // Display the success message
+        toast.success(data.message); // Display the success message using Toastify
         setNewStudentNumber(data.newStudentNumber); // Set the new student number
 
         // Send acceptance email
@@ -67,7 +67,7 @@ function MainContent() {
         return response.json();
       })
       .then((data) => {
-        toast.success(data.message); // Display success message for email sending
+        toast.success(data.message); // Display success message for email sending using Toastify
       })
       .catch((error) => {
         console.error('There was a problem with the fetch operation:', error);
@@ -105,7 +105,7 @@ function MainContent() {
         return response.json();
       })
       .then((data) => {
-        toast.success(data.message); // Display success message for email sending
+        toast.success(data.message); // Display success message for email sending using Toastify
       })
       .catch((error) => {
         console.error('There was a problem with the fetch operation:', error);
@@ -244,7 +244,7 @@ function MainContent() {
             )}
           </Modal>
         </main>
-        <ToastContainer />
+        <ToastContainer /> {/* Toast container for displaying notifications */}
       </div>
     </div>
   );

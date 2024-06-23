@@ -26,9 +26,8 @@ function WMainCont() {
                     <div className="absolute inset-0 bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://wallpapers.com/images/featured/blank-white-background-xbsfzsltjksfompa.jpg)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.1' }}></div>
                     <div className="absolute inset-0 bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://img.freepik.com/free-vector/blank-blue-halftone-background_53876-114466.jpg?size=626&ext=jpg&ga=GA1.1.2116175301.1718236800&semt=ais_user)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.6' }}></div>
                     <div className="relative z-10 fade-rise flex flex-col justify-center items-start h-full w-full lg:w-1/2 mt-20 pl-10" style={{ paddingBottom: '10%' }}> {/* Adjusted padding */}
-                        <h1 className="text-6xl text-white leading-tight font-poppins font-extrabold">Unlock Your Future</h1>
-                        <h1 className="text-6xl text-white font-poppins font-extrabold"> in Technology</h1>
-                        <h1 className="text-6xl text-white font-poppins font-extrabold"> with us!</h1>
+                        <h1 className="text-6xl text-white leading-tight font-poppins font-extrabold">Tech Your First</h1>
+                        <h1 className="text-6xl text-white font-poppins font-extrabold">Step With Us!</h1>
                         <p className="text-2xl text-gray-200 font-medium font-Poppins mt-6 text-justify pr-40"> {/* Adjusted leading and padding-right */}
                         At NNN College of InfoTech and Computing, we empower future tech leaders. Our tailored programs cater to beginners and advanced learners alike. Join our vibrant community to excel in the dynamic tech field.
                         </p>
