@@ -41,7 +41,7 @@ const MainContent = () => {
                 </div>
             </div>
             <div className="grid grid-cols-6 grid-rows-12 gap-5 mr-8">
-                <div className="row-span-6 col-span-4 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[290px]">
+                <div className={`row-span-6 col-span-4 bg-white rounded-xl shadow-lg flex items-center justify-center ${activeLink === 'payprocess' ? 'border-4 border-blue-500 transition-transform duration-300 transform translate-y-4' : ''}`}>
                     <a
                         href="payprocess"
                         className={`text-blue-600 hover:text-blue-900 flex items-center justify-center w-full h-full transition-transform transform ${activeLink === 'payprocess' ? 'scale-105' : ''}`}
