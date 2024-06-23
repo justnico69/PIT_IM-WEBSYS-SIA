@@ -27,7 +27,7 @@ const DepMainCont = () => {
           <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-16 flex-grow">
             <div className="">
               <h1 className="lg:text-3xl md:text-2xl mt-3 sm:text-xl xs:text-xl font-poppins font-extrabold mb-2 text-blue-800">
-               Registrar Profile
+               Department Profile
               </h1>
               <h2 className="text-grey text-sm mb-4 dark:text-gray-400">Create Profile</h2>
               <form>
