@@ -134,6 +134,7 @@ Route::middleware(['web'])->group(function () {
         return Inertia::render('RegistrarComponents/RegProfile/RegApp');
     })->middleware(['auth:registrar', 'role:registrar'])->name('registrar-profile');
 
+    
     // Admission Handler Dashboard
     Route::get('/admin-dashboard', function () {
         return Inertia::render('AdminComponents/AllAdComps');

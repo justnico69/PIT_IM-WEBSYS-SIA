@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import StudSidebar from './StudSidebar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import StudSidebar from './StudSidebar';
 
 Modal.setAppElement('#root'); // Set the root element for accessibility
 
@@ -71,7 +71,7 @@ function MainContent() {
       })
       .catch((error) => {
         console.error('There was a problem with the fetch operation:', error);
-        toast.error(error.message.includes('Duplicate entry') ? 'Duplicate Entry of Applicant' : 'An error occurred');
+       
       });
     }
   };

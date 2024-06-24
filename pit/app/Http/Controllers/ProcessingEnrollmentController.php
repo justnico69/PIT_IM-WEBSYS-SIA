@@ -6,6 +6,9 @@ use App\Models\ProcessingEnrollment;
 use App\Models\EnrolledStudent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Models\AcceptedApplicants;
+use App\Mail\EnrollmentConfirmed;
+use Illuminate\Support\Facades\Mail;
 
 class ProcessingEnrollmentController extends Controller
 {
@@ -67,6 +70,20 @@ class ProcessingEnrollmentController extends Controller
 
             Log::info('Deleting processing enrollment');
             $enrollment->delete();
+
+              // Send enrollment confirmation email
+              $acceptedApplicant = AcceptedApplicants::where('student_number', $enrollment->student_number)->first();
+              if ($acceptedApplicant) {
+                  $title = strtolower($acceptedApplicant->gender) == 'male' ? 'Mr.' : 'Ms.';
+                  $fullName = "{$acceptedApplicant->firstName} {$acceptedApplicant->middleName} {$acceptedApplicant->lastName}";
+                  $subject = "Congratulations {$title} {$fullName}, you are now enrolled!";
+                  $message = "Dear {$title} {$fullName},<br><br>We are pleased to inform you that your payment has been confirmed and you are now officially enrolled at NNN University. Your student number is {$enrollment->student_number}.<br><br>Welcome aboard and we wish you a successful academic journey.<br><br>Best regards,<br>NNN University";
+  
+                  Mail::to($acceptedApplicant->email)->send(new EnrollmentConfirmed($message, $subject));
+                  Log::info('Enrollment confirmation email sent successfully', ['email' => $acceptedApplicant->email]);
+              } else {
+                  Log::warning('Accepted applicant not found for sending email', ['student_number' => $enrollment->student_number]);
+              }
 
             Log::info('Enrollment paid and successfully moved to enrolled students', ['enrolled_student' => $enrolledStudent]);
             return response()->json(['message' => 'Enrollment paid and successfully moved to enrolled students', 'enrolled_student' => $enrolledStudent], 201);

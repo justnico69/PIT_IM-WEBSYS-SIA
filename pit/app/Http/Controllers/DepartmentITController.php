@@ -23,10 +23,25 @@ class DepartmentITController extends Controller
     public function getAcceptedApplicant($studentNumber)
     {
         try {
+            // Fetch accepted applicant details
             $applicant = AcceptedApplicants::where('student_number', $studentNumber)->first();
             if (!$applicant) {
                 return response()->json(['error' => 'Accepted applicant not found.'], 404);
             }
+            
+            // Fetch enrolled student details
+            $student = EnrolledStudent::where('student_number', $studentNumber)->first();
+            if ($student) {
+                // Assign id_image from enrolled_students table to the applicant object
+                $applicant->id_image = $student->id_image;
+
+                // Log information about id_image
+                Log::info('ID image URL: ' . $student->id_image);
+            } else {
+                Log::info('No enrolled student found with student number: ' . $studentNumber);
+            }
+            
+            // Return response with applicant details including id_image
             return response()->json($applicant);
         } catch (\Exception $e) {
             Log::error('Error fetching accepted applicant details: ' . $e->getMessage());
@@ -34,4 +49,3 @@ class DepartmentITController extends Controller
         }
     }
 }
-

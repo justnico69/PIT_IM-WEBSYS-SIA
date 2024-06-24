@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { useEffect, useState } from 'react';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function ItMainCont() {
@@ -29,6 +29,7 @@ function ItMainCont() {
   const handleRowClick = async (studentNumber) => {
     try {
       const response = await axios.get(`/api/accepted-applicants/${studentNumber}`);
+      console.log('Fetched student details:', response.data);
       setSelectedStudent(response.data);
     } catch (error) {
       console.error('Error fetching student details:', error);
@@ -103,8 +104,8 @@ function ItMainCont() {
               <div className="px-4 py-5 bg-white sm:px-6">
                 <h3 className="text-lg leading-6 font-medium text-gray-900">Applicant Information</h3>
               </div>
-              <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
-                <dl className="sm:divide-y sm:divide-gray-200">
+              <div className="border-t border-gray-200 px-4 py-5 sm:p-0 flex">
+                <dl className="sm:divide-y sm:divide-gray-200 flex-grow">
                   <div className="bg-gray-100 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 py-2">
                     <dt className="text-sm font-bold text-gray-500">Student Number</dt>
                     <dd className="mt-1 text-medium text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.student_number}</dd>
@@ -146,6 +147,9 @@ function ItMainCont() {
                     <dd className="mt-1 text-medium text-gray-900 sm:mt-0 sm:col-span-2">{selectedStudent.schoolLastAttended}</dd>
                   </div>
                 </dl>
+                <div className="sm:w-1/3 ml-4">
+                  <img src={selectedStudent.id_image} alt="ID" className="w-full h-auto rounded-lg" onError={(e) => { e.target.onerror = null; e.target.src = 'https://via.placeholder.com/150'; console.error('Failed to load image:', e.target.src); }}/>
+                </div>
               </div>
               <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
