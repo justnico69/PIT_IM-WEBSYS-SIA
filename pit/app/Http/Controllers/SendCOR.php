@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mail\CORApplicant;
-use Mail;
+use Illuminate\Support\Facades\Mail;
+
 
 class SendCOR extends Controller
 {

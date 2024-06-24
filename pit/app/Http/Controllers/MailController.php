@@ -9,10 +9,10 @@ use App\Mail\AcceptedApplicant;
 use App\Mail\RejectedApplicant;
 use App\Models\RejectedApplicants;
 use App\Models\AcceptedApplicants;
-use App\Models\RejectedApplicants;
+
 use App\Models\StudentAccount;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 
 class MailController extends Controller
 {
@@ -42,8 +42,8 @@ class MailController extends Controller
             $fullName = "{$applicant->firstName} {$applicant->middleName} {$applicant->lastName}";
             $subject = "Good day to you {$title} {$fullName}. You have been Accepted";
 
-            $message = "Congratulations! You have been accepted to the university. Here are your student credentials:<br>";
-            $message .= "Email: {$studentAccount->email}<br>";
+            $message = "Congratulations! You have been accepted to the university. Here are your student credentials to login:<br>";
+            $message .= "Username: {$studentAccount->email}<br>";
             $message .= "Password: {$newStudentNumber}<br>";
             $message .= "This also serves as your student number: {$newStudentNumber}<br>";
             $message .= 'Please <a href="http://127.0.0.1:8000/login">click here</a> to login and enroll. Thank you and have a blessed day!';
