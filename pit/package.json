@@ -37,7 +37,7 @@
         "dayjs": "^1.11.11",
         "nodemailer": "^6.9.13",
         "react-calendar": "^5.0.0",
-        "react-datepicker": "^7.0.0",
+        "react-datepicker": "^7.1.0",
         "react-modal": "^3.16.1",
         "react-router-dom": "^6.23.1",
         "react-slick": "^0.30.2",

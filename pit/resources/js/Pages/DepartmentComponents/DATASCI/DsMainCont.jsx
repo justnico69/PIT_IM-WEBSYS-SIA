@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Head } from '@inertiajs/react';
 
 function DsMainCont() {
   const [students, setStudents] = useState([]);
@@ -39,6 +40,7 @@ function DsMainCont() {
 
   return (
     <main className="w-full ml-5">
+       <Head title="Data Science" />
       <ToastContainer />
       <div className="flex flex-row">
         <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 flex-grow">

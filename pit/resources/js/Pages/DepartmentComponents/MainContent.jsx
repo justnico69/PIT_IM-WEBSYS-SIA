@@ -7,6 +7,7 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import 'react-calendar/dist/Calendar.css'; // Import styles for react-calendar
 import styles from './Calendar.module.css'; // Import your CSS Module
 
+
 const MainContent = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [applicants, setApplicants] = useState([]);

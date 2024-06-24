@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Head } from '@inertiajs/react';
 
 Modal.setAppElement('#root');
 
@@ -106,6 +107,7 @@ function EnrollMainContent() {
 
   return (
     <main className="w-full ml-5">
+      <Head title="Enrollment"/>
       <ToastContainer />
       <div className="flex flex-row">
         <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 mb-5 flex-grow">

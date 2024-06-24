@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import { Head } from '@inertiajs/react';
 
 Modal.setAppElement('#root');
 
@@ -51,6 +52,7 @@ function MainContent() {
 
   return (
     <main className="w-full ml-5">
+      <Head title="Shift Request"/>
       <div className="flex flex-row">
         <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 mb-5 flex-grow">
           <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Shift Request</p>
