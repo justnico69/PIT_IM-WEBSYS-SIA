@@ -1,5 +1,9 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { Head } from '@inertiajs/react';
+
+
+
 
 function Login({ csrfToken }) {
     const [email, setEmail] = useState('');
@@ -26,6 +30,7 @@ function Login({ csrfToken }) {
 
     return (
         <div className="relative h-screen flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8 px-6">
+           <Head title="Login" />
             <div className="absolute inset-0 bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/7067d0170920411.646604dc0db99.jpg)', backgroundPosition: 'top', backgroundSize: 'cover', opacity: '0.9'}}></div>
             <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-lg border-2 border-white bg-white/30 backdrop-blur-lg py-8 px-4 shadow sm:rounded-3xl sm:px-10">
                 <div className="text-center">

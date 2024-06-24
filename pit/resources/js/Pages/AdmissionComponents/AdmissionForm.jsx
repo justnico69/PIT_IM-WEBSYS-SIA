@@ -10,6 +10,8 @@ import NationalityFieldset from './NationalityFieldset';
 import SchoolLastAttendedFieldset from './SchoolLastAttendedFieldset';
 import ThankYouPage from './ThankYouPage';
 import Adheader from './Adheader';
+import { Head } from '@inertiajs/react';
+
 
 
 const AdmissionForm = () => {
@@ -72,12 +74,14 @@ const AdmissionForm = () => {
         setTimeout(() => setAlertMessage(''), 5000);
     };
 
+    
     if (isSubmitted) {
         return <ThankYouPage />;
     }
 
     return (
         <div>
+            <Head title="Admission Form" />
             <div style={{ position: 'relative', zIndex: '1' }}>
                 <div className="container mx-auto p-6" style={{ maxWidth: '1000px', height: '1200px' }}>
                     {alertMessage && (

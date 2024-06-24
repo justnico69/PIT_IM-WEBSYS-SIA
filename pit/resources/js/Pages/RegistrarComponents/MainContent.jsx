@@ -28,7 +28,7 @@ const MainContent = () => {
         <div className="w-full ml-5">
             <div className="flex flex-row">
                 <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 flex-grow">
-                    <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Dashboard / Home</p>
+                    <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Registrar Dashboard</p>
                     <p className="mt-3 mb-3 text-base font-semibold text-blue-800">Welcome, Registrar!</p>
                 </div>
             </div>
@@ -41,7 +41,7 @@ const MainContent = () => {
                 </div>
             </div>
             <div className="grid grid-cols-6 grid-rows-12 gap-5 mr-8">
-                <div className="row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[328px]">
+                <div className={`row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center ${activeLink === 'new-en-stud' ? 'border-4 border-blue-500 transition-transform duration-300 transform translate-y-4' : ''}`}>
                     <a
                         href="new-en-stud"
                         className={`text-blue-600 hover:text-blue-900 flex items-center justify-center w-full h-full transition-transform transform ${activeLink === 'new-en-stud' ? 'scale-105' : ''}`}
@@ -58,7 +58,7 @@ const MainContent = () => {
                     </a>
                 </div>
 
-                <div className="row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center min-h-[290px]">
+                <div className={`row-span-6 col-span-2 bg-white rounded-xl shadow-lg flex items-center justify-center ${activeLink === 'distofcor' ? 'border-4 border-blue-500 transition-transform duration-300 transform translate-y-4' : ''}`}>
                     <a
                         href="distofcor"
                         className={`text-blue-600 hover:text-blue-900 flex items-center justify-center w-full h-full transition-transform transform ${activeLink === 'distofcor' ? 'scale-105' : ''}`}
