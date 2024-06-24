@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Head } from '@inertiajs/react';
 
 function MainContent() {
   const [selectedProgram, setSelectedProgram] = useState('');
@@ -246,6 +247,7 @@ function MainContent() {
   //UI DESIGN
   return (
     <main className="w-full ml-5">
+      <Head title="Program Details"/>
       <div className="flex flex-row">
         <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 mb-5 flex-grow">
           <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Program Details</p>

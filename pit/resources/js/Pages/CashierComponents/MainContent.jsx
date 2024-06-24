@@ -5,6 +5,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import 'react-calendar/dist/Calendar.css'; // Import styles for react-calendar
 import styles from './Calendar.module.css'; // Import your CSS Module
+import { Head } from '@inertiajs/react';
 
 const MainContent = () => {
     const [activeLink, setActiveLink] = useState(null);
@@ -26,6 +27,7 @@ const MainContent = () => {
 
     return (
         <div className="w-full ml-5">
+            <Head title="Cashier Dashboard"/>
             <div className="flex flex-row">
                 <div className="row-span-3 col-span-4 items-center bg-white rounded-xl shadow-lg px-6 py-4 mt-[140px] mr-8 flex-grow">
                     <p className="text-3xl mt-3 font-extrabold font-poppins text-blue-800">Cashier Dashboard</p>
