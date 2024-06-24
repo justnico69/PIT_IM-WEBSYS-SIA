@@ -53,19 +53,22 @@ function MainContent() {
 
   const handlePayBalance = async () => {
     try {
-      const studentId = selectedStudent.id; // Ensure we get the correct student ID
+      const studentId = selectedStudent.id;
       console.log(`Processing payment for student ID: ${studentId}`);
+  
+      // Confirm the payment and send the email
       await axios.post(`/api/processing_enrollment/pay/${studentId}`);
+  
       fetchStudents();
       closeModal();
-      toast.success('Payment Confirmed!'); // Display success toast
+      toast.success('Payment Confirmed and email sent!');
     } catch (error) {
       console.error('Error processing payment', error);
       setError('Error processing payment');
-      toast.error('Error processing payment'); // Display error toast
+      toast.error('Error processing payment');
     }
   };
-
+  
   const filteredStudents = students.filter(student =>
     (selectedProgram === '' || student.program === selectedProgram) &&
     (`${student.firstName} ${student.lastName}`).toLowerCase().includes(searchTerm.toLowerCase())

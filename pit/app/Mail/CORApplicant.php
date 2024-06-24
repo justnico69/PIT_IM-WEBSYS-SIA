@@ -28,6 +28,15 @@ class CORApplicant extends Mailable
      *
      * @return $this
      */
+    public function envelope(): Envelope
+    {
+        return new Envelope(
+            from: new Address('triplenuniversity@gmail.com', 'NNN_Admission'),
+            subject: $this->subject,
+        );
+    }
+
+    
     public function build()
     {
         return $this->view('emails.applicantCOR')
